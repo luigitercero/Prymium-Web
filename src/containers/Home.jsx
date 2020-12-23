@@ -2,6 +2,7 @@ import React from 'react';
 import initialState from '../initiaState';
 import myImg from '../img/img.png';
 
+
 const Home = () => {
 
 

@@ -4,7 +4,7 @@ import Home from '../containers/Home';
 import Tienda from '../containers/Tienda';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
-import initialState from '../initiaState';
+
 
 const App = () => {
   return (
