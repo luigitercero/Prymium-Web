@@ -44,11 +44,17 @@ module.exports = {
                // fallback to style-loader in development
                process.env.NODE_ENV !== "production"
                   ? "style-loader"
+                  // eslint-disable-next-line no-undef
                   : MiniCssExtractPlugin.loader,
                "css-loader",
                "sass-loader",
             ]
-         }
+         },
+         {
+          test: /\.(png|jpe?g|gif)$/i,
+          exclude: /(node_modules)/,
+          loader : 'file-loader'
+        },
       ]
    },
    plugins: [
