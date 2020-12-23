@@ -62,11 +62,11 @@ $z-indexes: (
 //font-handling
 @mixin font-set($type: false, $size: false, $colour: false, $weight: false,  $lh: false) {
     @if ($type == 1) {
-        font-family: 'ProximaNovaRegular';
+        font-family: $font_family_regular;
     }
 
     @if ($type == 2) {
-        font-family: 'ProximaNovaBold';
+        font-family:$font_family_bold;
     }
 
 
