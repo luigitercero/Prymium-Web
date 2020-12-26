@@ -1,0 +1,19 @@
+@import '../global/settings.scss';
+
+.container-footer {
+  display: flex;
+  background-color: $primary;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+  section {
+    flex-wrap: wrap;
+    min-width: 100px;
+    max-width: 22em;
+    padding: 15px;
+  }
+  p {
+    @include font-set(1, 1em, $white, 100);
+  }
+
+}
