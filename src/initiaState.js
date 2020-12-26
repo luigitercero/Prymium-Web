@@ -1,4 +1,16 @@
+import _logo from './img/img.png';
+import _hamburger from './img/bars-solid.svg';
+
+export const Logo = {
+  img:_logo,
+  alt:'Logo de la empresa'
+} ;
+export const HamburguerMenu = {
+  img:_hamburger,
+  alt:'MenuHamburguesa'
+} ;
 export default {
+  
   cart: [],
   products: [
     {

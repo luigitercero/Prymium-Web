@@ -1,6 +1,6 @@
 import React from 'react';
 import initialState from '../initiaState';
-import myImg from '../img/img.png';
+
 
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
         home
         {initialState.products[0].description}
       </h1>
-      <img src={myImg} alt="nueva imange " />
+      
     </div>
   );
 

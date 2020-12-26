@@ -13,9 +13,13 @@ $black: #0000;
 $color-list: $blue, $white, $gray-light, $gray-medium, $gray-semi-dark, $gray-dark, $gray-darker, $brown;
 $color-names: 'blue','white', 'gray-light', 'gray-medium', 'gray-semi-dark', 'gray-dark', 'gray-darker', 'brown';
 
-$primary: $blue;
-$secondary: $white;
-$textColor:$black; 
+$primaryColor: #e2b85c;
+$secondaryColor:#553b00;
+$textColor:#1a1200;
+$enfasisColor:#fff0cf; 
+$enfasisColorHover:#fff; 
+
+
 
 @each $current-color in $color-list {
   $i: index($color-list, $current-color);
