@@ -33,6 +33,6 @@ const Footer = () => {
       </section>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
