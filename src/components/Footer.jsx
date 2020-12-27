@@ -20,8 +20,16 @@ const Footer = () => {
       <section>
 
         <p>Redes Sociales</p>
-      
-
+        <a href="https://www.facebook.com/lavatrastosprymium" className="icon-container">
+          <i className="icon facebook icon--check" />
+        </a>
+        <a href="https://www.instagram.com/lavatrastosprymium/" className="icon-container">
+          <i className="icon instagram icon--check" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCoseb5M5memG5PF67kF4slQ/featured" className="icon-container">
+          <i className="icon youtube icon--check" />
+        </a>
+        
       </section>
     </footer>
   );
