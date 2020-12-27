@@ -1,0 +1,22 @@
+//Hero variables
+$hero-text-color: $white;
+$hero-text-backcolor: rgba($color: #1A1200, $alpha: 0.4);
+$hero-link-color: #e2b85c;
+
+//Galleries varialbles
+$gallery-arrow-color: $white;
+$gallery-arrow-backcolor: #1A1200;
+
+//hero mixins
+@mixin hero-item($bottom, $fontSize: 2em, $paddingLeft: 0, $mainFont: 'Lato') {
+  bottom: $bottom;
+  font-family: $mainFont, sans-serif;
+  font-size: $fontSize;
+  padding-left: $paddingLeft;
+}
+
+@mixin hero-background($image) {
+  background: url($image) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}

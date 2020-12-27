@@ -51,10 +51,10 @@ module.exports = {
             ]
          },
          {
-          test: /\.(png|jpe?g|gif)$/i,
+          test: /\.(png|jpe?g|gif|svg|ttf)$/i,
           exclude: /(node_modules)/,
           loader : 'file-loader'
-        },
+        }
       ]
    },
    plugins: [
