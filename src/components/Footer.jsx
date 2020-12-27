@@ -1,5 +1,5 @@
 /* eslint-disable arrow-body-style */
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -7,6 +7,6 @@ const Footer = () => {
       <p>hola</p>
     </div>
   );
-}
+};
 
-export default Footer
+export default Footer;
