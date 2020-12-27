@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import { Logo, HamburguerMenu } from '../initiaState';
 import _route from '../routes/Config';
@@ -62,16 +62,34 @@ const NavigationList = () => {
 const NavItem = ({ id, to, name, children }) => {
   const [showSubMenu, setSubMenu] = useState(false);
   const onPress = () => {
-    setSubMenu(!showSubMenu)
+
+    setSubMenu(!showSubMenu);
   }
+  const close = () => {
+    setSubMenu(false);
+  }
+
+  const menu = () => {
+    return (
+      <>
+        <a href={to} onClick={onPress}>{name}</a>
+        {showSubMenu && children}
+      </>
+
+    )
+  }
+
   return (
 
     <li key={id}>
       {
-        children ? <a href={to} onClick={onPress}>{name}</a>
+        children ? (
+          <OutsideAlerter onClick={close}>
+            {menu()}
+          </OutsideAlerter>
+        )
           : <Link to={to}><div>{name}</div></Link>
       }
-      {showSubMenu && <OutsideAlerter onClick={onPress}>{children}</OutsideAlerter>}
     </li>
 
   );

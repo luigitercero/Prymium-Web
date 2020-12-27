@@ -51,6 +51,14 @@
       margin:0;
       padding-left: 0px;
       transition: 0.5s;
+      div {
+        display: flex;
+        justify-content: center   ;
+        @include mq ("medium-screen",'max'){ 
+          
+          flex-direction: column;
+        }
+      }
       @include mq ("medium-screen",'max'){
         position: absolute;
         flex-direction: column;
@@ -202,7 +210,5 @@
   justify-content: center;
   align-items: center;
   text-align: center;
- 
   z-index: 1;
-  
 }
