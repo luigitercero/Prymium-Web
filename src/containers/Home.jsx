@@ -11,7 +11,7 @@ const Home = () => {
         home
         {initialState.products[0].description}
       </h1>
-  
+      
     </div>
   );
 

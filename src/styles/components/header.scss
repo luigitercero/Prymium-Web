@@ -1,0 +1,208 @@
+@import '../globals/settings.scss';
+
+.header {
+  
+  .hide{
+    @include mq ("medium-screen",'max'){
+      display: none;
+      
+    } 
+  }
+  .direction{
+    background-color: $primaryColor;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-content: center;
+    align-items: center;
+    
+    .menu-container {
+      position: relative;
+    }
+    .contariner-hamburger {
+      @include mq ("medium-screen",'min'){
+        display: none;
+        
+      } 
+      .hambuerguer {
+        width: 1em;
+        @include mq ("medium-screen",'min'){
+          display: none;
+          
+        } 
+        &:hover{
+          width: 1.05em;
+        
+        }
+      }
+    }
+   
+    img {
+      max-height: 3em;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      list-style:none;
+      margin:0;
+      padding-left: 0px;
+      transition: 0.5s;
+      @include mq ("medium-screen",'max'){
+        position: absolute;
+        flex-direction: column;
+        right: 0;
+        top: 3em;
+        background-color: $primaryColor;
+        padding-left: 5px;
+        padding-right: 5px;
+       
+        ul{
+          position: initial;
+        }
+      } 
+      li:last-child{
+        
+        border-bottom: initial;
+      }
+      li{
+        @include mq ("medium-screen",'max'){
+          display: flex;
+          justify-content: center;
+          border-bottom: 0.5px solid $secondaryColor;
+          width: 9em;
+          text-align: left;
+          min-height: 3.3em;
+          li {
+            border-bottom: initial;
+            width: initial
+          }
+
+        } 
+        width: 6em;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+       
+        
+        .sub-menu {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background-color: $primaryColor;
+          @include font-set(1, 1em, $enfasisColor, 100); 
+          opacity: 1;
+          animation: .5s ease 1 pulse;
+          animation-fill-mode: forwards;
+          border-radius: 0.3em;
+          padding: 0.8em;
+          @include mq ("medium-screen",'min'){
+          
+            background-color: $secondaryColor;
+            top: 2.10em;
+            position: absolute;
+            clip-path: polygon(50% 0%, 60% 7%, 100% 7%, 100% 100%, 0% 100%, 0% 7%, 40% 7%);
+            min-width: 7em;
+            min-height: 8em;
+          }
+          
+          a{
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            color: $enfasisColor; 
+            &:hover{
+              color: $textColor;          
+            }
+            @include mq ("medium-screen",'max'){
+              @include font-set(1, 1em, $textColor, 100);
+                &:hover{
+                  color: $enfasisColorHover;
+                }
+                @include mq ("medium-screen",'max'){
+                  padding-left: 0.5em;
+                  padding-right: 0.5em;
+                } 
+            } 
+          }
+        }
+      }
+    }
+  
+    a{
+      text-decoration: none;
+      color: $enfasisColor;
+      padding: .5em;
+      @include font-set(1, 1em, $textColor, 100);
+      &:hover{
+        color: $enfasisColorHover;
+      }
+      @include mq ("medium-screen",'max'){
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      } 
+      div {
+        max-width: 100%;
+      }
+    }
+  }
+  
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeover-enter {
+  opacity: 0;
+}
+.fadeover-enter-active {
+  opacity: 1;
+  transition: opacity 100ms;
+}
+.fadeover-exit {
+  opacity: 1;
+}
+.fadeover-exit-active {
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+ 
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  
+}
+.overlay{
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ 
+  z-index: 1;
+  
+}
