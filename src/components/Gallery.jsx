@@ -32,9 +32,16 @@ const Gallery = ({ id, title, imageArray }) => {
     galleryContainer.scrollLeft = offset;
   })
 
+  function touchIn(){
+    const galleryContainer = document.getElementById(`${id}-container`);
+    galleryContainer.style.overflow = 'scroll';
+  }
+
   function touchOut(){
     const gallery = document.getElementById(id);
     const galleryContainer = document.getElementById(`${id}-container`);
+    galleryContainer.style.overflow = 'hidden';
+    currentScrollPosition = galleryContainer.scrollLeft;
     console.log(currentScrollPosition ,currentScrollPosition - offset, parseInt((currentScrollPosition - offset)/stepSize))
     console.log(offset);
     const movement = currentScrollPosition - offset
@@ -70,6 +77,7 @@ const Gallery = ({ id, title, imageArray }) => {
     }
 
     initialScrollPosition = currentScrollPosition;
+    console.log('Aloha')
   }
 
   function moveRight() {
@@ -89,7 +97,7 @@ const Gallery = ({ id, title, imageArray }) => {
   return (
     <div className="image-gallery">
       <h2>{title}</h2>
-      <div className="gallery-container" id={`${id}-container`} onScroll={scrollControl} onTouchEnd={touchOut}>
+      <div className="gallery-container" id={`${id}-container`} onScroll={scrollControl} onTouchEnd={touchOut} onTouchStart={touchIn}>
         <div className="gallery" id={id}>
           {imageArray.map(element => {
             return (
