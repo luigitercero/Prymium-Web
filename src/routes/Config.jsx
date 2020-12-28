@@ -6,7 +6,7 @@ export default {
   },
   products:{
     name:"Productos",
-    to:"/",
+    to:"/store-lavatrastos-grifos-bidet-guatemala/",
     id:2
   },
   asks:{
