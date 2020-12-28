@@ -18,8 +18,8 @@ $secondaryColor:#553b00;
 $textColor:#1a1200;
 $enfasisColor:#fff0cf; 
 $enfasisColorHover:#fff; 
-
-
+$backgroundLightColor: #fff7e2;
+$backgroundTextColor: rgba($color: #1A1200, $alpha: 0.4);
 
 @each $current-color in $color-list {
   $i: index($color-list, $current-color);
