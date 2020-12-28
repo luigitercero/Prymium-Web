@@ -20,6 +20,7 @@ const Gallery = ({ id, title, imageArray }) => {
   const maxPosition = imageArray.length;
   const offset =  parseInt(window.innerWidth / 2);
   const error = 20;
+  let allowScroll = false;
   let position = 0;
   let initialScrollPosition = 0;
   let currentScrollPosition = 0;
@@ -33,17 +34,14 @@ const Gallery = ({ id, title, imageArray }) => {
   })
 
   function touchIn(){
-    const galleryContainer = document.getElementById(`${id}-container`);
-    galleryContainer.style.overflow = 'scroll';
+    allowScroll = true;
   }
 
   function touchOut(){
+    allowScroll = false;
     const gallery = document.getElementById(id);
     const galleryContainer = document.getElementById(`${id}-container`);
-    galleryContainer.style.overflow = 'hidden';
     currentScrollPosition = galleryContainer.scrollLeft;
-    console.log(currentScrollPosition ,currentScrollPosition - offset, parseInt((currentScrollPosition - offset)/stepSize))
-    console.log(offset);
     const movement = currentScrollPosition - offset
     const stepsToMove = parseInt(movement / stepSize) 
     if(movement >= error){
@@ -59,7 +57,6 @@ const Gallery = ({ id, title, imageArray }) => {
         position--;
       }
     }
-    console.log(position, stepsToMove, scrollRight, !scrollRight);
     gallery.style.transform = `translateX(${offset - acumMovement}px)`;
     galleryContainer.scrollLeft = offset;
     acumMovement = position*stepSize;
@@ -69,15 +66,18 @@ const Gallery = ({ id, title, imageArray }) => {
 
   function scrollControl() {
     const galleryContainer = document.getElementById(`${id}-container`);
-    currentScrollPosition = galleryContainer.scrollLeft;
-    if(currentScrollPosition > initialScrollPosition){
-      scrollRight = true;
-    }else if(currentScrollPosition < initialScrollPosition){
-      scrollRight = false;
+    if(allowScroll){
+      currentScrollPosition = galleryContainer.scrollLeft;
+      if(currentScrollPosition > initialScrollPosition){
+        scrollRight = true;
+      }else if(currentScrollPosition < initialScrollPosition){
+        scrollRight = false;
+      }
+      
+      initialScrollPosition = currentScrollPosition;
+    }else{
+      galleryContainer.scrollLeft = offset;
     }
-
-    initialScrollPosition = currentScrollPosition;
-    console.log('Aloha')
   }
 
   function moveRight() {
