@@ -7,6 +7,28 @@ $font_family_bold:'Lato-Regular';
 
 
 
+@mixin font-set($type: false, $size: false, $colour: false, $weight: false,  $lh: false) {
+  @if ($type == 1) {
+      font-family: $font_family_regular;
+  }
+
+  @if ($type == 2) {
+      font-family:$font_family_bold;
+  }
+
+  @if $size {
+      font-size: $size;
+  }
+  @if $colour {
+      color: $colour;
+  }
+  @if $weight {
+      font-weight: $weight;
+  }
+  @if $lh {
+      line-height: $lh;
+  }
+}
 
 
 

@@ -25,3 +25,8 @@ export default {
     id:5
   },
 }
+export const url ="https://lavatrastosprymium.com/";
+export const getProducts = {
+  url:`${url}/wp-json/pg/v1/novedades/100`
+
+}

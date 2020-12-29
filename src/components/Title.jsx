@@ -17,10 +17,10 @@ export const SubTitle = ({ title }) => {
   );
 };
 
-export const Title3 = ({title}) => {
+export const Title3 = ({children}) => {
   return (
     <div className="container-title">
-      <h3 className="title3">{title}</h3>
+      <h3 className="title3">{children}</h3>
     </div>
   );
 }
@@ -32,4 +32,6 @@ export const Paragraph = ({children}) => {
     </div>
   );
 }
+
+
 export default Title;

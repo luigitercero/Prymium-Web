@@ -1,0 +1,11 @@
+@import '../globals/fonts.scss';
+@import '../globals/colors.scss';
+
+.container-title{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  .title3{
+    @include font-set(1, 1em, $textColor, 100); 
+    margin: 0;
+  }
+}
