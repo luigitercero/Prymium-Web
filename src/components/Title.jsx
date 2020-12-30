@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/components/title.scss'
 
-const Title = ({ title }) => {
+export const Title = ({ children }) => {
   return (
     <div className="container-title">
-      <h1 className="title">{title}</h1>
+      <h1 className="title">{children}</h1>
     </div>
   );
 };
@@ -17,7 +17,7 @@ export const SubTitle = ({ children }) => {
   );
 };
 
-export const Title3 = ({children}) => {
+export const Title3 = ({ children }) => {
   return (
     <div className="container-title">
       <h3 className="title3">{children}</h3>
@@ -25,13 +25,25 @@ export const Title3 = ({children}) => {
   );
 }
 
-export const Paragraph = ({children}) => {
+export const Paragraph = ({ children }) => {
   return (
-    <div className="container-title">
-      <p className="title3">{children}</p>
-    </div>
+
+    <p className="title3">{children}</p>
+
   );
 }
+
+export const Price = ({children}) => {
+  return (
+    <span className="price">{`Q. ${children}`}</span>
+  )
+}
+export const Pre = ({children}) => {
+  return (
+    <pre className="title3">{`${children}`}</pre>
+  )
+}
+
 
 
 export default Title;

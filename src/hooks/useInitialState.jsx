@@ -12,7 +12,7 @@ const useInitialState = () => {
       // eslint-disable-next-line arrow-body-style
       .then(response => response.json())
       // eslint-disable-next-line arrow-body-style
-      .then(data => { console.log(data); return setProducts(data)})
+      .then(data => {return setProducts(data)})
   }, []);
 
   const singleFilter = (query) => {

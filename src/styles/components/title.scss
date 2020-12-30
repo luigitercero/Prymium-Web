@@ -9,3 +9,8 @@
     margin: 0;
   }
 }
+
+.title3{
+  @include font-set(1, 1em, $textColor, 100); 
+  margin: 0;
+}

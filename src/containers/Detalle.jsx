@@ -1,10 +1,10 @@
 import React, { useEffect, useContext } from 'react';
 import { useParams } from "react-router-dom";
 import ContextApp from '../context/AppContext';
-import SigleProduct from '../components/SingleProduct'
+import SingleProduct from '../components/SingleProduct'
 
 const Detalle = () => {
-  const { singleFilter, singleProduct,products } = useContext(ContextApp);
+  const { singleFilter, singleProduct, products } = useContext(ContextApp);
   const { modelo } = useParams();
 
   useEffect(() => {
@@ -15,10 +15,7 @@ const Detalle = () => {
     return (
       singleProduct.map((single) => {
         return (
-          <>
-            <SingleProduct product={single}/>  
-
-          </>
+          <SingleProduct key={single.id} product={single} />
         )
       })
 
