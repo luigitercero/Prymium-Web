@@ -4,6 +4,7 @@ import Home from '../containers/Home';
 import Tienda from '../containers/Tienda';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
+import Detalle from '../containers/Detalle';
 
 const App = () => {
   return (
@@ -13,9 +14,15 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route
             exact
+            path="/store-lavatrastos-grifos-bidet-guatemala/:modelo"
+            component={Detalle}
+          />
+          <Route
+            exact
             path="/store-lavatrastos-grifos-bidet-guatemala/"
             component={Tienda}
           />
+          
           <Route component={NotFound} />
         </Switch>
       </Layout>
