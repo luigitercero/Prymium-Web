@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { Logo, HamburguerMenu } from '../initiaState';
 import _route from '../routes/Config';

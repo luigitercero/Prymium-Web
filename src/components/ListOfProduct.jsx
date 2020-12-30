@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import CardProduct from './CardProduct';
-import { getProducts } from '../routes/Config';
 import '../styles/components/listOfProduct.scss';
+import ContextApp from '../context/AppContext';
 
 const ListOfProduct = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    // eslint-disable-next-line no-undef
-    fetch(getProducts.url)
-      // eslint-disable-next-line arrow-body-style
-      .then(response => response.json())
-      // eslint-disable-next-line arrow-body-style
-      .then(data => setProducts(data))
-  }, []);
-
+  const {products} = useContext(ContextApp);
   const getList = () => {
     return (
       products.map((single) => 

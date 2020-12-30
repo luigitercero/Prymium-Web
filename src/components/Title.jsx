@@ -9,10 +9,10 @@ const Title = ({ title }) => {
   );
 };
 
-export const SubTitle = ({ title }) => {
+export const SubTitle = ({ children }) => {
   return (
     <div className="container-title">
-      <h2 className="subtitle">{title}</h2>
+      <h2 className="subtitle">{children}</h2>
     </div>
   );
 };
