@@ -1,0 +1,47 @@
+@import '../globals/mq.scss';
+.container-single-product {
+  display: grid;
+  grid-template-columns: minmax(auto,1000px);
+  justify-content: center;
+  .container-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 2em;
+    grid-template-areas:  "title title"
+                          "img price"
+                          "img tecnicos"
+                          "img tex";
+    @include mq ("medium-screen",'max'){
+      grid-template-columns:  1fr ;
+      gap: 15px;
+      grid-template-areas:  "title"
+                            "price"
+                            "img"
+                            "tecnicos"
+                            "tex";
+          
+    } 
+  }
+  .img-single-product {
+    grid-area: img;
+    margin: 0;
+    padding: 0;
+    img{
+      width:100%
+    }
+  }
+  .titulo-single-product {
+    grid-area: title;
+  }
+  .tecnicos-single-product {
+    grid-area: tecnicos
+  }
+  .text-single-product{
+    grid-area: tex;
+  }
+  .price-single-product{
+    grid-area: price;
+  }
+
+
+} 
