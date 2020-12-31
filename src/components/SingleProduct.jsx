@@ -1,10 +1,11 @@
 import React from 'react';
 import { Title, Price,Pre,Paragraph } from "./Title";
+import '../styles/components/singleProduct.scss';
 
 const SingleProduct = ({ id, product }) => {
 
   return (
-    <div className='containerSingleProduct' key={id}>
+    <div className='container' key={id}>
       <Image src={product.accesorio || product.imagen} alt={product.content} />
       <Title>{product.title}</Title>
       <Price>{product.price}</Price>
