@@ -15,9 +15,7 @@ const SingleProduct = ({ id, product }) => {
         <section className="text-single-product">
           <Paragraph>{product.content}</Paragraph>
         </section>
-        
       </div>
-
     </section>
 
   )
