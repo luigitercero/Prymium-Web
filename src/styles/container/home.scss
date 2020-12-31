@@ -1,160 +1,26 @@
 @import '../globals/settings.scss';
-@import 'home_vars';
 
-
-.hero{
-  height: 530px;
-  width: 100%;
-  @include hero-background('../../img/hero.svg');
-  position: relative;
-
-  #see-more, h1, span{
-    position: absolute;
-    text-align: right;
-    background-color: $hero-text-backcolor;
-    right: 15.8vw;
-  }
-
-  h1, span{
-    color: $hero-text-color;
-    margin: 0;
-  }
-
-  h1{
-    @include hero-item(3.5em, 3.5em, 0.2em, 'Lora');
-  }
-
-
-  span{
-    @include hero-item(4.5em, 2em, 0.2em);
-  }
-
-  #see-more{
-    text-decoration: none;
-    @include hero-item(2em, 2em, 0.2em);
-    color: $hero-link-color;
-
-    &:hover{
-      text-decoration: underline;
-    }
-  }
-}
-
-.galleries-container{
-  padding: 0 1em 3em;
-  background: #fff7e2;
-  position: relative;
-
+.home{
   h2{
     font-size: 2em;
-    margin: 0;
+    margin: 0 20px;
     font-family: "Lora", sans-serif;
-    padding: 1.5em 0 10px;
+    padding: 80px 0 10px;
+    color: $textColor;
   }
-  .right-arrow, .left-arrow{
-    color: $gallery-arrow-color;
-    background-color: $gallery-arrow-backcolor;
-    position: absolute;
-    top: 235px;
-    font-size: 30px;
-    border-radius: 50%;
-    border: 0;
-    line-height: 40px;
-    width: 40px;
-  }
-
-  .right-arrow{
-    right: 5px;
-  }
-
-  .left-arrow{
-    left:5px;
-  }
-
-}
-
-.gallery-container{
-  font-family: 'Lato', sans-serif;
-  overflow: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  .gallery{
-    overflow-x: auto;
-    display: inline-flex;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    .gallery-image{
-      width: 300px;
-      height: 350px;
-      margin: 0 5px 1px;
-      background: $white;
-      box-shadow: 0px 0px 4px $brown;
-      border-radius: 3px;
-      overflow: hidden;
-
-      img{
-        width:100%;
-      }
-
-      .image-description{
-        padding: 0 5px;
-      }
-    }
-  }
-}
-$large-screen: "(max-width: 992px)";
-$medium-screen: "(max-width: 767px)";
-$image-change: "(max-width: 652px)";
-$image-change-2: "(max-width: 652px)";
-
-@media #{$large-screen} {
-  .hero{
-    height: 430px;
-
-    #see-more, h1, span{
-      right: 10vw;
-    }
-
-    h1{
-      margin-bottom: -10px;
-      font-size: 2.8em;
-    }
-  
-    span, #see-more{
-      font-size: 1.5em;
+  @include mq("small-screen", 'max'){
+    h2{
+      font-size: 1.55em;
     }
   }
 }
 
 
-@media #{$image-change}{
-  .hero{
-    @include hero-background('../../img/hero-querysize-652.svg');
-  }
-
+.products-container{
+  padding-bottom: 48px;
+  background: $backgroundLightColor;
 }
 
-@media #{$image-change-2}{
-  .hero{
-    height: 350px;
-    @include hero-background('../../img/hero-querysize-480.svg');
-
-    #see-more, h1, span{
-      right: 3vw;
-    }
-    h1{
-      margin-bottom: -8px;
-      font-size: 1.8em;
-    }
-
-    span, #see-more{
-      font-size: 1em;
-    }
-  }
+.bidetframe-container{
+  padding-bottom: 48px;
 }

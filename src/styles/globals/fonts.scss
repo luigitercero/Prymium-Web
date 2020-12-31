@@ -5,6 +5,11 @@ $font_family_bold:'Lato-Regular';
   src: url('../fonts/Lato/Lato-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora/Lora-VariableFont_wght.ttf');
+}
+
 
 
 @mixin font-set($type: false, $size: false, $colour: false, $weight: false,  $lh: false) {
