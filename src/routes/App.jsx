@@ -29,7 +29,7 @@ const App = () => {
             <Route
               exact
               path="/store-lavatrastos-grifos-bidet-guatemala/:group/:modelo"
-              component={Tienda}
+              component={Detalle}
             />
             <Route
               exact
