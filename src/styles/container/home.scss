@@ -1,7 +1,26 @@
 @import '../globals/settings.scss';
 
-.galleries-container{
-  padding: 0 16px 48px;
-  background: #fff7e2;
+.home{
+  h2{
+    font-size: 2em;
+    margin: 0 20px;
+    font-family: "Lora", sans-serif;
+    padding: 80px 0 10px;
+    color: $textColor;
+  }
+  @include mq("small-screen", 'max'){
+    h2{
+      font-size: 1.55em;
+    }
+  }
 }
 
+
+.products-container{
+  padding-bottom: 48px;
+  background: $backgroundLightColor;
+}
+
+.bidetframe-container{
+  padding-bottom: 48px;
+}

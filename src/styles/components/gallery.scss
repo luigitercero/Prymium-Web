@@ -1,20 +1,16 @@
 @import '../globals/settings.scss';
 
+$media-query: "(max-width: 1024px)";
+
+
 .image-gallery{
   position: relative;
-
-  h2{
-    font-size: 2em;
-    margin: 0;
-    font-family: "Lora", sans-serif;
-    padding: 48px 0 10px;
-  }
   
   .arrow{
     color: $white;
     background-color: $backgroundTextColor;
     position: absolute;
-    top: 252px;
+    top: 287px;
     font-size: 30px;
     border-radius: 50%;
     border: 0;
@@ -33,6 +29,7 @@
 
   .left-arrow{
     left: 0;
+    display: none;
   }
 }
 
@@ -72,8 +69,43 @@
 
       .image-description{
         padding: 0 5px;
+        color: rgba($color: $textColor, $alpha: 0.88);
+        text-align: center;
       }
+
+      h3{
+        margin: 8px 0;
+      }
+    }
+
+    &:nth-child(1){
+      margin-left: 16px;
     }
   }
 
+}
+
+@media #{$media-query}{
+  .image-gallery{
+    .arrow{
+      top: 270px;
+    }
+  }
+  .gallery-container{
+    .gallery{
+      .gallery-image{
+        width: 270px;
+        height: 330px;
+
+        h3{
+          font-size: 1em;
+        }
+    
+        p{
+          font-size: 0.9em;
+        }
+    
+      }
+    }
+  }
 }

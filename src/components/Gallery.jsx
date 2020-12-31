@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { SubTitle } from './Title';
 import '../styles/components/gallery.scss';
+
 
 const GalleryItem = ({ element }) => {
   const { image, alt, name, description } = element
@@ -15,23 +17,74 @@ const GalleryItem = ({ element }) => {
 }
 
 const Gallery = ({ id, title, imageArray }) => {
-
-  const animationTime = 300;
-  const maxPosition = imageArray.length;
-  const offset =  parseInt(window.innerWidth / 2);
   const error = 20;
   let allowScroll = false;
   let position = 0;
   let initialScrollPosition = 0;
   let currentScrollPosition = 0;
   let acumMovement = 0;
-  let stepSize = 310;
+  let stepSize;
+  let offset;
+  let maxPosition;
+  let width;
+  let firstStep;
   let scrollRight = false;
 
-  useEffect(() => {
+
+  function calcFirstStep(){
+    const allowedSpaces = parseInt(width / stepSize)
+    const spaceLeft = width - allowedSpaces*stepSize
+    return stepSize - parseInt(spaceLeft / 2) + 16
+  }
+
+
+  function displayArrowsControl(){
+    const leftArrow = document.getElementById(`${id}-la`)
+    const rightArrow = document.getElementById(`${id}-ra`)
+    if(position === 0){
+      leftArrow.style.display = 'none';
+    }else{
+      leftArrow.style.display = 'inline-block';
+    }
+
+    if(position === maxPosition){
+      rightArrow.style.display = 'none';
+    }else{
+      rightArrow.style.display = 'inline-block';
+    }
+  }
+
+  function translatePosition(animationTime = 300){
+    const gallery = document.getElementById(id);
+
+    if(position === 0){
+      acumMovement = 0;
+    }else{
+      acumMovement = firstStep + (position - 1)*stepSize;  
+    }
+    gallery.animate({ "transform": `translateX(${-acumMovement + offset}px)` }, animationTime)
+    setTimeout(() => { gallery.style.transform = `translateX(${-acumMovement + offset}px)`; }, animationTime)
+    displayArrowsControl();
+  }
+
+
+  function setVariables(){
     const galleryContainer = document.getElementById(`${id}-container`);
-    galleryContainer.scrollLeft = offset;
-  })
+
+    width = galleryContainer.offsetWidth
+    offset = Math.floor(width / 2)
+    galleryContainer.scrollLeft = offset
+
+    if (window.matchMedia('(max-width: 1024px)').matches){
+      stepSize = 280;
+    }else{
+      stepSize = 310;
+    }
+    maxPosition = imageArray.length - Math.floor(width / stepSize);
+    firstStep = calcFirstStep();
+
+    translatePosition(10);
+  }
 
   function touchIn(){
     allowScroll = true;
@@ -41,27 +94,34 @@ const Gallery = ({ id, title, imageArray }) => {
     allowScroll = false;
     const gallery = document.getElementById(id);
     const galleryContainer = document.getElementById(`${id}-container`);
-    currentScrollPosition = galleryContainer.scrollLeft;
     const movement = currentScrollPosition - offset
-    const stepsToMove = parseInt(movement / stepSize) 
+    const stepsToMove = parseInt(movement / stepSize)
     if(movement >= error){
       acumMovement +=movement;
       position += stepsToMove;
       if(scrollRight){
-        position++;
+        position+=1;
       }
     }else if(movement <= -error){
       acumMovement +=movement;
       position += stepsToMove;
       if(!scrollRight){
-        position--;
+        position-=1;
       }
     }
-    gallery.style.transform = `translateX(${offset - acumMovement}px)`;
+
+    gallery.style.transform = `translateX(${-acumMovement + offset}px)`;
     galleryContainer.scrollLeft = offset;
-    acumMovement = position*stepSize;
-    gallery.animate({ "transform": `translateX(${-position*stepSize + offset}px)` }, animationTime)
-    setTimeout(() => { gallery.style.transform = `translateX(${-position*stepSize + offset}px)`; }, animationTime)
+
+    if(position < 0){
+      position = 0;
+    }
+
+    if(position > maxPosition){
+      position = maxPosition;
+    }
+
+    translatePosition();
   }
 
   function scrollControl() {
@@ -81,22 +141,23 @@ const Gallery = ({ id, title, imageArray }) => {
   }
 
   function moveRight() {
-    const gallery = document.getElementById(id);
     position += 1;
-    gallery.animate({ "transform": `translateX(${-position*stepSize + offset}px)` }, animationTime)
-    setTimeout(() => { gallery.style.transform = `translateX(${-position*stepSize + offset}px)`; }, animationTime)
+    translatePosition();
   }
 
   function moveLeft() {
-    const gallery = document.getElementById(id);
     position -= 1;
-    gallery.animate({ "transform": `translateX(${-position*stepSize + offset}px)` }, animationTime)
-    setTimeout(() => { gallery.style.transform = `translateX(${-position*stepSize + offset}px)`; }, animationTime)
+    translatePosition();
   }
+
+  useEffect(setVariables);
+
+  window.addEventListener('orientationchange',() => {setTimeout(setVariables, 20)} )
+  window.addEventListener('resize',() => {setTimeout(setVariables, 20)} )
 
   return (
     <div className="image-gallery">
-      <h2>{title}</h2>
+      <SubTitle>{title}</SubTitle>
       <div className="gallery-container" id={`${id}-container`} onScroll={scrollControl} onTouchEnd={touchOut} onTouchStart={touchIn}>
         <div className="gallery" id={id}>
           {imageArray.map(element => {
@@ -108,8 +169,8 @@ const Gallery = ({ id, title, imageArray }) => {
           })}
         </div>
       </div>
-      <span aria-hidden="true" className="fas fa-angle-right arrow right-arrow" id={id+'-ra'} onClick={moveRight} />
-      <span aria-hidden="true" className="fas fa-angle-left arrow left-arrow" id={id+'-la'} onClick={moveLeft} />
+      <span aria-hidden="true" className="fas fa-angle-right arrow right-arrow" id={`${id}-ra`} onClick={moveRight} />
+      <span aria-hidden="true" className="fas fa-angle-left arrow left-arrow" id={`${id}-la`} onClick={moveLeft} />
     </div>
   );
 };
