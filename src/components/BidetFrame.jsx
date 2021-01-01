@@ -1,10 +1,11 @@
 import React from 'react';
 import '../styles/components/bidet.scss';
+import { SubTitle } from './Title';
 
 const BidetFrame = ({ children }) => {
   return (
     <div className="bidetframe">
-      <h2>Bidet</h2>
+      <SubTitle>Bidet</SubTitle>
     </div>
   );
 };

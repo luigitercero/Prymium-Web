@@ -1,6 +1,5 @@
 import React from 'react';
 import { SubTitle } from './Title';
-
 import '../styles/components/youtube-video.scss';
 
 const YoutubeVideo = ({ title, vid }) => {

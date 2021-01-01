@@ -34,7 +34,7 @@ const Gallery = ({ id, title, imageArray }) => {
   function calcFirstStep(){
     const allowedSpaces = parseInt(width / stepSize)
     const spaceLeft = width - allowedSpaces*stepSize
-    return stepSize - parseInt(spaceLeft / 2) + 16
+    return stepSize - parseInt(spaceLeft / 2) + (width*0.03) - 5
   }
 
 
@@ -63,7 +63,7 @@ const Gallery = ({ id, title, imageArray }) => {
       acumMovement = firstStep + (position - 1)*stepSize;  
     }
     gallery.animate({ "transform": `translateX(${-acumMovement + offset}px)` }, animationTime)
-    setTimeout(() => { gallery.style.transform = `translateX(${-acumMovement + offset}px)`; }, animationTime)
+    setTimeout(() => { gallery.style.transform = `translateX(${-acumMovement + offset}px)`; }, animationTime-5)
     displayArrowsControl();
   }
 
@@ -94,6 +94,7 @@ const Gallery = ({ id, title, imageArray }) => {
     allowScroll = false;
     const gallery = document.getElementById(id);
     const galleryContainer = document.getElementById(`${id}-container`);
+    galleryContainer.scrollLeft = offset;
     const movement = currentScrollPosition - offset
     const stepsToMove = parseInt(movement / stepSize)
     if(movement >= error){
@@ -111,7 +112,6 @@ const Gallery = ({ id, title, imageArray }) => {
     }
 
     gallery.style.transform = `translateX(${-acumMovement + offset}px)`;
-    galleryContainer.scrollLeft = offset;
 
     if(position < 0){
       position = 0;
