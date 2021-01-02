@@ -9,7 +9,7 @@ const YoutubeVideo = ({ title, vid }) => {
       <div className="video">
         <div className="video-to-play">
           <div className="player" id="player">
-            <iframe title={title} className="youtube-video" src={`https://www.youtube.com/embed/${vid}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen="" />
+            <iframe title={title} className="youtube-video" src={`https://www.youtube.com/embed/${vid}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameBorder="0" allowFullScreen="" />
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Gallery from '../components/Gallery';
 import YoutubeVideo from '../components/YoutubeVideo';
 import BidetFrame from '../components/BidetFrame';
 import dishWashers from './dishwashers.json';
+import bidets from './bidetitems.json';
 import '../styles/container/home.scss';
 
 const Home = () => {
@@ -15,11 +16,11 @@ const Home = () => {
         linktext="QUIERO VER MÁS!>>"
       />
       <section className="products-container">
-        <Gallery title="Galería" id="dish-washers" imageArray={dishWashers} />
+        <Gallery title="Galería" imageArray={dishWashers} />
         <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' />
       </section>
       <section className="bidetframe-container">
-        <BidetFrame />
+        <BidetFrame itemsArray={bidets} />
       </section>
     </div>
   );

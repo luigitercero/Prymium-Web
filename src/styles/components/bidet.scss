@@ -1,7 +1,106 @@
 @import '../globals/settings.scss';
 
+$image-width: 400px;
+$image-width-mq1: 280px;
+
+%overlay-extend{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: $image-width;
+}
+
 .bidetframe{
+  
   h2{
     border-bottom: 3px solid $primaryColor;
+  }
+  .gallery-wrapper{
+    margin: 0 3vw;
+    position: relative;
+
+    .gallery-overlay{
+      @extend %overlay-extend;
+      background: linear-gradient(to right, $white, transparent, transparent, transparent);
+    }
+    
+    @include mq('large-screen','max'){
+      .gallery-overlay, .overlay{
+        width: $image-width-mq1;
+      }
+
+      .bidetitem{
+        grid-template-columns: $image-width-mq1 1fr;
+
+        span{
+          font-size: 1.4em;
+        }
+      }      
+    }
+    @include mq('small-screen','max'){
+      .gallery-overlay{
+        display: none;
+      }
+
+      .bidetitem{
+        grid-template-columns: 1fr;
+        grid-template-rows: 310px;
+
+        span{
+          position: absolute;
+          align-items: flex-end;
+          z-index: 2;
+          right: 0;
+          left: 0;
+          font-size: 1.3em;
+        }
+
+        .overlay{
+          width: unset;
+          right: 0;
+        }
+
+        .bottom-overlay{
+          display: block;
+        }
+      }
+    }
+  }
+
+  .bidetitem{
+    display: grid;
+    grid-template-columns: $image-width 1fr;
+    width: 100%;
+    position: relative;
+
+    img{
+      width: 100%;
+    }
+
+    span{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      padding: 0 1em;
+      box-sizing: border-box;
+      font-family: 'Lato-Regular';
+      text-align: center;
+    }
+
+    .overlay{
+      @extend %overlay-extend;
+      background: linear-gradient(to right, $white, transparent, transparent, $white);
+    }
+    .bottom-overlay{
+      @extend %overlay-extend;
+      display: none;
+      width: unset;
+      right: 0;
+      background: linear-gradient(to bottom, transparent, transparent, transparent, transparent, #ffff, #ffff);;
+    }
   }
 }
