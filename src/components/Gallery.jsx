@@ -55,15 +55,19 @@ const Gallery = ({ title, imageArray }) => {
     }
   }
 
-  function translatePosition(animationTime = 300){
+  function translatePosition(animationTime = 100){
 
     if(position === 0){
       acumMovement = 0;
     }else{
       acumMovement = firstStep + (position - 1)*stepSize;  
     }
-    gallery.current.animate({ "transform": `translateX(${-acumMovement + offset}px)` }, animationTime + 10)
-    setTimeout(() => { gallery.current.style.transform = `translateX(${-acumMovement + offset}px)`; }, animationTime)
+    gallery.current.animate({ "transform": `translateX(${-acumMovement + offset}px)` }, animationTime)
+    
+    setTimeout(() => { 
+      gallery.current.style.transform = `translateX(${-acumMovement + offset}px)`;
+      gallery.current.style.willChange = 'unset'; 
+    }, animationTime)
     displayArrowsControl();
   }
 
@@ -84,6 +88,7 @@ const Gallery = ({ title, imageArray }) => {
   }
 
   function touchIn(){
+    gallery.current.style.willChange = 'transform';
     allowScroll = true;
   }
 
