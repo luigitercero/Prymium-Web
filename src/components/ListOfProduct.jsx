@@ -12,7 +12,8 @@ const ListOfProduct = () => {
 
   useEffect(() => {
     getGroup(group);
-  }, [products,group])
+  }, [products, group]);
+
   const getList = () => {
     return (
       groupFilterd.map((single) => { return <CardProduct key={single.id} product={single} /> }
@@ -22,9 +23,9 @@ const ListOfProduct = () => {
 
   return (
     <div>
-      <Title>{group}</Title>
+      
       <div className="list-item-container">
-
+        <Title className="title-list-of-porudct">{group}</Title>
         {getList()}
       </div>
     </div>

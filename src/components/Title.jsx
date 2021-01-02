@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/components/title.scss'
 
-export const Title = ({ children,className }) => {
+export const Title = ({ children, className }) => {
   return (
-    <div className="container-title">
-      <h1 className={`title ${className}`}>{children}</h1>
-    </div>
+
+    <h1 className={`title ${className||''}`}>{children}</h1>
+
   );
 };
 
@@ -17,30 +17,39 @@ export const SubTitle = ({ children }) => {
   );
 };
 
-export const Title3 = ({ children }) => {
+export const Title3 = ({ children, className }) => {
   return (
     <div className="container-title">
-      <h3 className="title3">{children}</h3>
+      <h3 className={`title3 ${className||''}`}>{children}</h3>
     </div>
   );
 }
 
+export const Title3ForCard = ({ children, className }) => {
+  return (
+    <div className="container-title">
+      <h3 className={`title3  textColor ${className||''}`}>{children}</h3>
+    </div>
+  );
+}
+
+
 export const Paragraph = ({ children, className }) => {
   return (
 
-    <p className={`title3 ${className}`}>{children}</p>
+    <p className={`title3 ${className||''}`}>{children}</p>
 
   );
 }
 
-export const Price = ({children, className}) => {
+export const Price = ({ children, className }) => {
   return (
     <span className={`title3 ${className}`}>{`Q. ${children}`}</span>
   )
 }
-export const Pre = ({children, className}) => {
+export const Pre = ({ children, className }) => {
   return (
-    <pre className={`title3 ${className}`}>{`${children}`}</pre>
+    <li className={`title3 ${className}`} dangerouslySetInnerHTML={{ __html: children }} />
   )
 }
 

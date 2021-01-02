@@ -2,7 +2,7 @@ import React from 'react';
 import { Link,useParams } from 'react-router-dom';
 import '../styles/components/cardProduct.scss';
 import photo from '../img/img.png'
-import { Title3 } from './Title'
+import { Title3ForCard } from './Title'
 
 const CardProduct = ({ product }) => {
   const { imagen, alt, title,link } = product;
@@ -11,8 +11,9 @@ const CardProduct = ({ product }) => {
 
     <div className='card-container'>
       <Link to={`${group}/${link}`}>
-        <Title3>{title || "Lavatrastos mod 7807F"}</Title3>
+       
         <Image img={imagen || photo} alt={alt || "foto de lavatrastosO"} />
+        <Title3ForCard className="center-text">{title || "Lavatrastos mod 7807F"}</Title3ForCard>
       </Link>
     </div>
 
