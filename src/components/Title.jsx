@@ -40,7 +40,7 @@ export const Price = ({children, className}) => {
 }
 export const Pre = ({children, className}) => {
   return (
-    <pre className={`title3 ${className}`}>{`${children}`}</pre>
+    <li className={`title3 ${className}`} dangerouslySetInnerHTML={{__html: children}} />
   )
 }
 
