@@ -79,7 +79,7 @@ $media-query: "(max-width: 1024px)";
     }
 
     &:nth-child(1){
-      margin-left: 16px;
+      margin-left:calc(3vw - 5px);
     }
   }
 

@@ -1,10 +1,37 @@
 import React from 'react';
+import AnimatedGallery from './AnimatedGallery';
+import { SubTitle } from './Title';
 import '../styles/components/bidet.scss';
 
-const BidetFrame = ({ children }) => {
+
+const BidetItem = ({ item }) => {
+  const { image, alt, description } = item;
+  return (
+    <div className="bidetitem">
+      <img src={image} alt={alt} />
+      <span>{description}</span>
+      <div className="overlay" />
+      <div className="bottom-overlay" />
+    </div>
+  );
+}; 
+
+const BidetFrame = ({ itemsArray }) => {
+  const getList = () =>{
+    return(
+      itemsArray.map(item => { return(<BidetItem key={item.id} item={item} />) } )
+    )  
+  }
+
   return (
     <div className="bidetframe">
-      <h2>Bidet</h2>
+      <SubTitle>Bidet</SubTitle>
+      <div className="gallery-wrapper">
+        <AnimatedGallery>
+          {getList()}
+        </AnimatedGallery>
+        <div className="gallery-overlay" />
+      </div>
     </div>
   );
 };

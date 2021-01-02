@@ -1,0 +1,26 @@
+%gallery-extend{
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.agal-cont{
+  @extend %gallery-extend;
+
+  .agal{
+    @extend %gallery-extend;
+    display: inline-flex;
+  }
+
+  button{
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+  }
+}
+

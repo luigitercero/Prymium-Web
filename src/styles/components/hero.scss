@@ -1,10 +1,5 @@
 @import '../globals/settings.scss';
 
-//Hero variables
-$media-query-1: "(max-width: 992px)";
-$image-change: "(max-width: 652px)";
-$image-change-2: "(max-width: 576px)";
-
 //hero mixins
 @mixin hero-item($bottom, $fontSize: 2em, $paddingLeft: 0, $mainFont: 'Lato-Regular') {
   bottom: $bottom;
@@ -19,7 +14,7 @@ $image-change-2: "(max-width: 576px)";
   background-position: bottom;
 }
 
-.hero{
+.img-hero{
   height: 530px;
   width: 100%;
   @include hero-background('../../img/hero.svg');
@@ -28,7 +23,7 @@ $image-change-2: "(max-width: 576px)";
   #see-more, h1, span{
     position: absolute;
     text-align: right;
-    right: 15.8vw;
+    right: 13vw;
   }
 
   h1, span{
@@ -38,7 +33,7 @@ $image-change-2: "(max-width: 576px)";
   }
 
   h1{
-    @include hero-item(3.5em, 3.5em, 0.2em, 'Lora');
+    @include hero-item(3.4em, 3.6em, 0.2em, 'Lora');
   }
 
 
@@ -63,18 +58,17 @@ $image-change-2: "(max-width: 576px)";
       transform: scale(1);
     }
   }
-}
 
-@media #{$media-query-1} {
-  .hero{
+  @include mq('large-screen', 'max'){
     height: 430px;
-
+    @include hero-background('../../img/hero-querysize-652.svg');
+    
     #see-more, h1, span{
       right: 10vw;
     }
 
     h1{
-      margin-bottom: -10px;
+      margin-bottom: -6px;
       font-size: 2.8em;
     }
   
@@ -82,17 +76,8 @@ $image-change-2: "(max-width: 576px)";
       font-size: 1.5em;
     }
   }
-}
 
-@media #{$image-change}{
-  .hero{
-    @include hero-background('../../img/hero-querysize-652.svg');
-  }
-
-}
-
-@media #{$image-change-2}{
-  .hero{
+  @include mq('small-screen', 'max'){
     height: 400px;
     @include hero-background('../../img/hero-querysize-480.svg');
 
@@ -100,7 +85,7 @@ $image-change-2: "(max-width: 576px)";
       right: 3vw;
     }
     h1{
-      margin-bottom: 2px;
+      margin-bottom: 5px;
       font-size: 1.8em;
     }
 
