@@ -70,12 +70,18 @@ const NavItem = ({ id, to, name, children }) => {
   }
 
   const menu = () => {
+    const childrenWithProps = React.Children.map(children, child => {
+      // checking isValidElement is the safe way and avoids a typescript error too
+      if (React.isValidElement(child)) {
+        return React.cloneElement(child, { close });
+      }
+      return child;
+    });
     return (
       <>
         <a href={to} onClick={onPress}>{name}</a>
-        {showSubMenu && children}
+        {showSubMenu && childrenWithProps}
       </>
-
     )
   }
 
@@ -95,17 +101,17 @@ const NavItem = ({ id, to, name, children }) => {
   );
 }
 
-const SubMenu = () => {
+const SubMenu = ({ close }) => {
 
   return (
-    
+
 
     <ul className="sub-menu">
-      <li id="lavatrastos"><Link to={`${_route.products.to}#lavatrastos`}>Lavatrastos</Link></li>
-      <li id="grifo"><Link to={`${_route.products.to}#grifo`}>Grifos</Link></li>
-      <li id="bidet"><Link to={`${_route.products.to}#bidet`}>Bidet</Link></li>
+      <li id="lavatrastos"><Link to={`${_route.products.to}#lavatrastos`} onClick={close}>Lavatrastos</Link></li>
+      <li id="grifo"><Link to={`${_route.products.to}#grifo`} onClick={close}>Grifos</Link></li>
+      <li id="bidet"><Link to={`${_route.products.to}#bidet`} onClick={close}>Bidet</Link></li>
     </ul>
- 
+
   );
 
 }
@@ -141,22 +147,22 @@ const HambuergerMenu = ({ children, open, onClick, keyOpen }) => {
 /**
  * Hook that alerts clicks outside of the passed ref
  */
-const UseOutsideAlerter =(ref,onClick)=> {
+const UseOutsideAlerter = (ref, onClick) => {
   useEffect(() => {
     /**
      * Alert if clicked on outside of element
      */
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
-          onClick();
+        onClick();
       }
     }
     // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
-    
+
     return () => {
       // Unbind the event listener on clean up
-      
+
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [ref]);
@@ -165,9 +171,9 @@ const UseOutsideAlerter =(ref,onClick)=> {
 /**
  * Component that alerts if you click outside of it
  */
-const OutsideAlerter = ({children,onClick}) => {
+const OutsideAlerter = ({ children, onClick }) => {
   const wrapperRef = useRef(null);
-  UseOutsideAlerter(wrapperRef,onClick);
+  UseOutsideAlerter(wrapperRef, onClick);
 
   return <div ref={wrapperRef}>{children}</div>;
 }
