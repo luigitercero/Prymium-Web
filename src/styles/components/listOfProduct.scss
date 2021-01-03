@@ -7,7 +7,7 @@
   gap: 3em;
   justify-content: center;
   margin-bottom: 2em;
-  min-height: 100vh;
+
   
   @include mq ("large-screen",'max'){
     grid-template-columns: repeat(3,minmax(150px,210)) ;

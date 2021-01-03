@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { Logo, HamburguerMenu } from '../initiaState';
 import _route from '../routes/Config';
@@ -111,6 +110,7 @@ const SubMenu = ({ close }) => {
       <li id="lavatrastos"><Link to={`${_route.products.to}lavatrastos`} onClick={close}>Lavatrastos</Link></li>
       <li id="grifo"><Link to={`${_route.products.to}grifo`} onClick={close}>Grifos</Link></li>
       <li id="bidet"><Link to={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
+      <li id="bidet"><Link to={`${_route.products.to}`} onClick={close}>Todos</Link></li>
     </ul>
 
   );

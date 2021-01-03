@@ -1,22 +1,24 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect,useState } from 'react';
 import { useParams } from "react-router-dom";
 import CardProduct from './CardProduct';
 import '../styles/components/listOfProduct.scss';
 import ContextApp from '../context/AppContext';
 import { Title } from "./Title";
+import useFilterProducts from '../hooks/useFilterProducts'
 
-
-const ListOfProduct = () => {
-  const { products, getGroup, groupFilterd } = useContext(ContextApp);
+const ListOfProduct = ({filter}) => {
+  const { products  } = useContext(ContextApp);
   const { group } = useParams();
+  const [ListFilter, setListFilter] = useState(products);
 
   useEffect(() => {
-    getGroup(group);
+    
+    setListFilter(useFilterProducts(group||filter,products))
   }, [products, group]);
 
   const getList = () => {
     return (
-      groupFilterd.map((single) => { return <CardProduct key={single.id} product={single} /> }
+      ListFilter.map((single) => { return <CardProduct key={single.id} product={single} /> }
       )
     )
   }
@@ -25,7 +27,7 @@ const ListOfProduct = () => {
     <div>
       
       <div className="list-item-container">
-        <Title className="title-list-of-porudct">{group}</Title>
+        <Title className="title-list-of-porudct">{group||filter}</Title>
         {getList()}
       </div>
     </div>

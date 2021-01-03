@@ -14,6 +14,7 @@ const Home = () => {
         title="Lavatrastos Prymium"
         subtitle="Más de 25,000 unidades vendidas"
         linktext="QUIERO VER MÁS!>>"
+        url="/store-lavatrastos-grifos-bidet-guatemala"
       />
       <section className="products-container">
         <Gallery title="Galería" imageArray={dishWashers} />
