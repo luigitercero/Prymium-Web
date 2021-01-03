@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, Price, Pre, Paragraph } from "./Title";
+import { Title, Price, Pre } from "./Title";
 import '../styles/components/singleProduct.scss';
 
 const SingleProduct = ({ id, product }) => {
@@ -9,11 +9,11 @@ const SingleProduct = ({ id, product }) => {
       <div className="container-product">
         <Title className="title-single-product">{product.title}</Title>
         <Image className="img-single-product" src={product.accesorio || product.imagen} alt={product.content} />
-
+        {product.medidas && <Image className="medidas" imgClass="img" src={product.medidas} alt={product.content} />}
         <Price className="price-single-product">{product.price}</Price>
         <DatosTecnicos datosTecnicos={product.datos_tecnicos} />
         <section className="text-single-product">
-          <Paragraph>{product.content}</Paragraph>
+          <Pre>{product.content}</Pre>
         </section>
       </div>
     </section>
@@ -23,10 +23,10 @@ const SingleProduct = ({ id, product }) => {
 
 export default SingleProduct;
 
-const Image = ({ src, alt, className }) => {
+const Image = ({ src, alt, className,imgClass }) => {
   return (
     <figure className={className}>
-      <img src={src} alt={alt} />
+      <img src={src} alt={alt} className={imgClass||''} />
     </figure>
 
   )

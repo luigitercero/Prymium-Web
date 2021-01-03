@@ -4,7 +4,7 @@
 .container-title{
   padding-top: 0x;
   padding-bottom: 0px;
-  text-transform: capitalize;
+
   .title{
     @include font-set(1, 1em, $textColor, 100); 
     margin: 0;
@@ -28,7 +28,7 @@
     padding-bottom: 5px;
 }
 .title3{
-  text-transform: capitalize;
+  
   @include font-set(1, 1em, $textColor, 100); 
   margin: 0;
 }

@@ -14,6 +14,7 @@ const CardProduct = ({ product }) => {
        
         <Image img={imagen || photo} alt={alt || "foto de lavatrastosO"} />
         <Title3ForCard className="center-text">{title || "Lavatrastos mod 7807F"}</Title3ForCard>
+        <Button />
       </Link>
     </div>
 
@@ -29,5 +30,10 @@ const Image = ({ img, alt }) => {
 
 }
 
+const Button = () => {
+  return (
+    <div className="button">Ver detalles</div>
+  )
+}
 
 export default CardProduct;

@@ -49,7 +49,7 @@ export const Price = ({ children, className }) => {
 }
 export const Pre = ({ children, className }) => {
   return (
-    <li className={`title3 ${className}`} dangerouslySetInnerHTML={{ __html: children }} />
+    <p className={`title3 ${className}`} dangerouslySetInnerHTML={{ __html: children }} />
   )
 }
 
