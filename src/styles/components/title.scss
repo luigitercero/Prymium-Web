@@ -4,9 +4,11 @@
 .container-title{
   padding-top: 0x;
   padding-bottom: 0px;
-  .title3{
+
+  .title{
     @include font-set(1, 1em, $textColor, 100); 
     margin: 0;
+    
   }
   .title3{
     @include font-set(1, 1em, $textColor, 100); 
@@ -17,7 +19,16 @@
   }
 }
 
+.title {
+  @include font-set(1, 2.5em, $textColor, 100); 
+    margin: 0;
+    text-transform: capitalize;
+
+    padding-top: 25px;
+    padding-bottom: 5px;
+}
 .title3{
+  
   @include font-set(1, 1em, $textColor, 100); 
   margin: 0;
 }
