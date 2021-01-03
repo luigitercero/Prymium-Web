@@ -62,12 +62,10 @@ const Gallery = ({ title, imageArray }) => {
     }else{
       acumMovement = firstStep + (position - 1)*stepSize;  
     }
-    gallery.current.animate({ "transform": `translateX(${-acumMovement + offset}px)` }, animationTime)
-    
-    setTimeout(() => { 
-      gallery.current.style.transform = `translateX(${-acumMovement + offset}px)`;
-      // gallery.current.style.willChange = 'unset'; 
-    }, animationTime)
+
+    gallery.current.style.transitionDuration = `${animationTime}ms`;
+    gallery.current.style.transform = `translateX(${-acumMovement + offset}px)`;
+
     displayArrowsControl();
   }
 
@@ -89,6 +87,7 @@ const Gallery = ({ title, imageArray }) => {
 
   function touchIn(){
     // gallery.current.style.willChange = 'transform';
+    gallery.current.style.transitionDuration = `unset`;
     allowScroll = true;
   }
 
@@ -128,6 +127,7 @@ const Gallery = ({ title, imageArray }) => {
       }else if((currentScrollPosition - offset) < 0){
         scrollRight = false;
       }
+
       gallery.current.style.transform = `translateX(${-acumMovement + offset}px)`;
       
     }
