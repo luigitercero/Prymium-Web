@@ -26,28 +26,13 @@ const useInitialState = () => {
 
   }
 
-  const getGroup = (query) => {
 
-    const single = products.filter(producto => {
-       const fitler = producto.category.filter(cat => {
-          return cat.name.toLowerCase().includes(query.toLowerCase());
-        });
-        
-        if (fitler.length>0) {
-          return true
-        }
-    });
-
-    setGroup(single);
-
-  }
 
   return {
     products,
     singleFilter,
     singleProduct,
-    getGroup,
-    groupFilterd
+    groupFilterd,setGroup
   }
 }
 

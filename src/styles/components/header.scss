@@ -122,10 +122,15 @@
             padding-top: 0.5em;
             padding-bottom: 0.5em;
             color: $enfasisColor; 
+            width: 100% ;
+            text-align: center;
             &:hover{
-              color: $textColor;          
+              color: $textColor;    
+              background-color: $primaryColor;   
+              
             }
             @include mq ("medium-screen",'max'){
+              text-align: initial;
               @include font-set(1, 1em, $textColor, 100);
                 &:hover{
                   color: $enfasisColorHover;
