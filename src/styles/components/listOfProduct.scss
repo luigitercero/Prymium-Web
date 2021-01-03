@@ -3,18 +3,18 @@
 .list-item-container {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(4,minmax(150px,250px)) ;
-  gap: 1em;
+  grid-template-columns: repeat(4,minmax(150px,210px)) ;
+  gap: 3em;
   justify-content: center;
 
 
   @include mq ("large-screen",'max'){
-    grid-template-columns: repeat(3,minmax(150px,250px)) ;
-    gap: 1em;
+    grid-template-columns: repeat(3,minmax(150px,210)) ;
+    gap: 2em;
   } 
   @include mq ("medium-screen",'max'){
-    grid-template-columns: repeat(2,minmax(150px,250px)) ;
-    gap: 15px; 
+    grid-template-columns: repeat(2,minmax(150px,210px)) ;
+    gap: 1.5em ; 
   } 
   @include mq ("x-small-screen",'max'){
     grid-template-columns:  100% ;
@@ -23,5 +23,6 @@
   .title-list-of-porudct {
     grid-column-start: 1;
     grid-column-end: -1;
+    
   }
 }
