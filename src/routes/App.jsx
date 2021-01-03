@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import Detalle from '../containers/Detalle';
 import AppContext from '../context/AppContext';
 import useInitialState from '../hooks/useInitialState';
+import AllProduct from '../containers/AllProduct';
 
 const App = () => {
   const initialState = useInitialState()
@@ -18,8 +19,8 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route
               exact
-              path="/store-lavatrastos-grifos-bidet-guatemala/all"
-              component={Detalle}
+              path="/store-lavatrastos-grifos-bidet-guatemala/"
+              component={AllProduct}
             />
             <Route
               exact

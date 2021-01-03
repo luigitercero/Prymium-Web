@@ -105,6 +105,7 @@ const SubMenu = () => {
       <li id="lavatrastos"><Link to={`${_route.products.to}lavatrastos`}>Lavatrastos</Link></li>
       <li id="grifo"><Link to={`${_route.products.to}grifos`}>Grifos</Link></li>
       <li id="bidet"><Link to={`${_route.products.to}bidet`}>Bidet</Link></li>
+      <li id="bidet"><Link to={`${_route.products.to}`}>Todos</Link></li>
     </ul>
  
   );

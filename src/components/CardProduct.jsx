@@ -10,7 +10,7 @@ const CardProduct = ({ product }) => {
   return (
 
     <div className='card-container'>
-      <Link to={`${group}/${link}`}>
+      <Link to={`${group ||"all"}/${link}`}>
        
         <Image img={imagen || photo} alt={alt || "foto de lavatrastosO"} />
         <Title3ForCard className="center-text">{title || "Lavatrastos mod 7807F"}</Title3ForCard>
