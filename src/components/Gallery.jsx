@@ -17,7 +17,7 @@ const GalleryItem = ({ element }) => {
 }
 
 const Gallery = ({ title, imageArray }) => {
-  const error = 20;
+  const error = 5;
   const gallery = useRef();
   const galleryContainer = useRef();
   const leftArrow = useRef();
