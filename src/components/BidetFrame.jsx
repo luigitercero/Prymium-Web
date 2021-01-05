@@ -27,7 +27,7 @@ const BidetFrame = ({ itemsArray }) => {
     <div className="bidetframe">
       <SubTitle>Bidet</SubTitle>
       <div className="gallery-wrapper">
-        <AnimatedGallery>
+        <AnimatedGallery baseName="bidet">
           {getList()}
         </AnimatedGallery>
         <div className="gallery-overlay" />

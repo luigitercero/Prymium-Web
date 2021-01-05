@@ -1,7 +1,9 @@
 @import '../globals/settings.scss';
+@import '../components/ag';
 
 $image-width: 400px;
 $image-width-mq1: 280px;
+$max-items: 3;
 
 %overlay-extend{
   position: absolute;
@@ -104,3 +106,5 @@ $image-width-mq1: 280px;
     }
   }
 }
+
+@include ag('bidet', $max-items)

@@ -48,9 +48,8 @@ $media-query: "(max-width: 1024px)";
     display: inline-flex;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    transform: translateX(50vw);
     will-change: transform;
-    transition-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+    transition-timing-function: ease-out;
 
     &::-webkit-scrollbar {
       display: none;
