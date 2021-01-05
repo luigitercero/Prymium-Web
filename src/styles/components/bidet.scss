@@ -107,4 +107,16 @@ $max-items: 3;
   }
 }
 
+.bidet-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 32px 3vw 0;
+  column-gap: 3vw;
+  font-family: 'Lato-Regular';
+
+  @include mq('small-screen','max'){
+    grid-template-columns: 1fr;
+  }
+}
+
 @include ag('bidet', $max-items)

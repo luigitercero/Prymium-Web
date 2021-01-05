@@ -4,7 +4,7 @@ import useOnScreen from '../hooks/useOnScreen';
 import '../styles/components/animated-gallery.scss';
 
 
-const AnimatedGallery = ({ children, baseName, transitionTime = 5000, animationTime = 1000 }) =>{
+const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationTime = 1000 }) =>{
   const maxPosition = React.Children.count(children);
   const gallery = useRef();
   const galleryContainer = useRef();
@@ -22,7 +22,7 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 5000, animationT
         gallery.current.classList.remove(`${baseName}-${maxPosition}`);
         gallery.current.style.transitionDuration = `unset`;
         gallery.current.classList.add(`${baseName}-0`);;
-      }, atime)
+      }, animationTime * 1.5)
     }
   }
 
