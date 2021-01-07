@@ -5,7 +5,7 @@
   background-color: $textColor;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 13vw;
+  padding: 0 3vw;
   
   section {
     flex-wrap: wrap;
@@ -22,10 +22,6 @@
  .icon-container {
    padding-left: 5px;
    padding-right: 5px;
- }
-
- @include mq("large-screen","max"){
-   padding: 0 3vw;
  }
 
 }
