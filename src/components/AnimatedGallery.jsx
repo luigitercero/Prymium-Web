@@ -64,9 +64,9 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationT
   useEffect(() => {
     const firstItem = gallery.current.children[0].cloneNode(true);
     gallery.current.appendChild(firstItem);
+    setVariables();
   },[])
 
-  useEffect(setVariables,[]);
   window.addEventListener('resize', () => {setTimeout(setVariables, 20)})
 
   return(
