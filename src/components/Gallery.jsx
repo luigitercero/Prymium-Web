@@ -17,7 +17,7 @@ const GalleryItem = ({ element }) => {
 }
 
 const Gallery = ({ title, imageArray }) => {
-  const error = 20;
+  const error = 5;
   const gallery = useRef();
   const galleryContainer = useRef();
   const leftArrow = useRef();
@@ -42,13 +42,13 @@ const Gallery = ({ title, imageArray }) => {
 
 
   function displayArrowsControl(){
-    if(position === 0){
+    if(position <= 0){
       leftArrow.current.style.display = 'none';
     }else{
       leftArrow.current.style.display = 'inline-block';
     }
 
-    if(position === maxPosition){
+    if(position >= maxPosition){
       rightArrow.current.style.display = 'none';
     }else{
       rightArrow.current.style.display = 'inline-block';
@@ -144,8 +144,8 @@ const Gallery = ({ title, imageArray }) => {
     translatePosition();
   }
 
-  useEffect(setVariables);
-  window.addEventListener('resize',() => {setTimeout(setVariables, 20)} )
+  useEffect(setVariables, []);
+  window.addEventListener('resize', () => {setTimeout(setVariables, 20)})
 
   return (
     <div className="image-gallery">
