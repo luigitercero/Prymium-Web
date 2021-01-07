@@ -116,6 +116,14 @@ $max-items: 3;
 
   @include mq('small-screen','max'){
     grid-template-columns: 1fr;
+    
+    h3{
+      font-size: 1em;
+    }
+
+    p{
+      font-size: 0.9em;
+    }
   }
 }
 
