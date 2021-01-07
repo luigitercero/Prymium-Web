@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     min-width: 100px;
     max-width: 22em;
-    padding: 15px;
+    padding: 15px 3px;
   }
   p {
     @include font-set(1, 1em, $white, 100);
