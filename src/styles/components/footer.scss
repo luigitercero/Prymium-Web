@@ -2,9 +2,10 @@
 
 .container-footer {
   display: flex;
-  background-color: $primaryColor;
+  background-color: $textColor;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 13vw;
   
   section {
     flex-wrap: wrap;
@@ -13,7 +14,7 @@
     padding: 15px;
   }
   p {
-    @include font-set(1, 1em, $textColor, 100);
+    @include font-set(1, 1em, $white, 100);
   }
   img {
     max-width: 1em;
@@ -23,13 +24,17 @@
    padding-right: 5px;
  }
 
+ @include mq("large-screen","max"){
+   padding: 0 3vw;
+ }
+
 }
 
 $icon-sm: 16px;
 .icon {
     display: inline-block;
     background-repeat: no-repeat;
-    //filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
 }@mixin icon-sm {
     width: $icon-sm;
     height: $icon-sm;
@@ -49,3 +54,4 @@ $icon-sm: 16px;
 }.icon--settings {
     background-position: -16px 0;
 }
+
