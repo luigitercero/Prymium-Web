@@ -8,7 +8,11 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "format": "prettier --write '{*.jsx,src/**/*.{js,jsx}}'",
-    "lint": "eslint src/ --fix"
+    "lint": "eslint src/ --fix",
+    "build:static": "webpack && babel-node tools/index.js",
+    "next:dev": "next",
+    "next:build": "next build",
+    "next:start": "next start"
   },
   "keywords": [
     "lavatrastos",
@@ -17,12 +21,15 @@
   "author": "luigitercero",
   "license": "ISC",
   "dependencies": {
+    "next": "^10.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "babel-eslint": "^10.1.0",
