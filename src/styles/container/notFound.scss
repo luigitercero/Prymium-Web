@@ -1,0 +1,22 @@
+@import '../globals/mq.scss';
+
+.img1-not-found {
+  max-width: 100px;
+  display: none;
+  visibility: hidden;
+  @include mq ('medium-screen','min'){
+    visibility: visible;
+    display: block;
+  };
+}
+
+.img-not-found {
+  max-width: 100px;
+  display: none;
+  visibility: hidden;
+  @include mq ('medium-screen','max'){
+    visibility: visible;
+    display: block;
+    
+  };
+}

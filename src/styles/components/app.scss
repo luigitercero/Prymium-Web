@@ -1,5 +1,6 @@
-@import '../settings.scss';
+@import '../globals/settings.scss';
 
 h1 {
-   color:$blue;
+  color:$blue;
+  @include font-set(1, 1em, $white, 100);
 }

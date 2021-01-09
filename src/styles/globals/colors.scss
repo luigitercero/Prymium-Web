@@ -1,4 +1,5 @@
 /*Color palette*/
+ 
 $blue: #3092c4;
 $white: #ffff;
 $gray-light: #f7f7f8;
@@ -8,10 +9,17 @@ $gray-semi-dark: #aeadb3;
 $gray-dark: #87868a;
 $gray-darker: #5b5b5f;
 $brown: #60553f;
-
+$black: #0000;
 $color-list: $blue, $white, $gray-light, $gray-medium, $gray-semi-dark, $gray-dark, $gray-darker, $brown;
 $color-names: 'blue','white', 'gray-light', 'gray-medium', 'gray-semi-dark', 'gray-dark', 'gray-darker', 'brown';
 
+$primaryColor: #e2b85c;
+$secondaryColor:#553b00;
+$textColor:#1a1200;
+$enfasisColor:#fff0cf; 
+$enfasisColorHover:#fff; 
+$backgroundLightColor: #fff7e2;
+$backgroundTextColor: rgba($color: #1A1200, $alpha: 0.4);
 
 @each $current-color in $color-list {
   $i: index($color-list, $current-color);

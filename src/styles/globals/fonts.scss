@@ -1,0 +1,40 @@
+$font_family_regular:'Lato-Regular';
+$font_family_bold:'Lato-Regular';
+@font-face {
+  font-family: $font_family_regular;
+  src: url('../fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora/Lora-VariableFont_wght.ttf');
+}
+
+
+
+@mixin font-set($type: false, $size: false, $colour: false, $weight: false,  $lh: false) {
+  @if ($type == 1) {
+      font-family: $font_family_regular;
+  }
+
+  @if ($type == 2) {
+      font-family:$font_family_bold;
+  }
+
+  @if $size {
+      font-size: $size;
+  }
+  @if $colour {
+      color: $colour;
+  }
+  @if $weight {
+      font-weight: $weight;
+  }
+  @if $lh {
+      line-height: $lh;
+  }
+}
+
+
+
+

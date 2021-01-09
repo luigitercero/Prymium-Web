@@ -1,0 +1,51 @@
+@import '../globals/settings.scss';
+
+.container-footer {
+  display: flex;
+  background-color: $primaryColor;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+  section {
+    flex-wrap: wrap;
+    min-width: 100px;
+    max-width: 22em;
+    padding: 15px;
+  }
+  p {
+    @include font-set(1, 1em, $textColor, 100);
+  }
+  img {
+    max-width: 1em;
+  }
+ .icon-container {
+   padding-left: 5px;
+   padding-right: 5px;
+ }
+
+}
+
+$icon-sm: 16px;
+.icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    //filter: brightness(0) invert(1);
+}@mixin icon-sm {
+    width: $icon-sm;
+    height: $icon-sm;
+   
+}.instagram{
+    @include icon-sm;
+    background-image: url(../../img/instagram-brands.svg);
+}.facebook {
+    @include icon-sm;
+    background-image: url(../../img/facebook-brands.svg);
+}.youtube {
+    @include icon-sm;
+    background-image: url(../../img/youtube-brands.svg);
+}// 
+.icon classes.icon--check {
+    background-position: 0 0;
+}.icon--settings {
+    background-position: -16px 0;
+}

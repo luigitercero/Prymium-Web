@@ -1,0 +1,96 @@
+@import '../globals/settings.scss';
+
+//hero mixins
+@mixin hero-item($bottom, $fontSize: 2em, $paddingLeft: 0, $mainFont: 'Lato-Regular') {
+  bottom: $bottom;
+  font-family: $mainFont, sans-serif;
+  font-size: $fontSize;
+  padding-left: $paddingLeft;
+}
+
+@mixin hero-background($image) {
+  background: url($image) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.img-hero{
+  height: 530px;
+  width: 100%;
+  @include hero-background('../../img/hero.svg');
+  position: relative;
+
+  #see-more, h1, span{
+    position: absolute;
+    text-align: right;
+    right: 13vw;
+  }
+
+  h1, span{
+    color: $white;
+    background-color: $backgroundTextColor;
+    margin: 0;
+  }
+
+  h1{
+    @include hero-item(3.4em, 3.6em, 0.2em, 'Lora');
+  }
+
+
+  span{
+    @include hero-item(4.5em, 2em, 0.2em);
+  }
+
+  #see-more{
+    text-decoration: none;
+    @include hero-item(1.5em, 2em);
+    padding: 0.3em 1em;
+    color: $primaryColor;
+    border: 3px solid $primaryColor;
+    border-radius: 40px;
+    background-color: $textColor;
+
+    &:hover{
+      transform: scale(1.05);
+    }
+
+    &:active{
+      transform: scale(1);
+    }
+  }
+
+  @include mq('large-screen', 'max'){
+    height: 430px;
+    @include hero-background('../../img/hero-querysize-652.svg');
+    
+    #see-more, h1, span{
+      right: 10vw;
+    }
+
+    h1{
+      margin-bottom: -6px;
+      font-size: 2.8em;
+    }
+  
+    span, #see-more{
+      font-size: 1.5em;
+    }
+  }
+
+  @include mq('small-screen', 'max'){
+    height: 400px;
+    @include hero-background('../../img/hero-querysize-480.svg');
+
+    #see-more, h1, span{
+      right: 3vw;
+    }
+    h1{
+      margin-bottom: 5px;
+      font-size: 1.8em;
+    }
+
+    span, #see-more{
+      font-size: 1.1em;
+    }
+  }
+}

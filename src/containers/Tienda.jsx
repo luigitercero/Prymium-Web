@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import ListOfProduct from '../components/ListOfProduct';
 
 const Tienda = () => {
   return (
     <div>
-      <p>Tienda</p>
+      <ListOfProduct />
     </div>
-  )
-}
+  );
+};
 
-export default Tienda
+export default Tienda;

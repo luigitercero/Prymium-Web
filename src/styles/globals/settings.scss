@@ -1,46 +1,11 @@
 @import "fonts";
 @import "colors";
-
-$x-large-screen: 1200px;
-$mid-large-screen: 1024px;
-$large-screen: 992px;
-$medium-screen: 768px;
-$small-screen: 576px;
-$x-small-screen: 360px;
-$u-small-screen: 320px;
-
-//popular mixins
-
-//breakpoints-handling example:  .element { @include mq('medium-screen') { all_styles_in_selected_screen_will_go_here} }
-$breakpoints: (
-    "u-small-screen": 320px,
-    "x-small-screen": 360px,
-    "small-screen": 576px,
-    "medium-screen": 769px,
-    "large-screen": 992px,
-    "mid-large-screen": 1025px,
-    "x-large-screen": 1200px,
-    "wide-screen": 1440px,
-    "full-hd" : 1920px
-);
-
-@mixin mq($width, $type: min) {
-    @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
-        @if $type == max {
-            $width: $width - 1px;
-        }
-        @media only screen and (#{$type}-width: $width) {
-            @content;
-        }
-    }
-}
+@import 'mq';
 
 @mixin cover-structure() {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
-
 //z-index auto-handling usage: z-index: z('site-header');
 @function z($name) {
     @if index($z-indexes, $name) {
@@ -59,30 +24,7 @@ $z-indexes: (
     "site-footer"
 );
 
-//font-handling
-@mixin font-set($type: false, $size: false, $colour: false, $weight: false,  $lh: false) {
-    @if ($type == 1) {
-        font-family: 'ProximaNovaRegular';
-    }
 
-    @if ($type == 2) {
-        font-family: 'ProximaNovaBold';
-    }
-
-
-    @if $size {
-        font-size: $size;
-    }
-    @if $colour {
-        color: $colour;
-    }
-    @if $weight {
-        font-weight: $weight;
-    }
-    @if $lh {
-        line-height: $lh;
-    }
-}
 
 //auto for centering
 @mixin push--auto {

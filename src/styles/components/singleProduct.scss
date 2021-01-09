@@ -1,0 +1,100 @@
+@import '../globals/mq.scss';
+@import '../globals/colors.scss';
+.container-single-product {
+  display: grid;
+  grid-template-columns: minmax(auto,1024px);
+  justify-content: center;
+  min-height: 100vh;
+  button {
+    border-radius: 20px;
+    max-width: 5.8em;
+    margin-top: 25px;
+    background-color: $secondaryColor;
+    color: $primaryColor;
+    border-color: $textColor;
+    grid-area: button;
+    max-height: 2em;
+  }
+  .container-product {
+    display: grid;
+    grid-template-columns: 10fr 8fr  8fr ;
+    gap: 2em;
+    grid-template-areas:  "button . ."
+                          "title title title"
+                          "img price medidas"
+                          "img  tecnicos medidas"
+                          "img tex tex"
+                         ;
+                         
+    @include mq ("medium-screen",'max'){
+      grid-template-columns:  1fr 1fr ;
+      gap: 1em;
+      grid-template-areas: "button ." 
+                            "title title"
+                            "price price"
+                            "img tecnicos"
+                            "  tex medidas"
+                            
+                            ;
+          
+    }
+    @include mq ("small-screen",'max'){
+      grid-template-columns:  1fr  ;
+      gap: 1em;
+      grid-template-areas:  
+                            "button"
+                            "title"
+                            "price"
+                            "img"
+                            "tecnicos"
+                            "medidas"
+                            "tex"
+                            ;
+          
+    } 
+  }
+  .img-single-product {
+    grid-area: img;
+    margin: 0;
+    padding: 0;
+    img{
+      width:100%
+    }
+  }
+  .title-single-product {
+    grid-area: title;
+    padding-top: 0px;
+  }
+  .tecnicos-single-product {
+    grid-area: tecnicos;
+    @include mq ("medium-screen",'max'){
+      align-self: center;
+    
+    }
+    
+   
+  }
+  .text-single-product{
+    grid-area: tex;
+    @include mq ("medium-screen",'max'){
+      align-self: center;
+    
+    }
+    
+  }
+  .price-single-product{
+    grid-area: price;
+    align-self: end;
+  }
+  .medidas {
+    grid-area: medidas;
+    align-self: center;
+    
+    img{
+      width:100%;
+      max-width: 300px;
+    }
+   
+  }
+
+} 
