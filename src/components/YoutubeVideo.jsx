@@ -3,7 +3,7 @@ import { SubTitle } from './Title';
 
 const YoutubeVideo = ({ title, vid }) => {
   return (
-    <div className="video-container">
+    <div className="video-container" loading="lazy">
       <SubTitle>{title}</SubTitle>
       <div className="video">
         <div className="video-to-play">
