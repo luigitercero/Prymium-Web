@@ -11,11 +11,11 @@
   background: url('../../img/contact-image.jpg') no-repeat;
   background-size: $header-size;
   height: $header-size;
-  background-position: right;
+  background-position: right top;
   position: relative;
   overflow: hidden;
-  @include mq('x-small-screen','max'){
-    background-size: cover;
+  @include mq('small-screen','max'){
+    background-size: 117%;
   }
 }
 
@@ -35,12 +35,15 @@
 
 .contact-overlay{
   @include abs(0, 0);
-  position: absolute;
   background: radial-gradient(transparent, transparent, transparent,transparent, transparent, transparent, #fff7e2, #fff7e2, #fff7e2);;
   width: $header-size * 2;
   height: $header-size * 2.5;
   margin-right: -$header-size;
   margin-top: -$header-size * 1.5;
+  @include mq('small-screen','max'){
+    width: 200%;
+    margin-right: -90%;
+  }
 }
 
 .main-content{
