@@ -1,0 +1,60 @@
+@import '../container/main.scss';
+
+%titles-extend{
+  z-index: 2;
+  background-color: rgba($color: $backgroundLightColor, $alpha: 0.4);
+  padding: 0 4px 0 0;
+  margin-right: $margin-left-right;
+}
+
+.contact-hero{
+  background: url('../../img/contact-image.jpg') no-repeat;
+  background-size: $header-size;
+  height: $header-size;
+  background-position: right;
+  position: relative;
+  overflow: hidden;
+  @include mq('x-small-screen','max'){
+    background-size: cover;
+  }
+}
+
+.contact-title{
+  @include abs(false, false, 210px, $margin-left-right);
+  @extend %titles-extend;
+}
+
+.contact-subtitle{
+  @include abs(270px, false, false, $margin-left-right);
+  @extend %titles-extend;
+  @include font-set(1, 2em, $textColor, 100);
+  @include mq('small-screen','max'){
+    font-size: 1.5em;
+  }
+}
+
+.contact-overlay{
+  @include abs(0, 0);
+  position: absolute;
+  background: radial-gradient(transparent, transparent, transparent,transparent, transparent, transparent, #fff7e2, #fff7e2, #fff7e2);;
+  width: $header-size * 2;
+  height: $header-size * 2.5;
+  margin-right: -$header-size;
+  margin-top: -$header-size * 1.5;
+}
+
+.main-content{
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  column-gap: $margin-left-right;
+  grid-template-areas: "map schedule"
+                        "map form";
+
+  @include mq('large-screen', 'max'){
+    grid-template-columns: 1fr;
+    grid-template-areas: "schedule"
+                        "map"
+                        "form";
+  }
+}

@@ -21,7 +21,7 @@ export default {
   },
   contact:{
     name:"Contacto",
-    to:"/",
+    to:"/contacto",
     id:5
   },
 }

@@ -9,11 +9,15 @@ export const Title = ({ children, className }) => {
   );
 };
 
-export const SubTitle = ({ children }) => {
+export const SubTitle = ({ children, className }) => {
   return (
-    <div className="container-title">
-      <h2 className="subtitle">{children}</h2>
-    </div>
+    <h2 className={`subtitle ${className||''}`}>{children}</h2>
+  );
+};
+
+export const SubTitle2 = ({ children, className }) => {
+  return (
+    <h2 className={`subtitle2 ${className||''}`}>{children}</h2>
   );
 };
 

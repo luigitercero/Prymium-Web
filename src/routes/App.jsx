@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from '../containers/Home';
 import Tienda from '../containers/Tienda';
 import NotFound from '../containers/NotFound';
+import Contact from '../containers/Contact';
 import Layout from '../components/Layout';
 import Detalle from '../containers/Detalle';
 import AppContext from '../context/AppContext';
@@ -38,6 +39,11 @@ const App = () => {
               component={Tienda}
             />
             
+            <Route
+              exact
+              path="/contacto/"
+              component={Contact}
+            />
             <Route component={NotFound} />
           </Switch>
         </Layout>
