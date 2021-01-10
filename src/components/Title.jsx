@@ -3,7 +3,7 @@ import React from 'react';
 export const Title = ({ children, className }) => {
   return (
 
-    <h1 className={`title ${className||''}`}>{children}</h1>
+    <h1 className={`title ${className || ''}`}>{children}</h1>
 
   );
 };
@@ -19,7 +19,7 @@ export const SubTitle = ({ children }) => {
 export const Title3 = ({ children, className }) => {
   return (
     <div className="container-title">
-      <h3 className={`title3 ${className||''}`}>{children}</h3>
+      <h3 className={`title3 ${className || ''}`}>{children}</h3>
     </div>
   );
 }
@@ -27,7 +27,7 @@ export const Title3 = ({ children, className }) => {
 export const Title3ForCard = ({ children, className }) => {
   return (
     <div className="container-title">
-      <h3 className={`title3  textColor ${className||''}`}>{children}</h3>
+      <h3 className={`title3  textColor ${className || ''}`}>{children}</h3>
     </div>
   );
 }
@@ -36,7 +36,7 @@ export const Title3ForCard = ({ children, className }) => {
 export const Paragraph = ({ children, className }) => {
   return (
 
-    <p className={`title3 ${className||''}`}>{children}</p>
+    <p className={`title3 ${className || ''}`}>{children}</p>
 
   );
 }
