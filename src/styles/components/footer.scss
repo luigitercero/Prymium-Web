@@ -43,7 +43,10 @@ $icon-sm: 16px;
 }.youtube {
     @include icon-sm;
     background-image: url(../../img/youtube-brands.svg);
-}// 
+}.hamburguer{
+  @include icon-sm;
+    background-image: url(../../img/bars-solid.svg);
+}
 .icon classes.icon--check {
     background-position: 0 0;
 }.icon--settings {

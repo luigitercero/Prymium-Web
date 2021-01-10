@@ -1,10 +1,10 @@
 
 export const Logo = {
-  img:"img/img.png",
+  img:"/../src/img/img.png",
   alt:'Logo de la empresa'
 } ;
 export const HamburguerMenu = {
-  img:"img/bars-solid.svg",
+  img:"/../src/img/bars-solid.svg",
   alt:'MenuHamburguesa'
 } ;
 export default {

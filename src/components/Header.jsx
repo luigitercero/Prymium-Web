@@ -29,7 +29,7 @@ const Header = () => {
 
 
       <nav className="direction ">
-        <Image src={Logo.img} alt={Logo.alt} />
+        <Image src="/img.png" alt={Logo.alt} width="75" height="75" />
         <div className="menu-container">
           <HambuergerMenu open={open} keyOpen={keyOpen} onClick={onClick}>
             <NavigationList />
@@ -122,9 +122,9 @@ const HambuergerMenu = ({ children, open, onClick, keyOpen }) => {
   return (
     <div className="contariner-hamburger">
       <a href={keyOpen} className="hambuerguer" onClick={onClick}>
-        <Image src={HamburguerMenu.img} alt={HamburguerMenu.alt} />
+        <i className="icon hamburguer icon--check" />
       </a>
-
+      
 
       <CSSTransition
         in={open}
