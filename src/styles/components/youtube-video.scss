@@ -40,7 +40,7 @@
   
   @include mq("large-screen","max"){
     .video-to-play{
-      margin: 0 3vw;
+      margin: 0 $margin-left-right;
       border-radius: 10px;
     }
   }

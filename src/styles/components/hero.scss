@@ -17,7 +17,7 @@
 .img-hero{
   height: 530px;
   width: 100%;
-  @include hero-background('../../img/hero.svg');
+  @include hero-background('../../img/hero.webp');
   position: relative;
 
   #see-more, h1, span{
@@ -61,7 +61,7 @@
 
   @include mq('large-screen', 'max'){
     height: 430px;
-    @include hero-background('../../img/hero-querysize-652.svg');
+    @include hero-background('../../img/hero-querysize-652.webp');
     
     #see-more, h1, span{
       right: 10vw;
@@ -79,7 +79,7 @@
 
   @include mq('small-screen', 'max'){
     height: 400px;
-    @include hero-background('../../img/hero-querysize-480.svg');
+    @include hero-background('../../img/hero-querysize-480.webp');
 
     #see-more, h1, span{
       right: 3vw;

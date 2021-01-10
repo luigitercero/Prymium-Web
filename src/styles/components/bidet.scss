@@ -1,7 +1,9 @@
 @import '../globals/settings.scss';
+@import '../components/ag';
 
 $image-width: 400px;
 $image-width-mq1: 280px;
+$max-items: 3;
 
 %overlay-extend{
   position: absolute;
@@ -18,7 +20,7 @@ $image-width-mq1: 280px;
     border-bottom: 3px solid $primaryColor;
   }
   .gallery-wrapper{
-    margin: 0 3vw;
+    margin: 0 $margin-left-right;
     position: relative;
 
     .gallery-overlay{
@@ -104,3 +106,25 @@ $image-width-mq1: 280px;
     }
   }
 }
+
+.bidet-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 32px $margin-left-right 0;
+  column-gap: $margin-left-right;
+  font-family: 'Lato-Regular';
+
+  @include mq('small-screen','max'){
+    grid-template-columns: 1fr;
+    
+    h3{
+      font-size: 1em;
+    }
+
+    p{
+      font-size: 0.9em;
+    }
+  }
+}
+
+@include ag('bidet', $max-items)

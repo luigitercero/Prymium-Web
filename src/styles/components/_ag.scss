@@ -1,0 +1,9 @@
+@mixin ag($basename, $itemcount) {
+  @for $i from 0 to $itemcount + 1 {
+    $name: $basename + '-' + $i;  
+    .#{$name}{
+        $test: (-100 * $i) / ($itemcount + 1);
+        transform: translateX(#{$test + '%'});
+    }
+  }
+}
