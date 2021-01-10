@@ -21,12 +21,14 @@
   "author": "luigitercero",
   "license": "ISC",
   "dependencies": {
+   
     "next": "^10.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
@@ -49,7 +51,7 @@
     "mini-css-extract-plugin": "^1.3.3",
     "prettier": "^2.2.1",
     "react-transition-group": "^4.4.1",
-    "sass": "^1.30.0",
+    "sass": "^1.32.2",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.11.0",

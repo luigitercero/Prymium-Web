@@ -1,12 +1,12 @@
 import React from 'react';
-import Home from '../src/containers/Home';
+import Detalle from '../../src/containers/Detalle';
 
 
 const Principal = () => {
 
 
   return (
-    <Home />
+    <Detalle />
   );
 
 };

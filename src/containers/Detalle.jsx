@@ -1,11 +1,13 @@
 import React, { useEffect, useContext } from 'react';
-import { useParams } from "react-router-dom";
+import { useRouter } from 'next/router'
 import ContextApp from '../context/AppContext';
 import SingleProduct from '../components/SingleProduct'
 
 const Detalle = () => {
+  const router = useRouter()
   const { singleFilter, singleProduct, products } = useContext(ContextApp);
-  const { modelo } = useParams();
+  const { modelo } = router.query
+ 
 
   useEffect(() => {
     singleFilter(modelo);

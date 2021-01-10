@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import { Logo, HamburguerMenu } from '../initiaState';
 import _route from '../routes/Config';
-import '../styles/components/header.scss';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -29,7 +29,7 @@ const Header = () => {
 
 
       <nav className="direction ">
-        <img src={Logo.img} alt={Logo.alt} />
+        <Image src={Logo.img} alt={Logo.alt} />
         <div className="menu-container">
           <HambuergerMenu open={open} keyOpen={keyOpen} onClick={onClick}>
             <NavigationList />
@@ -94,7 +94,7 @@ const NavItem = ({ id, to, name, children }) => {
             {menu()}
           </OutsideAlerter>
         )
-          : <Link to={to}><div>{name}</div></Link>
+          : <Link href={to}><div>{name}</div></Link>
       }
     </li>
 
@@ -107,10 +107,10 @@ const SubMenu = ({ close }) => {
 
 
     <ul className="sub-menu">
-      <li id="lavatrastos"><Link to={`${_route.products.to}lavatrastos`} onClick={close}>Lavatrastos</Link></li>
-      <li id="grifo"><Link to={`${_route.products.to}grifo`} onClick={close}>Grifos</Link></li>
-      <li id="bidet"><Link to={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
-      <li id="bidet"><Link to={`${_route.products.to}`} onClick={close}>Todos</Link></li>
+      <li id="lavatrastos"><Link href={`${_route.products.to}lavatrastos`} onClick={close}>Lavatrastos</Link></li>
+      <li id="grifo"><Link href={`${_route.products.to}grifo`} onClick={close}>Grifos</Link></li>
+      <li id="bidet"><Link href={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
+      <li id="all"><Link href={`${_route.products.to}all`} onClick={close}>Todos</Link></li>
     </ul>
 
   );
@@ -122,7 +122,7 @@ const HambuergerMenu = ({ children, open, onClick, keyOpen }) => {
   return (
     <div className="contariner-hamburger">
       <a href={keyOpen} className="hambuerguer" onClick={onClick}>
-        <img src={HamburguerMenu.img} alt={HamburguerMenu.alt} />
+        <Image src={HamburguerMenu.img} alt={HamburguerMenu.alt} />
       </a>
 
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../styles/components/animated-gallery.scss';
 
 const AnimatedGallery = ({ children, animationTime = 1000, margin = 0, fullsize = true }) =>{
   const maxPosition = React.Children.count(children);
@@ -42,10 +41,12 @@ const AnimatedGallery = ({ children, animationTime = 1000, margin = 0, fullsize 
   useEffect(() => {
     const firstItem = gallery.current.children[0].cloneNode(true);
     gallery.current.appendChild(firstItem);
+    window.addEventListener('resize', () => {setResize(!resize)})
   })
 
-  useEffect(() => {setVariables()}, [resize]);
-  window.addEventListener('resize', () => {setResize(!resize)})
+  useEffect(() => {setVariables() }, [resize]);
+
+  
 
   return(
     <div className='agal-cont' ref={galleryContainer}>

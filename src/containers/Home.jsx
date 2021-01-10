@@ -5,11 +5,12 @@ import YoutubeVideo from '../components/YoutubeVideo';
 import BidetFrame from '../components/BidetFrame';
 import dishWashers from './dishwashers.json';
 import bidets from './bidetitems.json';
-import '../styles/container/home.scss';
+
 
 const Home = () => {
   return (
     <div className="home">
+      
       <Hero
         title="Lavatrastos Prymium"
         subtitle="Más de 25,000 unidades vendidas"

@@ -1,12 +1,10 @@
-import _logo from './img/img.png';
-import _hamburger from './img/bars-solid.svg';
 
 export const Logo = {
-  img:_logo,
+  img:"img/img.png",
   alt:'Logo de la empresa'
 } ;
 export const HamburguerMenu = {
-  img:_hamburger,
+  img:"img/bars-solid.svg",
   alt:'MenuHamburguesa'
 } ;
 export default {

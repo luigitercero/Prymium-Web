@@ -1,14 +1,14 @@
 import React, { useContext, useEffect,useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useRouter } from 'next/router'
 import CardProduct from './CardProduct';
-import '../styles/components/listOfProduct.scss';
 import ContextApp from '../context/AppContext';
 import { Title } from "./Title";
 import useFilterProducts from '../hooks/useFilterProducts'
 
 const ListOfProduct = ({filter}) => {
+  const router = useRouter()
   const { products  } = useContext(ContextApp);
-  const { group } = useParams();
+  const { group } = router.query
   const [ListFilter, setListFilter] = useState(products);
 
   useEffect(() => {

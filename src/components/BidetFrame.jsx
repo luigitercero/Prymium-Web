@@ -1,8 +1,6 @@
 import React from 'react';
 import AnimatedGallery from './AnimatedGallery';
 import { SubTitle } from './Title';
-import '../styles/components/bidet.scss';
-
 
 const BidetItem = ({ item }) => {
   const { image, alt, description } = item;

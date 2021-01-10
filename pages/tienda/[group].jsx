@@ -1,12 +1,12 @@
 import React from 'react';
-import Home from '../src/containers/Home';
+import Tienda from '../../src/containers/Tienda';
 
 
 const Principal = () => {
 
 
   return (
-    <Home />
+    <Tienda />
   );
 
 };

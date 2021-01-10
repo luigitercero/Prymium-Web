@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { SubTitle } from './Title';
-import '../styles/components/gallery.scss';
 
 
 const GalleryItem = ({ element }) => {
@@ -145,8 +144,10 @@ const Gallery = ({ title, imageArray }) => {
   }
 
   useEffect(setVariables);
-  window.addEventListener('resize',() => {setTimeout(setVariables, 20)} )
-
+  useEffect(()=>{
+    window.addEventListener('resize',() => {setTimeout(setVariables, 20)} )
+  },[])
+  
   return (
     <div className="image-gallery">
       <SubTitle>{title}</SubTitle>

@@ -1,23 +1,25 @@
 import React from 'react';
-import { Link,useParams } from 'react-router-dom';
-import '../styles/components/cardProduct.scss';
-import photo from '../img/img.png'
+import Link from 'next/link';
+import { useRouter } from 'next/router'
 import { Title3ForCard } from './Title'
 
 const CardProduct = ({ product }) => {
-  const { imagen, alt, title,link } = product;
-  const { group } = useParams();
+  const router = useRouter()
+  const { imagen, alt, title, link } = product;
+  const { group } = router.query
   return (
+    <Link href={`/detalle/${link}`}>
+      <div className='card-container'>
 
-    <div className='card-container'>
-      <Link to={`${group ||"all"}/${link}`}>
-       
-        <Image img={imagen || photo} alt={alt || "foto de lavatrastosO"} />
+
+
+        <Image img={imagen} alt={alt || "foto de lavatrastosO"} />
         <Title3ForCard className="center-text">{title || "Lavatrastos mod 7807F"}</Title3ForCard>
-        <Button />
-      </Link>
-    </div>
 
+        <Button link={link} />
+
+      </div>
+    </Link>
   )
 }
 
@@ -30,9 +32,11 @@ const Image = ({ img, alt }) => {
 
 }
 
-const Button = () => {
+const Button = ({ link }) => {
   return (
+
     <div className="button">Ver detalles</div>
+
   )
 }
 
