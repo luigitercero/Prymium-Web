@@ -20,7 +20,7 @@ $max-items: 3;
     border-bottom: 3px solid $primaryColor;
   }
   .gallery-wrapper{
-    margin: 0 3vw;
+    margin: 0 $margin-left-right;
     position: relative;
 
     .gallery-overlay{
@@ -110,8 +110,8 @@ $max-items: 3;
 .bidet-info{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 32px 3vw 0;
-  column-gap: 3vw;
+  margin: 32px $margin-left-right 0;
+  column-gap: $margin-left-right;
   font-family: 'Lato-Regular';
 
   @include mq('small-screen','max'){

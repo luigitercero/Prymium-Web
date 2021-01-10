@@ -1,0 +1,47 @@
+@import '../globals/settings.scss';
+
+.contacts-list{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: -75px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $secondaryColor;
+  text-decoration: none;
+  width: 166px;
+  margin-bottom: 20px;
+
+  &:hover{
+    transform: scale(1.1);
+  }
+
+  &:active{
+    transform: scale(0.95);
+  }
+
+  .contact-icon{
+    font-size: 4em;
+    background-color: white;
+    border-radius: 50%;
+    width: 120px;
+    text-align: center;
+    line-height: 120px;
+    border: 3px solid $secondaryColor;
+  }
+
+  .item-title{
+    @include font-set(2, 1.4em, black, bold);
+  }
+
+  .info{
+    @include font-set(2, 1.2em, $secondaryColor, bold);
+    padding-top: 5px;
+  }
+}

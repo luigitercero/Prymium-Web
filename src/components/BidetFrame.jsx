@@ -36,7 +36,7 @@ const BidetItem = ({ item }) => {
   const { image, alt, description } = item;
   return (
     <div className="bidetitem">
-      <img src={image} alt={alt} />
+      <img src={image} alt={alt} loading="lazy" />
       <span>{description}</span>
       <div className="overlay" />
       <div className="bottom-overlay" />

@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
+    "web:start": "webpack serve --mode development",
+    "web:build": "webpack --mode production",
     "format": "prettier --write '{*.jsx,src/**/*.{js,jsx}}'",
     "lint": "eslint src/ --fix",
     "build:static": "webpack && babel-node tools/index.js",
-    "next:dev": "next",
-    "next:build": "next build",
-    "next:start": "next start"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "keywords": [
     "lavatrastos",

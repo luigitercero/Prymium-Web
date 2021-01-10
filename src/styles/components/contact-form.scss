@@ -1,0 +1,36 @@
+@import '../globals/settings.scss';
+
+.form-container{
+  grid-area: form;
+}
+
+.form{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  margin-top: 5px;
+
+  input, textarea{
+    @include font-set(1, 1em, $textColor);
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid #dfe1e5;
+ 
+    &:focus{
+      outline: 0;
+      box-shadow: 1px 1px 6px rgba(32,33,36,.28);
+    }
+  }
+
+  textarea{
+    padding: 5px;
+  }
+
+  input{
+    padding: 10px 5px;
+  }
+  
+  .note{
+    @include font-set(1, 0.8em, gray);
+  }
+}

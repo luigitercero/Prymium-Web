@@ -1,16 +1,21 @@
 // import App from 'next/app'
 import React from 'react';
 import '../src/styles/container/home.scss';
+import '../src/styles/container/contact.scss';
 import '../src/styles/components/animated-gallery.scss';
 import '../src/styles/components/app.scss';
 import '../src/styles/components/bidet.scss';
 import '../src/styles/components/cardProduct.scss';
+import '../src/styles/components/contacts-list.scss';
+import '../src/styles/components/contact-map.scss';
+import '../src/styles/components/contact-form.scss';
 import '../src/styles/components/footer.scss';
 import '../src/styles/components/gallery.scss';
 import '../src/styles/components/header.scss';
 import '../src/styles/components/hero.scss';
 import '../src/styles/components/listOfProduct.scss';
 import '../src/styles/components/singleProduct.scss';
+import '../src/styles/components/schedule.scss';
 import '../src/styles/components/title.scss';
 import '../src/styles/components/youtube-video.scss';
 import Layout from '../src/components/Layout';

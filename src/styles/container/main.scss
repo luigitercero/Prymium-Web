@@ -1,0 +1,12 @@
+@import '../globals/settings.scss';
+
+.container{
+  background-color: $backgroundLightColor;
+}
+
+.content{
+  & section{
+    padding: 0 $margin-left-right;
+    padding-bottom: 32px;
+  }
+}

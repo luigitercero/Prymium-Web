@@ -6,7 +6,7 @@ const GalleryItem = ({ element }) => {
   const { image, alt, name, description } = element
   return (
     <>
-      <img src={image} alt={alt} />
+      <img src={image} alt={alt} loading="lazy" />
       <div className="image-description">
         <h3>{name}</h3>
         <p>{description}</p>
