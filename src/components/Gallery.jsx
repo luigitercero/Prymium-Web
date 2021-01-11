@@ -144,9 +144,9 @@ const Gallery = ({ title, imageArray }) => {
   }
 
   useEffect(()=>{
-    window.addEventListener('resize',() => {setTimeout(setVariables, 20)} )
     setVariables();
-  },[])
+    window.addEventListener('resize',() => {setTimeout(setVariables, 10)} )
+  })
   
   return (
     <div className="image-gallery">
