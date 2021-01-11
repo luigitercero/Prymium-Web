@@ -69,9 +69,10 @@ const Gallery = ({ title, imageArray }) => {
   }
 
   function setVariables(){
-    width = galleryContainer.current.offsetWidth
-    offset = Math.floor(width / 2)
-    galleryContainer.current.scrollLeft = offset
+    width = galleryContainer.current.offsetWidth;
+    offset = parseInt(width / 2);
+    console.log(offset);
+    galleryContainer.current.scrollLeft = offset;
 
     if (window.matchMedia('(max-width: 1024px)').matches){
       stepSize = 280;
