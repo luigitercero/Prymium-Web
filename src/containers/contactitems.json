@@ -1,28 +1,28 @@
 [
   {
     "id": "41",
-    "iconClasses": "fab fa-whatsapp",
+    "icon": "/images/icons/whatsapp.webp",
     "itemName":"Whatsapp", 
     "itemInfo": "(+502) 5510-3370",  
     "linkTo": "#"
   },
   {
     "id": "42",
-    "iconClasses": "fas fa-phone-square-alt",
+    "icon": "/images/icons/phone.webp",
     "itemName":"Teléfono",
     "itemInfo": "(+502) 2485-5176",  
     "linkTo": "#"
   },
   {
     "id": "43",
-    "iconClasses": "far fa-envelope",
+    "icon": "/images/icons/email.webp",
     "itemName":"Email",
     "itemInfo": "@lavatrastospry.com",  
     "linkTo": "#"
   },
   {
     "id": "44",
-    "iconClasses": "fas fa-map-marker-alt",
+    "icon": "/images/icons/location.webp",
     "itemName":"Ubicación",
     "itemInfo": "Zona 8 de Mixco",  
     "linkTo": "#"
