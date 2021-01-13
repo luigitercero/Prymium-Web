@@ -31,7 +31,7 @@ const Home = () => {
       />
       <section className="products-container">
         <Gallery title="Galería" imageArray={dishWashers} />
-        <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' /> 
+        {/* <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' />  */}
       </section>
       <section className="bidetframe-container">
         <BidetFrame itemsArray={bidets} />
