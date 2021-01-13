@@ -1,5 +1,13 @@
 @import '../container/main.scss';
 
+:root{
+  --header-size: 480px;
+
+  @include mq('small-screen','max'){
+    --header-size: 400px;
+  }
+}
+
 %titles-extend{
   z-index: 2;
   background-color: rgba($color: $backgroundLightColor, $alpha: 0.4);
@@ -8,18 +16,29 @@
 }
 
 .contact-hero{
-  background: url('../../img/contact-image.jpg') no-repeat;
-  background-size: $header-size;
-  height: $header-size;
-  background-position: right top;
+  // background: url('../../img/contact-image.jpg') no-repeat;
+  // background-size: $header-size;
+  // height: $header-size;
+  // background-position: right top;
   position: relative;
   overflow: hidden;
-  @include mq('small-screen','max'){
-    background-size: 117%;
+  display: flex;
+  justify-content: flex-end;
+
+  .image{
+    position: relative;
+    height: var(--header-size);
+    width: var(--header-size);
+
+    @include mq('small-screen','max'){
+      width: 100%;
+    }
   }
+
 }
 
 .contact-title{
+  padding-top: 0 !important;
   @include abs(false, false, 210px, $margin-left-right);
   @extend %titles-extend;
 }
@@ -30,16 +49,17 @@
   @include font-set(1, 2em, $textColor, 100);
   @include mq('small-screen','max'){
     font-size: 1.5em;
+    top: 190px;
   }
 }
 
 .contact-overlay{
   @include abs(0, 0);
   background: radial-gradient(transparent, transparent, transparent,transparent, transparent, transparent, #fff7e2, #fff7e2, #fff7e2);;
-  width: $header-size * 2;
-  height: $header-size * 2.5;
-  margin-right: -$header-size;
-  margin-top: -$header-size * 1.5;
+  width: calc(var(--header-size) * 2);
+  height: calc(var(--header-size) * 2.5);
+  margin-right: calc(var(--header-size)* (-1));
+  margin-top: calc(var(--header-size) * (-1.5));
   @include mq('small-screen','max'){
     width: 200%;
     margin-right: -90%;
@@ -50,6 +70,7 @@
   background-color: white;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: 1fr;
   column-gap: $margin-left-right;
   grid-template-areas: "map schedule"
                         "map form";

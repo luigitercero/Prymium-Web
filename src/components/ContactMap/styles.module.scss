@@ -1,20 +1,25 @@
 @import '../../styles/globals/colors.scss';
 @import '../../styles/globals/fonts.scss';
+@import '../../styles/globals/mq.scss';
 
 .container{
   grid-area: map;
 }
 
 .content{
-  height: 100%;
   width: 100%;
   display: grid;
   grid-template-rows: 1fr auto auto;
 }
 
 .map{
+  height: 32vw;
   width: 100%;
   margin-bottom: 10px;
+
+  @include mq('large-screen','max'){
+    height: 66vw;
+  }
 }
 
 .info{

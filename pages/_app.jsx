@@ -1,5 +1,6 @@
 // import App from 'next/app'
 import React from 'react';
+import '../src/styles/container/layout.scss';
 import '../src/styles/container/home.scss';
 import '../src/styles/container/contact.scss';
 import '../src/styles/components/animated-gallery.scss';

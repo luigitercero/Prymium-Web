@@ -162,8 +162,12 @@ const Gallery = ({ title, imageArray }) => {
           })}
         </div>
       </div>
-      <span aria-hidden="true" className="fas fa-angle-right arrow right-arrow" ref={rightArrow} onClick={moveRight} />
-      <span aria-hidden="true" className="fas fa-angle-left arrow left-arrow" ref={leftArrow} onClick={moveLeft} />
+      <span aria-hidden="true" className="arrow right-arrow" ref={rightArrow} onClick={moveRight}>
+        <img src="/images/icons/right-arrow.png" alt="right-arrow" />
+      </span>
+      <span aria-hidden="true" className="arrow left-arrow" ref={leftArrow} onClick={moveLeft}>
+        <img src="/images/icons/left-arrow.png" alt="left-arrow" />
+      </span>
     </div>
   );
 };
