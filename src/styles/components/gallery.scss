@@ -11,12 +11,16 @@ $media-query: "(max-width: 1024px)";
     background-color: $backgroundTextColor;
     position: absolute;
     top: 287px;
-    font-size: 30px;
     border-radius: 50%;
     border: 0;
-    line-height: 40px;
+    height: 40px;
     width: 40px;
+    line-height: 55px;
     text-align: center;
+    
+    img{
+      filter: brightness(0) invert(1);  
+    }
 
     &:active{
       transform: scale(0.95);

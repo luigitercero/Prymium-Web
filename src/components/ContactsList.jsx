@@ -1,16 +1,20 @@
 import React from 'react';
-import { Link } from 'next/link';
-
+import  Link  from 'next/link';
+import Image from 'next/image';
 
 const ContactItem = ({ item }) =>{
-  const { iconClasses, itemName, itemInfo, linkTo } = item;
+  const { icon, itemName, itemInfo, linkTo } = item;
 
   return(
-    <div className="contact-item">
-      <span className={`${iconClasses} contact-icon`} />
-      <span className="item-title">{itemName}</span>
-      <span className="info">{itemInfo}</span>
-    </div>
+    <Link href={linkTo}>
+      <div className="contact-item">
+        <div className="contact-icon">
+          <Image src={icon} height={64} width={64} />
+        </div>
+        <span className="item-title">{itemName}</span>
+        <span className="info">{itemInfo}</span>
+      </div>
+    </Link>
   )
 }
 

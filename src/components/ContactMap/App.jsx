@@ -3,7 +3,6 @@ import { SubTitle2, Paragraph } from '../Title';
 import styles from './styles.module.scss';
 
 const ContactMap = () => {
-
   return(
     <div className={styles.container}>
       <SubTitle2>Mapa</SubTitle2>

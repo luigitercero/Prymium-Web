@@ -9,7 +9,7 @@ $font_family_lora: 'Lora';
 
 @font-face {
   font-family: $font_family_lora;
-  src: url('../fonts/Lora/Lora-VariableFont_wght.ttf');
+  src: url('../fonts/Lora/Lora-Regular.ttf');
 }
 
 @mixin font-set($type: false, $size: false, $colour: false, $weight: false,  $lh: false) {
