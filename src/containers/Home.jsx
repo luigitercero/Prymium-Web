@@ -1,11 +1,13 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
-import YoutubeVideo from '../components/YoutubeVideo';
 import BidetFrame from '../components/BidetFrame';
 import dishWashers from './dishwashers.json';
 import bidets from './bidetitems.json';
 
+// eslint-disable-next-line arrow-body-style
+const YoutubeVideo = dynamic(() => import('../components/YoutubeVideo'));
 
 const Home = () => {
   return (
@@ -19,7 +21,7 @@ const Home = () => {
       />
       <section className="products-container">
         <Gallery title="Galería" imageArray={dishWashers} />
-        <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' />
+        <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' /> 
       </section>
       <section className="bidetframe-container">
         <BidetFrame itemsArray={bidets} />
