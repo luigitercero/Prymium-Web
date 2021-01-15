@@ -13,8 +13,8 @@ const Contact = () => {
   return(
     <div className="container">
       <SubHero image="/images/backgrounds/contact-image.webp" overlay>
-        <Title>Contáctenos</Title>
-        <span>Y empiece a disfrutar de su nuevo lavatrastos</span>
+        <Title id="title">Contáctenos</Title>
+        <span id="subtitle">Y empiece a disfrutar de su nuevo lavatrastos</span>
       </SubHero>
       <div className="content contact-content">
         <ContactsList contactsArray={contactItems} />

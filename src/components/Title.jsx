@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Title = ({ children, className }) => {
+export const Title = ({ children, className, id }) => {
   return (
 
-    <h1 className={`title ${className||''}`}>{children}</h1>
+    <h1 className={`title ${className||''}`} id={id}>{children}</h1>
 
   );
 };

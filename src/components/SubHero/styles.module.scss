@@ -9,6 +9,7 @@
 
 .hero{
   position: relative;
+  height: var(--header-size);
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
@@ -18,21 +19,17 @@
   position: relative;
   height: var(--header-size);
   width: var(--header-size);
-
-  @include mq('small-screen','max'){
-    width: 100%;
-  }
 }
 
 .children{
 
-  h1, section{
+  [id=title]{
     padding-top: 0 !important;
     @include abs(false, false, 210px, $margin-left-right);
     @extend %children-extend;
   }
 
-  span{
+  [id=subtitle]{
     @include abs(270px, false, false, $margin-left-right);
     @extend %children-extend;
     @include font-set(1, 2em, $textColor, 100);
@@ -51,9 +48,5 @@
   height: calc(var(--header-size) * 2.5);
   margin-right: calc(var(--header-size)* (-1));
   margin-top: calc(var(--header-size) * (-1.5));
-  @include mq('small-screen','max'){
-    width: 200%;
-    margin-right: -90%;
-  }
 }
 

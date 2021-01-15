@@ -1,19 +1,5 @@
 @import '../container/main.scss';
 
-:root{
-  --header-size: 480px;
-
-  @include mq('small-screen','max'){
-    --header-size: 400px;
-  }
-}
-
-.image{
-  position: relative;
-  height: 30px;
-  width: 30px;
-}
-
 .main-content{
   background-color: white;
   display: grid;
