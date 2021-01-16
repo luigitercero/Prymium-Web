@@ -61,22 +61,26 @@ const NavigationList = () => {
 
 const NavItem = ({ id, to, name, children }) => {
   const [showSubMenu, setSubMenu] = useState(false);
+  
   const onPress = () => {
-
     setSubMenu(!showSubMenu);
   }
+
   const close = () => {
+    console.log('cerrando');
     setSubMenu(false);
   }
 
+  const childrenWithProps = React.Children.map(children, child => {
+    // checking isValidElement is the safe way and avoids a typescript error too
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, { close });
+    }
+    return child;
+  });
+
   const menu = () => {
-    const childrenWithProps = React.Children.map(children, child => {
-      // checking isValidElement is the safe way and avoids a typescript error too
-      if (React.isValidElement(child)) {
-        return React.cloneElement(child, { close });
-      }
-      return child;
-    });
+   
     return (
       <>
         <a href={to} onClick={onPress}>{name}</a>
@@ -94,7 +98,7 @@ const NavItem = ({ id, to, name, children }) => {
             {menu()}
           </OutsideAlerter>
         )
-          : <Link href={to}><div>{name}</div></Link>
+          : <Link href={to}>{name}</Link>
       }
     </li>
 
@@ -104,13 +108,11 @@ const NavItem = ({ id, to, name, children }) => {
 const SubMenu = ({ close }) => {
 
   return (
-
-
     <ul className="sub-menu">
-      <li id="lavatrastos"><Link href={`${_route.products.to}lavatrastos`} onClick={close}>Lavatrastos</Link></li>
-      <li id="grifo"><Link href={`${_route.products.to}grifo`} onClick={close}>Grifos</Link></li>
-      <li id="bidet"><Link href={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
-      <li id="all"><Link href={`${_route.products.to}all`} onClick={close}>Todos</Link></li>
+      <li id="lavatrastos" onClick={close} aria-hidden><Link href={`${_route.products.to}lavatrastos`}>Lavatrastos</Link></li>
+      <li id="grifo" onClick={close} aria-hidden><Link href={`${_route.products.to}grifo`}>Grifos</Link></li>
+      <li id="bidet" onClick={close} aria-hidden><Link href={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
+      <li id="all" onClick={close} aria-hidden><Link href={`${_route.products.to}all`}>Todos</Link></li>
     </ul>
 
   );
