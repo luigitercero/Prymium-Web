@@ -1,13 +1,18 @@
 import React from 'react';
+import Head from '@hooks/useSEO';
 import Detalle from '../../src/containers/Detalle';
 
-
 const Principal = () => {
-
-
   return (
-    <Detalle />
-  );
+    <Head
+      title="Lavatrastos || Prymium"
+      description="Encuntra accesorios lavatrastos, fregaderos o bidets de grandes fosas y deacero inoxidable para tu nueva cocina"
+    >
+
+      <Detalle />
+
+    </Head>
+  )
 
 };
 
