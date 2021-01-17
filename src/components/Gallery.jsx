@@ -1,3 +1,5 @@
+/* eslint-disable radix */
+/* eslint-disable no-console */
 import React, { useEffect, useRef } from 'react';
 import { SubTitle } from './Title';
 
@@ -70,19 +72,24 @@ const Gallery = ({ title, imageArray }) => {
   }
 
   const setVariables = () =>{
-    width = galleryContainer.current.offsetWidth
-    offset = Math.floor(width / 2)
-    galleryContainer.current.scrollLeft = offset
-
-    if (window.matchMedia('(max-width: 1024px)').matches){
-      stepSize = 280;
-    }else{
-      stepSize = 310;
+    try {
+      width = galleryContainer.current.offsetWidth
+      offset = Math.floor(width / 2)
+      galleryContainer.current.scrollLeft = offset
+  
+      if (window.matchMedia('(max-width: 1024px)').matches){
+        stepSize = 280;
+      }else{
+        stepSize = 310;
+      }
+      maxPosition = imageArray.length - Math.floor(width / stepSize);
+      firstStep = calcFirstStep();
+  
+      translatePosition(10);
+      
+    } catch (err) {
+      console.log(err)
     }
-    maxPosition = imageArray.length - Math.floor(width / stepSize);
-    firstStep = calcFirstStep();
-
-    translatePosition(10);
   }
 
   function touchIn(){
