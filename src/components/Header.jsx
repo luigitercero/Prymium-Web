@@ -44,30 +44,27 @@ const Header = () => {
   )
 }
 
-const NavigationList = () => {
-
-  return (
-    <ul>
-      <NavItem {..._route.home} />
-      <NavItem key={_route.products.key} to='#product' name={_route.products.name}>
-        <SubMenu />
-      </NavItem>
-      <NavItem {..._route.asks} />
-      <NavItem {..._route.blog} />
-      <NavItem {..._route.contact} />
-    </ul>
-  );
-}
+const NavigationList = () => (
+  <ul>
+    <NavItem {..._route.home} />
+    <NavItem key={_route.products.key} to='#product' name={_route.products.name}>
+      <SubMenu />
+    </NavItem>
+    <NavItem {..._route.asks} />
+    <NavItem {..._route.blog} />
+    <NavItem {..._route.contact} />
+  </ul>
+  )
 
 const NavItem = ({ id, to, name, children }) => {
   const [showSubMenu, setSubMenu] = useState(false);
-  
+
   const onPress = () => {
     setSubMenu(!showSubMenu);
   }
 
   const close = () => {
-    console.log('cerrando');
+
     setSubMenu(false);
   }
 
@@ -79,15 +76,12 @@ const NavItem = ({ id, to, name, children }) => {
     return child;
   });
 
-  const menu = () => {
-   
-    return (
-      <>
-        <a href={to} onClick={onPress}>{name}</a>
-        {showSubMenu && childrenWithProps}
-      </>
+  const menu = () => (
+    <>
+      <a href={to} onClick={onPress}>{name}</a>
+      {showSubMenu && childrenWithProps}
+    </>
     )
-  }
 
   return (
 
@@ -105,44 +99,36 @@ const NavItem = ({ id, to, name, children }) => {
   );
 }
 
-const SubMenu = ({ close }) => {
+const SubMenu = ({ close }) => (
+  <ul className="sub-menu">
+    <li id="lavatrastos" onClick={close} aria-hidden><Link href={`${_route.products.to}lavatrastos`}>Lavatrastos</Link></li>
+    <li id="grifo" onClick={close} aria-hidden><Link href={`${_route.products.to}grifo`}>Grifos</Link></li>
+    <li id="bidet" onClick={close} aria-hidden><Link href={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
+    <li id="all" onClick={close} aria-hidden><Link href={`${_route.products.to}all`}>Todos</Link></li>
+  </ul>
 
-  return (
-    <ul className="sub-menu">
-      <li id="lavatrastos" onClick={close} aria-hidden><Link href={`${_route.products.to}lavatrastos`}>Lavatrastos</Link></li>
-      <li id="grifo" onClick={close} aria-hidden><Link href={`${_route.products.to}grifo`}>Grifos</Link></li>
-      <li id="bidet" onClick={close} aria-hidden><Link href={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
-      <li id="all" onClick={close} aria-hidden><Link href={`${_route.products.to}all`}>Todos</Link></li>
-    </ul>
+  )
 
-  );
-
-}
-
-const HambuergerMenu = ({ children, open, onClick, keyOpen }) => {
-
-  return (
-    <div className="contariner-hamburger">
-      <a href={keyOpen} className="hambuerguer" onClick={onClick}>
-        <i className="icon hamburguer icon--check" />
-      </a>
-      
-
-      <CSSTransition
-        in={open}
-        timeout={1000}
-        classNames="fade"
-        unmountOnExit
-      >
-        {children}
-      </CSSTransition>
+const HambuergerMenu = ({ children, open, onClick, keyOpen }) => (
+  <div className="contariner-hamburger">
+    <a href={keyOpen} className="hambuerguer" onClick={onClick}>
+      <i className="icon hamburguer icon--check" />
+    </a>
 
 
-    </div>
+    <CSSTransition
+      in={open}
+      timeout={1000}
+      classNames="fade"
+      unmountOnExit
+    >
+      {children}
+    </CSSTransition>
 
-  );
 
-}
+  </div>
+
+  )
 
 
 

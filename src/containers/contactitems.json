@@ -4,27 +4,27 @@
     "icon": "/images/icons/whatsapp.webp",
     "itemName":"Whatsapp", 
     "itemInfo": "(+502) 5510-3370",  
-    "linkTo": "#"
+    "linkTo": "https://wa.me/c/50236172878"
   },
   {
     "id": "42",
     "icon": "/images/icons/phone.webp",
     "itemName":"Teléfono",
     "itemInfo": "(+502) 2485-5176",  
-    "linkTo": "#"
+    "linkTo": "tel:+55103370"
   },
   {
     "id": "43",
     "icon": "/images/icons/email.webp",
     "itemName":"Email",
-    "itemInfo": "@lavatrastospry.com",  
-    "linkTo": "#"
+    "itemInfo": "@lavatrastosprymium.com",  
+    "linkTo": "mailto: lavatrastosprymium@gmail.com"
   },
   {
     "id": "44",
     "icon": "/images/icons/location.webp",
     "itemName":"Ubicación",
     "itemInfo": "Zona 8 de Mixco",  
-    "linkTo": "#"
+    "linkTo": "https://www.google.com/maps/place/Lavatrastos+Prymium/@14.613611,-90.6062561,17z/data=!3m1!4b1!4m5!3m4!1s0x85890a80dcfef08b:0x4393518a6d351144!8m2!3d14.613611!4d-90.6040674"
   }
 ]

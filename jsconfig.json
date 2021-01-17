@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2020",
+    "experimentalDecorators": false,
+    "baseUrl": "src",
+    "jsx": "react",
+    "paths": {
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@component/*": [
+        "component/*"
+      ],
+      "@context/*": [
+        "component/*"
+      ],
+    }
+  }
+}
+
+

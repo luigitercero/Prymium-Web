@@ -13,8 +13,6 @@ const YoutubeVideo = ({ title, vid }) => {
         </div>
       </div>
     </div>
-    
-    
   );
 };
 

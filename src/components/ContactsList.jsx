@@ -6,14 +6,14 @@ const ContactItem = ({ item }) =>{
   const { icon, itemName, itemInfo, linkTo } = item;
 
   return(
-    <Link href={linkTo}>
-      <div className="contact-item">
+    <Link href={linkTo} >
+      <a target="_blank" className="contact-item">
         <div className="contact-icon">
           <Image src={icon} height={64} width={64} />
         </div>
         <span className="item-title">{itemName}</span>
         <span className="info">{itemInfo}</span>
-      </div>
+      </a>
     </Link>
   )
 }

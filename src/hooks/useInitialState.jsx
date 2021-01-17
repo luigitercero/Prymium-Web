@@ -17,10 +17,10 @@ const useInitialState = () => {
 
   const singleFilter = (query) => {
 
-    const single = products.filter(producto => {
+    const single = products.filter(producto =>
 
-      return producto.link.toLowerCase().includes(query.toLowerCase())
-    })
+      producto.link.toLowerCase().includes(query.toLowerCase())
+    )
 
     setSingleProduct(single);
 
@@ -32,7 +32,7 @@ const useInitialState = () => {
     products,
     singleFilter,
     singleProduct,
-    groupFilterd,setGroup
+    groupFilterd, setGroup
   }
 }
 
