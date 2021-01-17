@@ -1,0 +1,9 @@
+@import './mq.scss';
+
+:root{
+  --header-size: 480px;
+
+  @include mq('small-screen','max'){
+    --header-size: 400px;
+  }
+}

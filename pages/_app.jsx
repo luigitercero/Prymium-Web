@@ -1,6 +1,8 @@
 // import App from 'next/app'
 import React from 'react';
 import { useRouter } from 'next/router';
+
+import '../src/styles/globals/root_vars.scss';
 import '../src/styles/container/layout.scss';
 import '../src/styles/container/home.scss';
 import '../src/styles/container/contact.scss';
