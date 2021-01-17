@@ -1,3 +1,4 @@
+
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Hero from '../components/Hero';
@@ -6,7 +7,7 @@ import BidetFrame from '../components/BidetFrame';
 import dishWashers from './dishwashers.json';
 import bidets from './bidetitems.json';
 
-// eslint-disable-next-line arrow-body-style
+
 const YoutubeVideo = dynamic(() => import('../components/YoutubeVideo'));
 
 const Home = () => {
@@ -18,16 +19,15 @@ const Home = () => {
   //     {querySize: '575', image:'/images/hero-querysize-480.webp'}
   //   ]
   // }
-
   return (
     <div className="home">
-      
+
       <Hero
         title="Lavatrastos Prymium"
         subtitle="Más de 25,000 unidades vendidas"
         linktext="QUIERO VER MÁS!>>"
         url="/store-lavatrastos-grifos-bidet-guatemala/"
-        // image="/images/hero-image.webp"
+      // image="/images/hero-image.webp"
       />
       <section className="products-container">
         <Gallery title="Galería" imageArray={dishWashers} />

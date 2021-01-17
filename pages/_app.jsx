@@ -1,5 +1,6 @@
 // import App from 'next/app'
 import React from 'react';
+import { useRouter } from 'next/router';
 import '../src/styles/container/layout.scss';
 import '../src/styles/container/home.scss';
 import '../src/styles/container/contact.scss';
@@ -24,11 +25,21 @@ import AppContext from '../src/context/AppContext';
 import useInitialState from '../src/hooks/useInitialState'
 
 function MyApp({ Component, pageProps }) {
-  const initialState = useInitialState()
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <AppContext.Provider value={initialState}><Layout><Component {...pageProps} /></Layout></AppContext.Provider>
+  const router = useRouter();
+  const initialState = useInitialState();
+  return <AppContext.Provider value={initialState}><CustomLayout pathname={router.pathname}><Component {...pageProps} /></CustomLayout></AppContext.Provider>
 }
 
+const CustomLayout = ({ pathname, children }) => (
+  <>
+    {
+      pathname === "/_error" ? <>{children}</>
+        : (
+          <Layout>{children}</Layout>
+        )
+    }
+  </>
+)
 // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to
 // perform automatic static optimization, causing every page in your app to
