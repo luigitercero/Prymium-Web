@@ -1,18 +1,21 @@
 @import '../../styles/container/main.scss';
 
 
-.qtitle{
+.item_title{
   font-size: 1.3em;
   @include mq('small-screen', 'min'){
     font-size: 1.55em;
   }
 }
 
-.answer{
+.item{
   margin: 0 3vw;
+}
+
+.item_content{
   text-align: justify;
   @include mq('small-screen', 'min'){
-    margin: 0 10vw;
+     margin: 0 10vw;
   }
 
   h2{
@@ -29,11 +32,13 @@
     text-align: center;
   }
   img{
-    width: 230px;
-    height: 230px;
+    font-size: 7px;
+    max-width: 37em;
+    max-height: 37em;
+    border: 1px solid $textColor;
+    // margin: 0;
     @include mq('small-screen', 'min'){
-      width: 300px;
-      height: 300px;
+      font-size: 16px;
     }
   }
 
