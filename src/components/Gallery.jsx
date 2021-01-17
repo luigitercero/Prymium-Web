@@ -54,7 +54,8 @@ const Gallery = ({ title, imageArray }) => {
     }
   }
 
-  function translatePosition(animationTime = 400){
+  function translatePosition(animationTime = 300){
+    gallery.current.style.transitionDuration = `${animationTime}ms`;
 
     if(position === 0){
       acumMovement = 0;
@@ -62,13 +63,13 @@ const Gallery = ({ title, imageArray }) => {
       acumMovement = firstStep + (position - 1)*stepSize;  
     }
 
-    gallery.current.style.transitionDuration = `${animationTime}ms`;
+    
     gallery.current.style.transform = `translateX(${-acumMovement + offset}px)`;
 
     displayArrowsControl();
   }
 
-  function setVariables(){
+  const setVariables = () =>{
     width = galleryContainer.current.offsetWidth
     offset = Math.floor(width / 2)
     galleryContainer.current.scrollLeft = offset
@@ -86,13 +87,20 @@ const Gallery = ({ title, imageArray }) => {
 
   function touchIn(){
     // gallery.current.style.willChange = 'transform';
+    galleryContainer.current.style.overflowX = 'scroll';
     gallery.current.style.transitionDuration = `unset`;
     allowScroll = true;
   }
 
   function touchOut(){
+    galleryContainer.current.style.overflowX = 'hidden';
     allowScroll = false;
-    const movement = acumMovement - position * stepSize
+    currentScrollPosition = galleryContainer.current.scrollLeft;
+    acumMovement += currentScrollPosition - offset;
+    gallery.current.style.transform = `translateX(${-acumMovement - error + offset}px)`;
+
+    // galleryContainer.current.scrollLeft = offset;
+    const movement = acumMovement - position * stepSize;
     const stepsToMove = parseInt(movement / stepSize)
     if(movement >= error){
       position += stepsToMove;
@@ -118,8 +126,9 @@ const Gallery = ({ title, imageArray }) => {
   }
 
   function scrollControl() {
-    if(allowScroll){
-      currentScrollPosition = galleryContainer.current.scrollLeft;
+    currentScrollPosition = galleryContainer.current.scrollLeft;
+    galleryContainer.current.scrollLeft = offset;
+    if(allowScroll){  
       acumMovement += currentScrollPosition - offset;
       if((currentScrollPosition - offset) > 0){
         scrollRight = true;
@@ -130,7 +139,6 @@ const Gallery = ({ title, imageArray }) => {
       gallery.current.style.transform = `translateX(${-acumMovement + offset}px)`;
       
     }
-    galleryContainer.current.scrollLeft = offset;
   }
 
   function moveRight() {
@@ -144,14 +152,14 @@ const Gallery = ({ title, imageArray }) => {
   }
 
   useEffect(()=>{
-    setVariables();
     window.addEventListener('resize',() => {setTimeout(setVariables, 10)} )
+    setVariables();
   })
   
   return (
     <div className="image-gallery">
       <SubTitle>{title}</SubTitle>
-      <div className="gallery-container" ref={galleryContainer} onScroll={scrollControl} onTouchEnd={touchOut} onTouchStart={touchIn}>
+      <div className="gallery-container" ref={galleryContainer} onScroll={scrollControl} onTouchEnd={touchOut} onTouchStart={touchIn} aria-live="polite">
         <div className="gallery" ref={gallery}>
           {imageArray.map(element => {
             return (

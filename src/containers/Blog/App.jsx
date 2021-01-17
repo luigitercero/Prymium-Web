@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 import React, { useState, useEffect } from 'react';
 import SubHero from '../../components/SubHero/App'
-import { Title, SubTitle, Pre } from '../../components/Title';
+import { Title, Pre } from '../../components/Title';
 
 const Blog = () => {
   const API_URL = 'https://lavatrastosprymium.com/wp-json/pg/v1/preguntas/';
@@ -24,7 +24,6 @@ const Blog = () => {
       </SubHero>
       <div className="content">
         <section>
-          <SubTitle></SubTitle>
           <Pre>
             {data.description}
           </Pre>

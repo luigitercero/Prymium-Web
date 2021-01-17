@@ -39,7 +39,7 @@ $media-query: "(max-width: 1024px)";
 
 .gallery-container{
   font-family: 'Lato-Regular', sans-serif;
-  overflow-x: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 
@@ -48,12 +48,14 @@ $media-query: "(max-width: 1024px)";
   }
 
   .gallery{
-    overflow-x: scroll;
+    overflow-x: hidden;
     display: inline-flex;
     -ms-overflow-style: none;
     scrollbar-width: none;
     will-change: transform;
-    transition-timing-function: ease-out;
+    // transition-timing-function:cubic-bezier(0, 0, 1, 1);
+    transition-timing-function: cubic-bezier(0.5, 1, 0.5, 1);
+    // transition-timing-function:cubic-bezier(1, 0, 0, 1);
 
     &::-webkit-scrollbar {
       display: none;
