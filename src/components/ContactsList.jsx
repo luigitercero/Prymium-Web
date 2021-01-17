@@ -6,7 +6,7 @@ const ContactItem = ({ item }) =>{
   const { icon, itemName, itemInfo, linkTo } = item;
 
   return(
-    <Link href={linkTo} >
+    <Link href={linkTo}>
       <a target="_blank" className="contact-item">
         <div className="contact-icon">
           <Image src={icon} height={64} width={64} />
@@ -19,11 +19,9 @@ const ContactItem = ({ item }) =>{
 }
 
 const ContactsList = ({ contactsArray }) => {
-  const getList = () =>{
-    return(
-      contactsArray.map(item => { return(<ContactItem key={item.id} item={item} />) } )
+  const getList = () =>(
+      contactsArray.map(item => (<ContactItem key={item.id} item={item} />) )
     )
-  }
 
   return(
     <section className="contacts-list">
