@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
 import React, { useState, useEffect } from 'react';
 import SubHero from '../../components/SubHero/App'
@@ -24,6 +25,7 @@ const Blog = () => {
       </SubHero>
       <div className="content">
         <section>
+          <h1>{data.titulo}</h1>
           <Pre>
             {data.description}
           </Pre>
