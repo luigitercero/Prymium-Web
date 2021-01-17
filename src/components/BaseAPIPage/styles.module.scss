@@ -2,6 +2,7 @@
 
 
 .item_title{
+  padding-top: 10px;
   font-size: 1.3em;
   @include mq('small-screen', 'min'){
     font-size: 1.55em;
@@ -14,6 +15,10 @@
 
 .item_content{
   text-align: justify;
+  height: 0;
+  transition-duration: 10s;
+  overflow: hidden;
+
   @include mq('small-screen', 'min'){
      margin: 0 10vw;
   }

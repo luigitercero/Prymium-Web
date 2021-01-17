@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SubHero from '../SubHero/App';
 import { Title, SubTitle2, Pre } from "../Title";
 
@@ -8,13 +8,25 @@ import styles from './styles.module.scss';
 
 const Item = ({ item }) => {
   const { titulo, description } = item;
+  const content = useRef();
+  let hasClicked = false;
+
+  const onPress = () => {
+    if (!hasClicked) {
+      content.current.style.height = 'auto';
+    }else{
+      content.current.style.height = '0';
+    }
+
+    hasClicked = !hasClicked;
+  }
 
   return(
     <div className={styles.item}>
-      <div>
+      <div onClick={onPress}>
         <SubTitle2 className={styles.item_title}>{titulo}</SubTitle2>
       </div>
-      <div className={styles.item_content}>
+      <div className={styles.item_content} ref={content}>
         <Pre>
           {description}
         </Pre>
