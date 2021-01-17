@@ -13,7 +13,6 @@
 }
 
 .item_content{
-  text-align: justify;
   @include mq('small-screen', 'min'){
      margin: 0 10vw;
   }
@@ -45,8 +44,8 @@
      // font-size: 16px;
      max-width: 37em;
     
-      height: 100%;
-      width: 100%;
+      height: unset;
+      width: unset;
      
     }
   }
