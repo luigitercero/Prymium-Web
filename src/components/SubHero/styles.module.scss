@@ -1,0 +1,52 @@
+@import '../../styles/globals/settings.scss';
+
+%children-extend{
+  z-index: 1;
+  background-color: rgba($color: $backgroundLightColor, $alpha: 0.4);
+  padding: 0 4px 0 0;
+  margin-right: $margin-left-right;
+}
+
+.hero{
+  position: relative;
+  height: var(--header-size);
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image{
+  position: relative;
+  height: var(--header-size);
+  width: var(--header-size);
+}
+
+.children{
+
+  [id=title]{
+    padding-top: 0 !important;
+    @include abs(false, false, 210px, $margin-left-right);
+    @extend %children-extend;
+  }
+
+  [id=subtitle]{
+    @include abs(270px, false, false, $margin-left-right);
+    @extend %children-extend;
+    @include font-set(1, 2em, $textColor, 100);
+    @include mq('small-screen','max'){
+      font-size: 1.5em;
+      top: 190px;
+    }
+  }
+}
+
+
+.overlay{
+  @include abs(0, 0);
+  background: radial-gradient(transparent, transparent, transparent,transparent, transparent, transparent, #fff7e2, #fff7e2, #fff7e2);;
+  width: calc(var(--header-size) * 2);
+  height: calc(var(--header-size) * 2.5);
+  margin-right: calc(var(--header-size)* (-1));
+  margin-top: calc(var(--header-size) * (-1.5));
+}
+

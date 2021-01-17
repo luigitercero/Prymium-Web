@@ -16,7 +16,7 @@
         ]
       }
     ],
-    "arrow-body-style": ["warning", "as-needed", { "requireReturnForObjectLiteral": true }],
+    "arrow-body-style": ["warn", "as-needed", { "requireReturnForObjectLiteral": true }],
     // eslint-disable-next-line react/jsx-props-no-spreading
     "react/jsx-props-no-spreading": [0,
       {

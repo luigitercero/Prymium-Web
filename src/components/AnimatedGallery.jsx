@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect, useRef } from 'react';
 import useOnScreen from '../hooks/useOnScreen';
 
@@ -25,10 +26,14 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationT
 
 
   const setVariables = () => {
-    for (let index = 0; index < (maxPosition+1); index+=1) {
-      gallery.current.children[index].style.width = `${galleryContainer.current.offsetWidth}px`;
+    try {
+      for (let index = 0; index < (maxPosition+1); index+=1) {
+        gallery.current.children[index].style.width = `${galleryContainer.current.offsetWidth}px`;
+      }
+      translatePosition(10);
+    } catch (err) {
+      console.log(err);
     }
-    translatePosition(10);
   }
 
 
@@ -60,8 +65,12 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationT
 
   useEffect(() => {
     window.addEventListener('resize', () => {setTimeout(setVariables, 20)})
-    const firstItem = gallery.current.children[0].cloneNode(true);
-    gallery.current.appendChild(firstItem);
+    try {
+      const firstItem = gallery.current.children[0].cloneNode(true);
+      gallery.current.appendChild(firstItem);
+    } catch (err) {
+      console.log(err);
+    }
     setVariables();
   },[])
 
