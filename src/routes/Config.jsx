@@ -11,7 +11,7 @@ export default {
   },
   asks:{
     name:"Preguntas",
-    to:"/",
+    to:"/preguntas",
     id:3
   },
   blog:{

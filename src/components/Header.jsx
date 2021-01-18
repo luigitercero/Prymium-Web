@@ -51,7 +51,7 @@ const NavigationList = () => (
       <SubMenu />
     </NavItem>
     <NavItem {..._route.asks} />
-    <NavItem {..._route.blog} />
+    {/* <NavItem {..._route.blog} /> */}
     <NavItem {..._route.contact} />
   </ul>
   )
