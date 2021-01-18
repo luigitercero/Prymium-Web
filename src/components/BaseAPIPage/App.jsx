@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
 import React, { useState, useEffect, useRef } from 'react';
@@ -46,10 +47,10 @@ const BaseAPIPage = ({ title, subtitle, url }) => {
 
   const [data, setData] = useState([]);
 
-  useEffect(async () =>{
-    const response = await fetch(url);
-    const info = await response.json();
-    setData(info);
+  useEffect(() =>{
+    fetch(url)      
+    .then(response => response.json())
+    .then(info => { setData(info) })
   }, []);
 
   return(
