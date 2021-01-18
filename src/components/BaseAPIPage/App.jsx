@@ -1,23 +1,56 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SubHero from '../SubHero/App';
-import { Title, SubTitle2, Pre } from "../Title";
+import { Title, SubTitle, Pre } from "../Title";
 
 import styles from './styles.module.scss';
 
+const Item = ({ item }) => {
+  const { titulo, description } = item;
+  const content = useRef();
+  const arrow = useRef();
+  let hasClicked = false;
+
+  const onPress = () => {
+    if (!hasClicked) {
+      content.current.style.height = 'auto';
+      arrow.current.style.transform = "rotate(90deg)";
+    }else{
+      content.current.style.height = '0';
+      arrow.current.style.transform = "rotate(-90deg)";
+    }
+
+    hasClicked = !hasClicked;
+  }
+
+  return(
+    <div className={styles.item}>
+      <div onClick={onPress} className={styles.title_container}>
+        <SubTitle className={styles.item_title}>{titulo}</SubTitle>
+        <img ref={arrow} src="/images/icons/left-arrow.png" alt="arrow" />
+      </div>
+      <div className={styles.content_container} ref={content}>
+        <div className={styles.item_content}>
+          <Pre>
+            {description}
+          </Pre>
+        </div>
+      </div>
+    </div>
+  )
+
+}
+
 const BaseAPIPage = ({ title, subtitle, url }) => {
 
-  const [data, setData] = useState({
-    titulo:"",
-    description:""
-  });
+  const [data, setData] = useState([]);
 
-  useEffect(async () =>{
-    const response = await fetch(url);
-    const info = await response.json();
-    setData(info[0]);
-    console.log(data.titulo);
+  useEffect(() =>{
+    fetch(url)      
+    .then(response => response.json())
+    .then(info => { setData(info) })
   }, []);
 
   return(
@@ -27,13 +60,10 @@ const BaseAPIPage = ({ title, subtitle, url }) => {
         <span id="subtitle">{subtitle}</span>
       </SubHero>
       <div className={styles.content}>
-        <section>
-          <div className={styles.answer}>
-            <SubTitle2 className={styles.qtitle}>{data.titulo}</SubTitle2>
-            <Pre>
-              {data.description}
-            </Pre>
-          </div>
+        <section className={styles.items_container}>
+          {data.map(item => {
+            return <Item key={item.id} item={item} />
+          })}
         </section>
       </div>
     </div>
