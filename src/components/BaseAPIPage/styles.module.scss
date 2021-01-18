@@ -1,19 +1,47 @@
 @import '../../styles/container/main.scss';
 
+.items_container{
+  background-color: $white;
+  padding-top: 32px !important;
+}
 
-.qtitle{
+.title_container{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items:center;
+  gap: 0;
+
+  img{
+    cursor: pointer;
+    padding: 10px;
+    transform: rotate(-90deg);
+  }
+}
+
+.item_title{
+  padding-top: 20px;
+  cursor: pointer;
   font-size: 1.3em;
   @include mq('small-screen', 'min'){
     font-size: 1.55em;
   }
 }
 
-.answer{
+.item{
   margin: 0 3vw;
-  text-align: justify;
+  
   @include mq('small-screen', 'min'){
     margin: 0 10vw;
   }
+}
+
+.content_container{
+  height: 0;
+  overflow: hidden;
+  border-bottom: 3px solid $primaryColor;
+}
+
+.item_content{
 
   h2{
     font-size: 1.1em;
@@ -29,12 +57,34 @@
     text-align: center;
   }
   img{
-    width: 230px;
-    height: 230px;
-    @include mq('small-screen', 'min'){
-      width: 300px;
-      height: 300px;
+    // font-size: 7px;
+    object-fit: cover;
+    max-width: 99%;
+    max-height: 99%;
+    height: 99%;
+    width: 99%;
+    
+    border: 1px solid $textColor;
+    // margin: 0;
+    @include mq('medium-screen', 'min'){
+     // font-size: 16px;
+     max-width: 37em;
+    
+      height: unset;
+      width: unset;
+     
     }
+  }
+
+  iframe{
+    width: 100%;
+    height: 220px;
+    margin-bottom: 32px;
+    border-radius: 20px;
+
+    @include mq('medium-screen', 'min'){
+      height: 560px;
+     }
   }
 
   figcaption{
