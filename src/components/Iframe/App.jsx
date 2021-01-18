@@ -10,7 +10,7 @@ const Iframe = ({ src, title, className, isYoutube = false, opts = "" }) => {
   useEffect(() =>{
     if (isVisible) {
       setUrl(src);
-      videoFrame.current.animate([{"opacity": "0"},{"opacity": "1"}], 2000)
+      videoFrame.current.animate([{"opacity": "0"},{"opacity": "1"}], 1000)
     }
   },[isVisible])
 
