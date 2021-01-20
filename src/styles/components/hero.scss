@@ -1,11 +1,10 @@
 @import '../globals/colors.scss';
 @import '../globals/mq.scss';
+@import '../globals/fonts.scss';
 
 //hero mixins
-@mixin hero-item($bottom, $fontSize: 2em, $paddingLeft: 0, $mainFont: 'Lato-Regular') {
+@mixin hero-item($bottom, $paddingLeft: 0) {
   bottom: $bottom;
-  font-family: $mainFont, sans-serif;
-  font-size: $fontSize;
   padding-left: $paddingLeft;
 }
 
@@ -18,15 +17,16 @@
 .img-hero{
   height: 590px;
   width: 100%;  
-  @include hero-background('/images/backgrounds/hero-default.webp');
+  // @include hero-background('/images/backgrounds/hero-default.webp');
   position: relative;
+  background-color: $textColor;
 
-  // .image{
-  //   position: relative;
-  //   width: 65%;
-  //   height: 100%;
-  //   z-index: 1;
-  // }
+  .image{
+    position: relative;
+    width: 65%;
+    height: 100%;
+    z-index: 1;
+  }
 
   a, h1, span{
     position: absolute;
@@ -42,40 +42,43 @@
   }
 
   h1{
-    @include hero-item(3.4em, 3.6em, 0.2em, 'Lora');
+    @include font-set(3, 3.6em);
+    font-weight: 500;
+    @include hero-item(3.4em, 0.2em);
   }
 
 
   span{
-    @include hero-item(4.5em, 2em, 0.2em);
+    @include font-set(1, 2em);
+    @include hero-item(4.5em, 0.2em);
   }
 
   a{
     text-decoration: none;
-    @include hero-item(1.5em, 2em);
+    @include font-set(1, 2em, $primaryColor);
+    @include hero-item(1.5em);
     padding: 0.3em 1em;
-    color: $primaryColor;
     border: 3px solid $primaryColor;
     border-radius: 40px;
     background-color: $textColor;
-
+    
     &:hover{
       transform: scale(1.05);
     }
-
     &:active{
       transform: scale(1);
     }
   }
-  // @include mq('medium-screen', 'max'){
-  //   .image{
-  //     width: 82%;
-  //   }
-  // }
+
+  @include mq('medium-screen', 'max'){
+    .image{
+      width: 82%;
+    }
+  }
 
   @include mq('large-screen', 'max'){
-    height: 430px;
-    @include hero-background('/images/backgrounds/hero-730w.webp');
+    height: 520px;
+    // @include hero-background('/images/backgrounds/hero-730w.webp');
     
     a, h1, span{
       right: 10vw;
@@ -92,11 +95,11 @@
   }
 
   @include mq('small-screen', 'max'){
-    height: 400px;
-    @include hero-background('/images/backgrounds/hero-600w.webp');
-    // .image{
-    //   width: 100%;
-    // }
+    // @include hero-background('/images/backgrounds/hero-600w-hd3.webp');
+
+    .image{
+      width: 100%;
+    }
 
     a, h1, span{
       right: 3vw;

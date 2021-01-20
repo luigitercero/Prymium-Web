@@ -1,28 +1,33 @@
+$mainFont: 'Lato';
+$secondaryFont: 'Lora';
+
 $font_family_regular:'Lato-Regular';
 $font_family_bold:'Lato-Regular';
-$font_family_lora: 'Lora';
+$font_family_lora: 'Lora-Regular';
 
 @font-face {
   font-family: $font_family_regular;
-  src: url('../fonts/Lato/Lato-Regular.ttf');
+  src: url('../fonts/Lato/Lato-Regular.woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-family: $font_family_lora;
-  src: url('../fonts/Lora/Lora-Regular.ttf');
+  src: url('../fonts/Lora/Lora-Regular.woff2');
+  font-display: swap;
 }
 
 @mixin font-set($type: false, $size: false, $colour: false, $weight: false,  $lh: false) {
   @if ($type == 1) {
-    font-family: $font_family_regular;
+    font-family: $mainFont, $font_family_regular, sans-serif;
   }
 
   @if ($type == 2) {
-    font-family:$font_family_bold;
+    font-family: $mainFont, $font_family_bold, sans-serif;
   }
 
   @if ($type == 3) {
-    font-family:$font_family_lora;
+    font-family: $secondaryFont, $font_family_lora, 'Times New Roman';
   }
 
   @if $size {

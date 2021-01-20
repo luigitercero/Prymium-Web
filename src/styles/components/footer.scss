@@ -14,7 +14,7 @@
     padding: 15px 3px;
   }
   p {
-    @include font-set(1, 1em, $white, 100);
+    @include font-set(1, 1em, $white, 400);
   }
   img {
     max-width: 1em;
@@ -31,6 +31,7 @@ $icon-sm: 16px;
     display: inline-block;
     background-repeat: no-repeat;
     filter: brightness(0) invert(1);
+
 }@mixin icon-sm {
     width: $icon-sm;
     height: $icon-sm;
@@ -44,9 +45,11 @@ $icon-sm: 16px;
 }.youtube {
     @include icon-sm;
     background-image: url(../../img/youtube-brands.svg);
-}.hamburguer{
+}.hamburger-icon{
   @include icon-sm;
     background-image: url(../../img/bars-solid.svg);
+    background-position: center;
+    filter: brightness(0) invert(0.3);
 }
 .icon classes.icon--check {
     background-position: 0 0;

@@ -21,24 +21,29 @@ $media-query: "(max-width: 1024px)";
     img{
       filter: brightness(0) invert(1);  
     }
+  }
 
+  .right-arrow{
+    right: 0;    
+    
     &:active{
       transform: scale(0.95);
     }
   }
 
-  .right-arrow{
-    right: 0;
-  }
-
   .left-arrow{
     left: 0;
+    transform: rotate(180deg);
     display: none;
+
+    &:active{
+      transform: rotate(180deg) scale(0.95);
+    }
   }
 }
 
 .gallery-container{
-  font-family: 'Lato-Regular', sans-serif;
+  font-family: 'Lato', 'Lato-Regular', sans-serif;
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -69,9 +74,12 @@ $media-query: "(max-width: 1024px)";
       box-shadow: 0px 0px 4px $secondaryColor;
       border-radius: 3px;
       overflow: hidden;
+      position: relative;
 
       img{
         width:100%;
+        height: 205px;
+        object-fit: cover;
       }
 
       .image-description{
@@ -82,6 +90,22 @@ $media-query: "(max-width: 1024px)";
 
       h3{
         margin: 8px 0;
+      }
+
+      a{
+        @include abs(false, 0, 10px, 0);
+        text-decoration: none;
+        width: 114px;
+        margin: 0 auto;
+        padding: .3em 0;
+        color:$textColor;
+        border: 0.15em solid $textColor;
+        border-radius: 10px;
+
+        &:hover{
+          color:$primaryColor;
+          background-color:$secondaryColor;
+        }
       }
     }
 

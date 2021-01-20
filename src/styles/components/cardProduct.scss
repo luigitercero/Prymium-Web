@@ -28,7 +28,7 @@
   .button {
     text-decoration: none;
    
-    @include font-set(1, 1em, $enfasisColor, 100);
+    @include font-set(1, 1em, $enfasisColor, 400);
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;

@@ -42,7 +42,10 @@
   }
 
   .info{
-    @include font-set(2, 1.2em, $secondaryColor, bold);
+    @include font-set(2, 1em, $secondaryColor, bold);
     padding-top: 5px;
+    @include mq('medium-screen','min'){
+      font-size: 1.2em;
+    }
   }
 }
