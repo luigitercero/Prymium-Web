@@ -114,7 +114,7 @@ const SubMenu = ({ close }) => (
 const HambuergerMenu = ({ children, open, onClick, keyOpen }) => (
   <div className="container-hamburger">
     <a href={keyOpen} className="hamburger" onClick={onClick}>
-      <i className="icon hamburger-icon icon--check" />
+      <span className="icon hamburger-icon"><img src="/images/icons/bars-solid.webp" alt="b" /></span>
     </a>
 
 

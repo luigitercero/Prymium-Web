@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
@@ -31,10 +32,19 @@ const Home = () => {
       />
       <section className="products-container">
         <Gallery title="Galería" url={GALLERY_URL} />
+        <span className="home-link">
+          <Link href="/tienda/lavatrastos">Lavatrastos</Link>
+        </span>
         <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' />
+        <span className="home-link">
+          <Link href="/tienda/accesorios">Accesorios</Link>
+        </span>
       </section>
       <section className="bidetframe-container">
         <BidetFrame itemsArray={bidets} />
+        <span className="home-link">
+          <Link href="/tienda/bidet">Bidet</Link>
+        </span>
       </section>
     </div>
   );

@@ -173,7 +173,7 @@ const Gallery = ({ title, url }) => {
   },[])
   
   return (
-    <div className="image-gallery">
+    <div className="image-gallery" id="galeria">
       <SubTitle>{title}</SubTitle>
       <div className="gallery-container" ref={galleryContainer} onScroll={scrollControl} onTouchEnd={touchOut} onTouchStart={touchIn} aria-live="polite">
         <div className="gallery" ref={gallery}>

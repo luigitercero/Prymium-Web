@@ -12,6 +12,10 @@
   grid-template-rows: 1fr auto auto;
 }
 
+.map_container{
+  position: relative;
+}
+
 .map{
   height: 32vw;
   width: 100%;

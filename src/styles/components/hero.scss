@@ -28,9 +28,42 @@
     z-index: 1;
   }
 
-  a, h1, span{
+  .arrows{
     position: absolute;
-    z-index: 1;
+    bottom: 0;
+    left: 3vw;
+    margin: auto;
+    width: 24px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+
+    @include mq('large-screen', 'min'){
+      right: 3vw;
+    }
+  }
+
+  .arrow{
+    filter: invert(1);
+    width: 24px;
+    height: 24px;
+    transform: rotate(-90deg);
+    &:nth-child(1){
+      animation: fadeIn 1500ms linear 100ms infinite;
+    }
+
+    &:nth-child(2){
+      animation: fadeIn 1500ms linear 200ms infinite;
+    }
+
+    &:nth-child(3){
+      animation: fadeIn 1500ms linear 300ms infinite;
+    }
+  }
+
+  .link a, h1, span{
+    position: absolute;
+    z-index: 3;
     text-align: right;
     right: 14vw;
   }
@@ -53,7 +86,7 @@
     @include hero-item(4.5em, 0.2em);
   }
 
-  a{
+  .link a{
     text-decoration: none;
     @include font-set(1, 2em, $primaryColor);
     @include hero-item(1.5em);
@@ -80,7 +113,7 @@
     height: 520px;
     // @include hero-background('/images/backgrounds/hero-730w.webp');
     
-    a, h1, span{
+    .link a, h1, span{
       right: 10vw;
     }
 
@@ -89,7 +122,7 @@
       font-size: 2.8em;
     }
   
-    span, a{
+    span, .link a{
       font-size: 1.5em;
     }
   }
@@ -101,7 +134,7 @@
       width: 100%;
     }
 
-    a, h1, span{
+    .link a, h1, span{
       right: 3vw;
     }
     h1{
@@ -109,8 +142,21 @@
       font-size: 1.8em;
     }
 
-    span, a{
+    span, .link a{
       font-size: 1.1em;
     }
+  }
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
   }
 }
