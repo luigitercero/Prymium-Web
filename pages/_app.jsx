@@ -10,7 +10,6 @@ import '../src/styles/components/animated-gallery.scss';
 import '../src/styles/components/bidet.scss';
 import '../src/styles/components/cardProduct.scss';
 import '../src/styles/components/contacts-list.scss';
-import '../src/styles/components/contact-map.scss';
 import '../src/styles/components/contact-form.scss';
 import '../src/styles/components/footer.scss';
 import '../src/styles/components/gallery.scss';

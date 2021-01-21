@@ -30,30 +30,15 @@ $icon-sm: 16px;
 .icon {
     display: inline-block;
     background-repeat: no-repeat;
-    filter: brightness(0) invert(1);
-
-}@mixin icon-sm {
     width: $icon-sm;
     height: $icon-sm;
-   
-}.instagram{
-    @include icon-sm;
-    background-image: url(../../img/instagram-brands.svg);
-}.facebook {
-    @include icon-sm;
-    background-image: url(../../img/facebook-brands.svg);
-}.youtube {
-    @include icon-sm;
-    background-image: url(../../img/youtube-brands.svg);
-}.hamburger-icon{
-  @include icon-sm;
-    background-image: url(../../img/bars-solid.svg);
-    background-position: center;
-    filter: brightness(0) invert(0.3);
-}
-.icon classes.icon--check {
-    background-position: 0 0;
-}.icon--settings {
-    background-position: -16px 0;
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
 }
 
+.hamburger-icon{
+  margin-top: 8px;
+}

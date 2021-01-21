@@ -10,18 +10,24 @@ const Hero = ({ title, image, subtitle, linktext, url}) => {
       <div className="image">
         <Image 
           src={image}
-          priority="true"
-          // quality={75}
+          priority
           objectFit="cover"
-          objectPosition="bottom center"
           layout="fill"
+          objectPosition="bottom"
         />        
       </div>
       <h1 id="line-one">{title}</h1>
       <span id="line-two">{subtitle}</span>
-      <Link href={url}>
-        {linktext}
-      </Link>
+      <div className="link">
+        <Link href={url}>
+          {linktext}
+        </Link>
+      </div>
+      <a href="#galeria" className="arrows">
+        <img className="arrow" src="/images/icons/left-arrow.png" alt="arrow" />
+        <img className="arrow" src="/images/icons/left-arrow.png" alt="arrow" />
+        <img className="arrow" src="/images/icons/left-arrow.png" alt="arrow" />
+      </a>
     </div>
   );
 };

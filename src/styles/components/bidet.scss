@@ -101,7 +101,7 @@ $max-items: 3;
       display: none;
       width: unset;
       right: 0;
-      background: linear-gradient(to bottom, transparent, transparent, transparent, transparent, #ffff, #ffff);;
+      background: linear-gradient(to bottom, transparent, transparent, #ffff);;
     }
   }
 }
@@ -126,4 +126,4 @@ $max-items: 3;
   }
 }
 
-@include ag('bidet', $max-items)
+@include ag('bidet', $max-items);

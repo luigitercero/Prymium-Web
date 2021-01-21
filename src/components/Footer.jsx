@@ -21,13 +21,13 @@ const Footer = () => {
 
         <p>Redes Sociales</p>
         <a href="https://www.facebook.com/lavatrastosprymium" className="icon-container">
-          <i className="icon facebook icon--check" />
+          <span className="icon"><img src="/images/icons/facebook-brands.webp" loading="lazy" alt="f" /></span>
         </a>
         <a href="https://www.instagram.com/lavatrastosprymium/" className="icon-container">
-          <i className="icon instagram icon--check" />
+          <span className="icon"><img src="/images/icons/instagram-brands.webp" loading="lazy" alt="i" /></span>
         </a>
         <a href="https://www.youtube.com/channel/UCoseb5M5memG5PF67kF4slQ/featured" className="icon-container">
-          <i className="icon youtube icon--check" />
+          <span className="icon"><img src="/images/icons/youtube-brands.webp" loading="lazy" alt="y" /></span>
         </a>
         
       </section>
