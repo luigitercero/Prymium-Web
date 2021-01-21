@@ -32,6 +32,12 @@ export const getProducts = {
 export const getQuestion = {
   url: `${url}wp-json/pg/v1/preguntas/`
 }
+export const getSlidersSinks= {
+  url: `${url}wp-json/pg/v1/sliders/fregaderos`
+}
+export const getSlidersBidet= {
+  url: `${url}wp-json/pg/v1/sliders/bidets`
+}
 
 export const singleProductUrl = (product) => {
   return `${url}wp-json/pg/v1/product/${product}`

@@ -7,9 +7,8 @@ import BidetFrame from '../components/BidetFrame';
 import bidets from './bidetitems.json';
 import YoutubeVideo from '../components/YoutubeVideo'
 
+const Home = ({sliderSink,sliderBidet}) => {
 
-const Home = () => {
-  const GALLERY_URL = 'https://lavatrastosprymium.com/wp-json/pg/v1/sliders/'
   // const imagesObject = {
   //   queryType: 'max',
   //   images:[
@@ -29,7 +28,7 @@ const Home = () => {
         image="/images/backgrounds/hero-image.webp"
       />
       <section className="products-container">
-        <Gallery title="Galería" url={GALLERY_URL} />
+        <Gallery title="Galería" sliderSink={sliderSink} />
         <span className="home-link">
           <Link href="/tienda/lavatrastos">Lavatrastos</Link>
         </span>
@@ -39,7 +38,7 @@ const Home = () => {
         </span>
       </section>
       <section className="bidetframe-container">
-        <BidetFrame itemsArray={bidets} />
+        <BidetFrame itemsArray={bidets} sliderBidet={sliderBidet} />
         <span className="home-link">
           <Link href="/tienda/bidet">Bidet</Link>
         </span>

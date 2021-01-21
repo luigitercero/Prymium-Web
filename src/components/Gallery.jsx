@@ -19,7 +19,7 @@ const GalleryItem = ({ element }) => {
   );
 }
 
-const Gallery = ({ title, url }) => {
+const Gallery = ({ title, url,sliderSink }) => {
   const error = 5;
   const gallery = useRef();
   const galleryContainer = useRef();
@@ -167,9 +167,9 @@ const Gallery = ({ title, url }) => {
   })
 
   useEffect(async () => {
-    const response = await fetch(url);
-    const images = await response.json();
-    setImages(images);
+  
+  
+    setImages(sliderSink);
   },[])
   
   return (
