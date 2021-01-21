@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
@@ -45,21 +43,19 @@ const Item = ({ item }) => {
 
 }
 
-const BaseAPIPage = ({ title, subtitle, url }) => {
+const BaseAPIPage = ({ title, subtitle, question }) => {
 
   const [data, setData] = useState([]);
 
   useEffect(() =>{
-    fetch(url)      
-    .then(response => response.json())
-    .then(info => { setData(info) })
+    setData(question)
   }, []);
 
   return(
     <div className={styles.container}>
       <SubHero>
-        <Title className={styles.item} id="title">{title}</Title>
-        <span className={styles.item} id="subtitle">{subtitle}</span>
+        <Title id="title">{title}</Title>
+        <span id="subtitle">{subtitle}</span>
       </SubHero>
       <div className={styles.content}>
         <section className={styles.items_container}>

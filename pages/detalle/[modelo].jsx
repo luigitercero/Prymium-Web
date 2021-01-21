@@ -5,17 +5,16 @@ import Detalle from '../../src/containers/Detalle';
 import {  singleProductUrl} from '../../src/routes/Config';
 
 export const getServerSideProps = async ({params}) => {
-  
   // eslint-disable-next-line no-undef
   const response = await fetch(singleProductUrl(params.modelo))
   const singleProduct = await response.json()
-
   return {
     props: {
       singleProduct
     }
   }
 }
+
 const Principal = ({singleProduct}) => {
   const title = singleProduct[0]?.title || "Producto de fregadero "
   const content = singleProduct[0]?.content || "Producto de fregadero "
