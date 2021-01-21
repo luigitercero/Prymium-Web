@@ -1,18 +1,18 @@
-import React, { useContext, useEffect,useState } from 'react';
+import React, {useEffect,useState } from 'react';
 import { useRouter } from 'next/router'
-import CardProduct from './CardProduct';
-import ContextApp from '../context/AppContext';
-import { Title } from "./Title";
-import useFilterProducts from '../hooks/useFilterProducts'
+import CardProduct from '../CardProduct';
 
-const ListOfProduct = ({filter}) => {
+import { Title } from "../Title";
+import useFilterProducts from '../../hooks/useFilterProducts'
+import Styles from './styles.module.scss'
+
+const ListOfProduct = ({filter,products}) => {
   const router = useRouter()
-  const { products  } = useContext(ContextApp);
+
   const { group } = router.query
   const [ListFilter, setListFilter] = useState(products);
 
   useEffect(() => {
-    
     setListFilter(useFilterProducts(group||filter,products))
   }, [products, group]);
 
@@ -26,8 +26,8 @@ const ListOfProduct = ({filter}) => {
   return (
     <div>
       
-      <div className="list-item-container">
-        <Title className="title-list-of-porudct">{group||filter}</Title>
+      <div className={Styles.list}>
+        <Title className={Styles.title}>{group||filter}</Title>
         {getList()}
       </div>
     </div>

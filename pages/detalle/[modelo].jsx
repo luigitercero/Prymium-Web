@@ -1,20 +1,25 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import Head from '@hooks/useSEO';
-import ContextApp from '@context/AppContext';
-import { useRouter } from 'next/router';
-import Detalle from '../../src/containers/Detalle';
 
-const Principal = () => {
-  const { singleFilter, products, singleProduct } = useContext(ContextApp)
-  const router = useRouter();
-  const { modelo } = router.query
+import Detalle from '../../src/containers/Detalle';
+import {  singleProductUrl} from '../../src/routes/Config';
+
+export const getServerSideProps = async ({params}) => {
+  
+  // eslint-disable-next-line no-undef
+  const response = await fetch(singleProductUrl(params.modelo))
+  const singleProduct = await response.json()
+
+  return {
+    props: {
+      singleProduct
+    }
+  }
+}
+const Principal = ({singleProduct}) => {
   const title = singleProduct[0]?.title || "Producto de fregadero "
   const content = singleProduct[0]?.content || "Producto de fregadero "
   const imagen =singleProduct[0]?.imagen || "Producto de fregadero "
-  useEffect(() => {
-    singleFilter(modelo);
-
-  }, [products]);
 
   return (
 
@@ -24,7 +29,7 @@ const Principal = () => {
       img={imagen}
       url="https://lavatrastosprymium.com/"
     >
-      <Detalle />
+      <Detalle singleProduct={singleProduct} />
     </Head>
   )
 

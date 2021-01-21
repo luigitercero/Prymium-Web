@@ -27,8 +27,8 @@ export default {
 }
 export const url ="https://lavatrastosprymium.com/";
 export const getProducts = {
-  url:`${url}/wp-json/pg/v1/novedades/100`
+  url:`${url}wp-json/pg/v1/novedades/100`
 }
 export const singleProductUrl = (product) => {
-  return `${url}/wp-json/pg/v1/product/${product}`
+  return `${url}wp-json/pg/v1/product/${product}`
 }

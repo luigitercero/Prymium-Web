@@ -3,11 +3,23 @@ import React from 'react';
 import Head from '@hooks/useSEO';
 import { useRouter } from 'next/router';
 import Tienda from '../../src/containers/Tienda';
+import { getProducts } from '../../src/routes/Config';
 
+export const getServerSideProps = async () => {
+  // eslint-disable-next-line no-undef
+  const response = await fetch(getProducts.url)
+  const products = await response.json()
 
-const Principal = () => {
+  return {
+    props: {
+      products
+    }
+  }
+}
+const Principal = ({ products }) => {
   const router = useRouter()
-  const {group} = router.query
+  const { group } = router.query
+
   return (
     <Head
       title={`Prymium|${group}`}
@@ -15,10 +27,11 @@ const Principal = () => {
       img="https://lavatrastosprymium.com/wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg"
       url="https://lavatrastosprymium.com/"
     >
-      <Tienda />
+      <Tienda products={products} />
     </Head>
   );
 
 };
 
-export default Principal;
+export default Principal
+

@@ -1,6 +1,6 @@
-@import '../globals/mq.scss';
+@import '../../styles/globals/mq.scss';
 
-.list-item-container {
+.list{
   margin: 0 3vw;
   display: grid;
   justify-content: center;
@@ -22,7 +22,7 @@
     grid-template-columns:  100% ;
     gap: 15px; 
   } 
-  .title-list-of-porudct {
+  .title{
     grid-column-start: 1;
     grid-column-end: -1;
     

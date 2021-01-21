@@ -1,5 +1,6 @@
 import React from 'react';
 import { Title, Price, Pre } from "./Title";
+import ListOfProduct from "./ListOfProduct";
 
 const SingleProduct = ({ id, product }) => {
 
@@ -17,6 +18,8 @@ const SingleProduct = ({ id, product }) => {
           <Pre>{product.content}</Pre>
         </section>
       </div>
+
+      
     </section>
 
   )

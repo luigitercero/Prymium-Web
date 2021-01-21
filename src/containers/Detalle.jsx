@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
-import ContextApp from '../context/AppContext';
+import React from 'react';
 import SingleProduct from '../components/SingleProduct'
 
-const Detalle = () => {
-  const {  singleProduct } = useContext(ContextApp);
+const Detalle = ({singleProduct}) => {
+ 
 
   const ProductComponent = () => {
     return (
