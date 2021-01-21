@@ -6,7 +6,7 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
   return (
     <>
       <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <title>{title}</title>
         <meta name="title" content={title} />
         <meta name="description" content={description} />

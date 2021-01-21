@@ -1,5 +1,6 @@
-@import '../globals/settings.scss';
-
+@import '../../styles/globals/mq.scss';
+@import '../../styles/globals/fonts.scss';
+@import '../../styles/globals/colors.scss';
 %subtitle{
   @include font-set(3, 2em, $textColor, 400);
   padding: 80px 0 5px;

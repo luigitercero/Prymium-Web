@@ -20,7 +20,7 @@ import '../src/styles/components/hero.scss';
 import '../src/styles/components/listOfProduct.scss';
 import '../src/styles/components/singleProduct.scss';
 import '../src/styles/components/schedule.scss';
-import '../src/styles/components/title.scss';
+
 import '../src/styles/components/youtube-video.scss';
 import Layout from '../src/components/Layout';
 import AppContext from '../src/context/AppContext';
