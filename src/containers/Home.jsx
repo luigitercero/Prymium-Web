@@ -1,13 +1,12 @@
 
 import React from 'react';
-import dynamic from 'next/dynamic';
+
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
 import BidetFrame from '../components/BidetFrame';
 import bidets from './bidetitems.json';
+import YoutubeVideo from '../components/YoutubeVideo'
 
-
-const YoutubeVideo = dynamic(() => import('../components/YoutubeVideo'));
 
 const Home = () => {
   const GALLERY_URL = 'https://lavatrastosprymium.com/wp-json/pg/v1/sliders/'

@@ -58,8 +58,8 @@ const BaseAPIPage = ({ title, subtitle, url }) => {
   return(
     <div className={styles.container}>
       <SubHero>
-        <Title id="title">{title}</Title>
-        <span id="subtitle">{subtitle}</span>
+        <Title className={styles.item} id="title">{title}</Title>
+        <span className={styles.item} id="subtitle">{subtitle}</span>
       </SubHero>
       <div className={styles.content}>
         <section className={styles.items_container}>
