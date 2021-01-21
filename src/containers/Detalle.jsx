@@ -1,8 +1,10 @@
+
 import React from 'react';
+import ListOfProduct from '../components/ListOfProduct';
 import SingleProduct from '../components/SingleProduct'
 
-const Detalle = ({singleProduct}) => {
- 
+const Detalle = ({ singleProduct, listRelevant }) => {
+
 
   const ProductComponent = () => {
     return (
@@ -18,6 +20,8 @@ const Detalle = ({singleProduct}) => {
   return (
     <div>
       {ProductComponent()}
+
+      <ListOfProduct filter='relevante' products={listRelevant||[]} h1={false}  />
     </div>
   );
 };

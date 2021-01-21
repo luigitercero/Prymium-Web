@@ -38,7 +38,13 @@ export const getSlidersSinks= {
 export const getSlidersBidet= {
   url: `${url}wp-json/pg/v1/sliders/bidets`
 }
-
+/**
+ * relevante
+ * @param {relevante} product 
+ */
+export const getRecomended = (relevante) => {
+  return `${url}wp-json/pg/v1/per-category/${relevante}`
+}
 export const singleProductUrl = (product) => {
   return `${url}wp-json/pg/v1/product/${product}`
 }

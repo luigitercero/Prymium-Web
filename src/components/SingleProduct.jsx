@@ -1,8 +1,8 @@
 import React from 'react';
 import { Title, Price, Pre } from "./Title";
-import ListOfProduct from "./ListOfProduct";
 
-const SingleProduct = ({ id, product }) => {
+
+const SingleProduct = ({ id, product, }) => {
 
   return (
     <section className='container-single-product' key={id}>

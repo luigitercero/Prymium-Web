@@ -106,7 +106,7 @@ const SubMenu = ({ close }) => (
     <li id="lavatrastos" onClick={close} aria-hidden><Link href={`${_route.products.to}lavatrastos`}>Lavatrastos</Link></li>
     <li id="grifo" onClick={close} aria-hidden><Link href={`${_route.products.to}grifo`}>Grifos</Link></li>
     <li id="bidet" onClick={close} aria-hidden><Link href={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
-    <li id="all" onClick={close} aria-hidden><Link href={`${_route.products.to}all`}>Todos</Link></li>
+    <li id="all" onClick={close} aria-hidden><Link href={`${_route.products.to}`}>Todos</Link></li>
   </ul>
 
   )

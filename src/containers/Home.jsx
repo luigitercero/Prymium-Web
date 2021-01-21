@@ -6,6 +6,7 @@ import Gallery from '../components/Gallery';
 import BidetFrame from '../components/BidetFrame';
 import bidets from './bidetitems.json';
 import YoutubeVideo from '../components/YoutubeVideo'
+import HomeLink from '../../src/components/HomeLink'
 
 const Home = ({sliderSink,sliderBidet}) => {
 
@@ -24,24 +25,25 @@ const Home = ({sliderSink,sliderBidet}) => {
         title="Lavatrastos Prymium"
         subtitle="Más de 25,000 unidades vendidas"
         linktext="QUIERO VER MÁS!>>"
-        url="/tienda/all"
+        url="/tienda/"
         image="/images/backgrounds/hero-image.webp"
       />
       <section className="products-container">
         <Gallery title="Galería" sliderSink={sliderSink} />
+        <HomeLink url="/tienda/lavatrastos" title="Lavatrastos" />
         <span className="home-link">
           <Link href="/tienda/lavatrastos">Lavatrastos</Link>
         </span>
         <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' />
+        <HomeLink url="/tienda/accesorios" title="Accesorios" />
         <span className="home-link">
           <Link href="/tienda/accesorios">Accesorios</Link>
         </span>
       </section>
       <section className="bidetframe-container">
         <BidetFrame itemsArray={bidets} sliderBidet={sliderBidet} />
-        <span className="home-link">
-          <Link href="/tienda/bidet">Bidet</Link>
-        </span>
+        <HomeLink url="/tienda/bidet" title="Bidet" />
+       
       </section>
     </div>
   );

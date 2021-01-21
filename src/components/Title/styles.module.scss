@@ -42,7 +42,15 @@
 }
 
 .subtitle{
-  @extend %subtitle;
+  @include font-set(3, 3.2rem, $textColor, 400); 
+  margin: 0;
+  text-transform: capitalize;
+  padding-top: 48px;
+  padding-bottom: 5px;
+
+  @include mq('small-screen', 'max'){
+    font-size: 2.5rem;
+  }
 }
 
 .subtitle2{

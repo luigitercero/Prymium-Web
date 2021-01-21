@@ -33,7 +33,7 @@ function create_post_type() {
 			'has_archive'     => true,
 			'supports' => array( 'title', 'editor','thumbnail' ),
 			'menu_icon' => '',
-			'taxonomies' => array('category'),
+			'taxonomies' => array('category','relevancia'),
 		)
   );
 
@@ -95,6 +95,7 @@ function create_post_type() {
     );
   
 	add_post_type_support( 'producto', 'custom-fields' );
+	add_post_type_support( 'slides', 'custom-fields' );
 };
 add_action( 'init', 'create_post_type' );
 
@@ -122,7 +123,7 @@ add_action('rest_api_init','getCategory' );
 function getCategory(){
    register_rest_route( 
       'pg/v1',
-      'per-category/(?P<taxonomy>\w+)/?(?P<sus>\d+)?',
+      'per-category/(?P<taxonomy>\w+)',
       array(
          'methods'=>'GET',
          'callback'=>'perCategory'
@@ -141,11 +142,6 @@ function perCategory($data) {
             'taxonomy' => 'category',
             'field' => 'slug',
             'terms' => $data['taxonomy']
-         ),
-         array(
-            'taxonomy' => 'category',
-            'field' => 'slug',
-            'terms' => $data['sus']
          )
       )
    );
@@ -156,16 +152,14 @@ function perCategory($data) {
       while ($productos->have_posts()) {
          $productos->the_post();
          $return[] = array (
-            'imagen' => get_the_post_thumbnail_url(get_the_id(),'large'),
-            'link' => get_the_permalink(),
-            'titulo'=> get_the_title(),
-            'content' => get_the_content(),
-            'accesorio' => get_post_meta(get_the_id(), 'Accesorio', true),
-            'datos_tecnicos' => get_post_meta(get_the_id(), 'datos_tecnicos', false),
-            'medidas' => get_post_meta(get_the_id(), 'datos_tecnicos', true),
-            'patente' => get_post_meta(get_the_id(), 'patente', true),
-            'precio' => get_post_meta(get_the_id(), 'precio', true),
-            'category' => get_the_terms(get_the_id(),'category')
+          'id' =>get_the_id(),
+          'imagen' => get_the_post_thumbnail_url(get_the_id(),'medium'),
+        
+          'link' =>  get_post_field( 'post_name', get_post() ),
+          'title'=> get_the_title(),
+          'accesorio' => get_post_meta(get_the_id(), 'Accesorio', true),
+          'price' => get_post_meta(get_the_id(), 'precio', true),
+          'category' => get_the_terms(get_the_id(),'category'),
          );
       }
    }
@@ -178,7 +172,7 @@ add_action('rest_api_init','sliderAPI' );
 function sliderAPI(){
    register_rest_route( 
       'pg/v1',
-      'sliders/',
+      'sliders/(?P<taxonomy>\w+)',
       array(
          'methods'=>'GET',
          'callback'=>'slider'
@@ -186,12 +180,19 @@ function sliderAPI(){
    );
 }
 
-function slider(){
+function slider($data){
     $args = array (
        'post_type' => 'slides',
        'posts_per_page'=> -1,
        'order' => 'ASC',
-       'orderby' => 'title'
+       'orderby' => 'title',
+		    'tax_query'=>array(
+         array(
+            'taxonomy' => 'category',
+            'field' => 'slug',
+            'terms' => $data['taxonomy']
+         ),
+		)
     );
     $productos =new WP_Query($args);
     if ($productos->have_posts()) {
@@ -200,12 +201,14 @@ function slider(){
           $productos->the_post();
           $return[] = array (
 			  'id' => get_the_id(),
-             'imagen' => get_the_post_thumbnail_url(get_the_id(),'large'),
+        'imagen_large' => get_the_post_thumbnail_url(get_the_id(),'large'),
+			  'imagen_mini' => get_the_post_thumbnail_url(get_the_id(),'thumbnail'),
+			  'imagen_medium' => get_the_post_thumbnail_url(get_the_id(),'medium'),
 			  'alt' =>  "fotografia de" + get_the_title(),
 			  'name' =>get_the_title(),
-             'link' => get_the_permalink(),
-             'titulo'=> get_the_title(),
-             'description' => get_the_content(),
+        'link' => get_post_meta(get_the_id(), 'link_to_product', true),
+        'titulo'=> get_the_title(),
+        'description' => get_the_content(),
             
           );
        }
@@ -245,11 +248,11 @@ function pedidoNovedades($data){
              //'link' => str_replace(home_url(), '', get_permalink()),
              'link' =>  get_post_field( 'post_name', get_post() ),
              'title'=> get_the_title(),
-             'content' => get_the_content(),
+             //'content' => get_the_content(),
              'accesorio' => get_post_meta(get_the_id(), 'Accesorio', true),
-             'datos_tecnicos' => get_post_meta(get_the_id(), 'datos_tecnicos', false),
-             'medidas' => get_post_meta(get_the_id(), 'medidas', true),
-             'patente' => get_post_meta(get_the_id(), 'patente', true),
+             //'datos_tecnicos' => get_post_meta(get_the_id(), 'datos_tecnicos', false),
+             //'medidas' => get_post_meta(get_the_id(), 'medidas', true),
+             //'patente' => get_post_meta(get_the_id(), 'patente', true),
              'price' => get_post_meta(get_the_id(), 'precio', true),
              'category' => get_the_terms(get_the_id(),'category'),
 			 
@@ -288,14 +291,14 @@ function singleProduct($data){
           $return[] = array (
 			  'id' =>get_the_id(),
              'imagen' => get_the_post_thumbnail_url(get_the_id(),'medium'),
-             //'link' => str_replace(home_url(), '', get_permalink()),
+             'link' => str_replace(home_url(), '', get_permalink()),
              'link' =>  get_post_field( 'post_name', get_post() ),
              'title'=> get_the_title(),
-             'content' => get_the_content(),
+              'content' => get_the_content(),
              'accesorio' => get_post_meta(get_the_id(), 'Accesorio', true),
-             'datos_tecnicos' => get_post_meta(get_the_id(), 'datos_tecnicos', false),
-             'medidas' => get_post_meta(get_the_id(), 'medidas', true),
-             'patente' => get_post_meta(get_the_id(), 'patente', true),
+              'datos_tecnicos' => get_post_meta(get_the_id(), 'datos_tecnicos', false),
+              'medidas' => get_post_meta(get_the_id(), 'medidas', true),
+              'patente' => get_post_meta(get_the_id(), 'patente', true),
              'price' => get_post_meta(get_the_id(), 'precio', true),
              'category' => get_the_terms(get_the_id(),'category'),
 			 
@@ -349,22 +352,22 @@ add_action('rest_api_init','singlePreguntaApi' );
 function singlePreguntaApi(){
    register_rest_route( 
       'pg/v1',
-      'preguntas/(?P<id>\d+))',
+      'preguntas/(?P<id>\d+)',
       array(
          'methods'=>'GET',
-         'callback'=>'singleProduct'
+         'callback'=>'singlePregunta'
       )
    );
 }
 
-function singleProduct($data){
+function singlePregunta($data){
     $args = array (
-       'post_type' => 'producto',
+       'post_type' => 'preguntas',
        'posts_per_page'=> -1,
        'order' => 'DESC',
        'orderby' => 'post_date',
-		   'paged' => 1,
-		   'p'=>$data['id']
+	   'paged' => 1,
+	   'p'=>$data['id']
     );
     $productos =new WP_Query($args);
     if ($productos->have_posts()) {

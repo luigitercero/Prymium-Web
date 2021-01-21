@@ -1,19 +1,19 @@
-import React, {useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 import CardProduct from '../CardProduct';
 
-import { Title } from "../Title";
+import { Title, SubTitle } from "../Title";
 import useFilterProducts from '../../hooks/useFilterProducts'
 import Styles from './styles.module.scss'
 
-const ListOfProduct = ({filter,products}) => {
+const ListOfProduct = ({ filter, products, h1 = true }) => {
   const router = useRouter()
 
   const { group } = router.query
   const [ListFilter, setListFilter] = useState(products);
 
   useEffect(() => {
-    setListFilter(useFilterProducts(group||filter,products))
+    setListFilter(useFilterProducts(group || filter, products))
   }, [products, group]);
 
   const getList = () => {
@@ -25,9 +25,11 @@ const ListOfProduct = ({filter,products}) => {
 
   return (
     <div>
-      
+
       <div className={Styles.list}>
-        <Title className={Styles.title}>{group||filter}</Title>
+        {h1 ? <Title className={Styles.title}>{group || filter}</Title>
+          : <SubTitle className={Styles.title}>{group || filter}</SubTitle>}
+
         {getList()}
       </div>
     </div>

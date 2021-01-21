@@ -9,9 +9,9 @@ export const Title = ({ children, className, id }) => {
   );
 };
 
-export const SubTitle = ({ children, className }) => {
+export const SubTitle = ({ children, className,id }) => {
   return (
-    <h2 className={`${styles.subtitle} ${className||''}`}>{children}</h2>
+    <h2 className={`${styles.subtitle} ${className||''}`} id={id}>{children}</h2>
   );
 };
 
