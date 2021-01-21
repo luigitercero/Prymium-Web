@@ -2,11 +2,7 @@
 
 .home{
   h2{
-    font-size: 2em;
     margin: 0 $margin-left-right;
-    font-family: "Lora", sans-serif;
-    padding: 80px 0 10px;
-    color: $textColor;
     @include mq("small-screen", 'max'){
       font-size: 1.55em;
     }

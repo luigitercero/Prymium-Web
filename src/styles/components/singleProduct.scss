@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: minmax(auto,1024px);
   justify-content: center;
+  margin: 0 3vw;
   min-height: 100vh;
   button {
     border-radius: 20px;
@@ -67,6 +68,7 @@
   }
   .tecnicos-single-product {
     grid-area: tecnicos;
+    line-height: 1.5em;
     @include mq ("medium-screen",'max'){
       align-self: center;
     
@@ -83,6 +85,8 @@
     
   }
   .price-single-product{
+    font-size: 1.5em;
+    font-weight: bold;
     grid-area: price;
     align-self: end;
   }

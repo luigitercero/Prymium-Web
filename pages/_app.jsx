@@ -7,7 +7,6 @@ import '../src/styles/container/layout.scss';
 import '../src/styles/container/home.scss';
 import '../src/styles/container/contact.scss';
 import '../src/styles/components/animated-gallery.scss';
-import '../src/styles/components/app.scss';
 import '../src/styles/components/bidet.scss';
 import '../src/styles/components/cardProduct.scss';
 import '../src/styles/components/contacts-list.scss';

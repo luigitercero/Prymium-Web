@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { Logo, HamburguerMenu } from '../initiaState';
+import { Logo } from '../initiaState';
 import _route from '../routes/Config';
 
 const Header = () => {
@@ -29,7 +29,9 @@ const Header = () => {
 
 
       <nav className="direction ">
-        <Image src="/img.png" alt={Logo.alt} width="75" height="75" />
+        <div className="image-container">
+          <Image src="/images/logo/logotipo-Prymium.webp" alt={Logo.alt} width="227" height="67" layout='responsive' priority />
+        </div>
         <div className="menu-container">
           <HambuergerMenu open={open} keyOpen={keyOpen} onClick={onClick}>
             <NavigationList />
@@ -110,9 +112,9 @@ const SubMenu = ({ close }) => (
   )
 
 const HambuergerMenu = ({ children, open, onClick, keyOpen }) => (
-  <div className="contariner-hamburger">
-    <a href={keyOpen} className="hambuerguer" onClick={onClick}>
-      <i className="icon hamburguer icon--check" />
+  <div className="container-hamburger">
+    <a href={keyOpen} className="hamburger" onClick={onClick}>
+      <i className="icon hamburger-icon icon--check" />
     </a>
 
 

@@ -86,10 +86,9 @@ $max-items: 3;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2em;
+      @include font-set(1, 2em);
       padding: 0 1em;
       box-sizing: border-box;
-      font-family: 'Lato-Regular';
       text-align: center;
     }
 
@@ -112,7 +111,7 @@ $max-items: 3;
   grid-template-columns: 1fr 1fr;
   margin: 32px $margin-left-right 0;
   column-gap: $margin-left-right;
-  font-family: 'Lato-Regular';
+  @include font-set(1);
 
   @include mq('small-screen','max'){
     grid-template-columns: 1fr;

@@ -1,12 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
 import { Title3ForCard } from './Title'
 
 const CardProduct = ({ product }) => {
-  const router = useRouter()
   const { imagen, alt, title, link } = product;
-  const { group } = router.query
+  
   return (
     <Link href={`/detalle/${link}`}>
       <div className='card-container'>
@@ -32,7 +30,7 @@ const Image = ({ img, alt }) => {
 
 }
 
-const Button = ({ link }) => {
+const Button = () => {
   return (
 
     <div className="button">Ver detalles</div>

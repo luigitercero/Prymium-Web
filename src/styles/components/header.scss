@@ -9,27 +9,38 @@
     } 
   }
   .direction{
-    background-color: $primaryColor;
+    padding: 5px $margin-left-right;
+    border-bottom: 5px solid $primaryColor;
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
     align-content: center;
     align-items: center;
+
+    .image-container{
+      position: relative;
+      height: 52px;
+      width: 174px;
+
+      @include mq('medium-screen', 'min'){
+        height: 67px;
+        width: 227px;
+      }
+    }
     
     .menu-container {
       position: relative;
     }
-    .contariner-hamburger {
+    .container-hamburger {
+
       @include mq ("medium-screen",'min'){
         display: none;
         
       } 
-      .hambuerguer {
-        width: 1em;
+      .hamburger {
+
         @include mq ("medium-screen",'min'){
           display: none;
           
@@ -102,7 +113,7 @@
           flex-direction: column;
           justify-content: space-between;
           background-color: $primaryColor;
-          @include font-set(1, 1em, $enfasisColor, 100); 
+          @include font-set(1, 1em, $enfasisColor, 400); 
           opacity: 1;
           animation: .5s ease 1 pulse;
           animation-fill-mode: forwards;
@@ -131,7 +142,7 @@
             }
             @include mq ("medium-screen",'max'){
               text-align: initial;
-              @include font-set(1, 1em, $textColor, 100);
+              @include font-set(1, 1em, $textColor, 400);
                 &:hover{
                   color: $enfasisColorHover;
                 }
@@ -147,16 +158,21 @@
   
     a{
       text-decoration: none;
-      color: $enfasisColor;
       padding: .5em;
-      @include font-set(1, 1em, $textColor, 100);
-      &:hover{
-        color: $enfasisColorHover;
+      @include font-set(1, 1em, $secondaryColor, 400);
+      &:hover, &:focus{
+        color: $primaryColor;
       }
+
       @include mq ("medium-screen",'max'){
         padding-left: 0.5em;
         padding-right: 0.5em;
+
+        &:hover, &:focus{
+          color: $enfasisColorHover;
+        }
       } 
+
       div {
         max-width: 100%;
       }

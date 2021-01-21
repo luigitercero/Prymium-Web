@@ -1,28 +1,31 @@
 /* eslint-disable radix */
 /* eslint-disable no-console */
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { SubTitle } from './Title';
 
 
 const GalleryItem = ({ element }) => {
-  const { image, alt, name, description } = element
+  const { imagen_medium, alt, name, description, link } = element
   return (
     <>
-      <img src={image} alt={alt} loading="lazy" />
+      <img src={imagen_medium} alt={alt} decoding="async" loading="lazy" />
       <div className="image-description">
         <h3>{name}</h3>
         <p>{description}</p>
+        <Link href={link}>Ver detalles</Link>
       </div>
     </>
   );
 }
 
-const Gallery = ({ title, imageArray }) => {
+const Gallery = ({ title, url }) => {
   const error = 5;
   const gallery = useRef();
   const galleryContainer = useRef();
   const leftArrow = useRef();
   const rightArrow = useRef();
+  const [imageArray, setImages] = useState([])
   let allowScroll = false;
   let position = 0;
   let currentScrollPosition = 0;
@@ -158,10 +161,16 @@ const Gallery = ({ title, imageArray }) => {
     translatePosition();
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     window.addEventListener('resize',() => {setTimeout(setVariables, 10)} )
     setVariables();
   })
+
+  useEffect(async () => {
+    const response = await fetch(url);
+    const images = await response.json();
+    setImages(images);
+  },[])
   
   return (
     <div className="image-gallery">
@@ -181,7 +190,7 @@ const Gallery = ({ title, imageArray }) => {
         <img src="/images/icons/right-arrow.png" alt="right-arrow" />
       </span>
       <span aria-hidden="true" className="arrow left-arrow" ref={leftArrow} onClick={moveLeft}>
-        <img src="/images/icons/left-arrow.png" alt="left-arrow" />
+        <img src="/images/icons/right-arrow.png" alt="left-arrow" />
       </span>
     </div>
   );

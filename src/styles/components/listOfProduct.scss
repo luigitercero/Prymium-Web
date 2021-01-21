@@ -1,6 +1,7 @@
 @import '../globals/mq.scss';
 
 .list-item-container {
+  margin: 0 3vw;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(4,minmax(150px,210px)) ;

@@ -32,7 +32,7 @@
   [id=subtitle]{
     @include abs(270px, false, false, $margin-left-right);
     @extend %children-extend;
-    @include font-set(1, 2em, $textColor, 100);
+    @include font-set(1, 2em, $textColor, 400);
     @include mq('small-screen','max'){
       font-size: 1.5em;
       top: 190px;
