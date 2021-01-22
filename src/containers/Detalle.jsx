@@ -2,6 +2,7 @@
 import React from 'react';
 import ListOfProduct from '../components/ListOfProduct';
 import SingleProduct from '../components/SingleProduct'
+import ArrayNavigationButton from '../components/ArrayNavigationButton';
 
 const Detalle = ({ singleProduct, listRelevant }) => {
 
@@ -20,8 +21,8 @@ const Detalle = ({ singleProduct, listRelevant }) => {
   return (
     <div>
       {ProductComponent()}
-
-      <ListOfProduct filter='relevante' products={listRelevant||[]} h1={false}  />
+      <ArrayNavigationButton />
+      <ListOfProduct filter='relevante' products={listRelevant||[]} h1={false} title="Lo más vendido" />
     </div>
   );
 };

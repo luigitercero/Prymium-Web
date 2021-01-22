@@ -1,12 +1,11 @@
 
 import React from 'react';
-import Link from 'next/link';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
 import BidetFrame from '../components/BidetFrame';
 import bidets from './bidetitems.json';
-import YoutubeVideo from '../components/YoutubeVideo'
-import HomeLink from '../../src/components/HomeLink'
+import YoutubeVideo from '../components/YoutubeVideo';
+import HomeLink from "../components/HomeLink";
 
 const Home = ({sliderSink,sliderBidet}) => {
 
@@ -31,14 +30,8 @@ const Home = ({sliderSink,sliderBidet}) => {
       <section className="products-container">
         <Gallery title="Galería" sliderSink={sliderSink} />
         <HomeLink url="/tienda/lavatrastos" title="Lavatrastos" />
-        <span className="home-link">
-          <Link href="/tienda/lavatrastos">Lavatrastos</Link>
-        </span>
         <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' />
         <HomeLink url="/tienda/accesorios" title="Accesorios" />
-        <span className="home-link">
-          <Link href="/tienda/accesorios">Accesorios</Link>
-        </span>
       </section>
       <section className="bidetframe-container">
         <BidetFrame itemsArray={bidets} sliderBidet={sliderBidet} />

@@ -8,7 +8,14 @@ const HomeLink = ({url,title}) => {
       <Link href={url}>{title}</Link>
     </span>
   )
+}
 
+export const HomeLinkSimple = ({url,title}) => {
+  return (
+    <span className={styles.link_simple}>
+      <Link href={url}>{title}</Link>
+    </span>
+  )
 }
 
 export default HomeLink;

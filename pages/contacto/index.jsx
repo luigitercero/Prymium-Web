@@ -7,8 +7,8 @@ const Principal = () => {
 
   return (
     <Head
-      title="Lavatrastos|Prymium"
-      description="Encuntra accesorios lavatrastos, fregaderos o bidets de grandes fosas y deacero inoxidable para tu nueva cocina"
+      title="Lavatrastos| Bidet | Grifos | Prymium"
+      description="Ve a la tienda del los lavatrastos más lujoso de Guatemala , encuntra la dirección numero de teléfono ubicados en ciudad San Cristobal zona 8 de Mixco"
       img="/hero-querysize-480.webp"
     >
       <Detalle />

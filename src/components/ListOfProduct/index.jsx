@@ -6,7 +6,7 @@ import { Title, SubTitle } from "../Title";
 import useFilterProducts from '../../hooks/useFilterProducts'
 import Styles from './styles.module.scss'
 
-const ListOfProduct = ({ filter, products, h1 = true }) => {
+const ListOfProduct = ({ filter, products, h1 = true, title }) => {
   const router = useRouter()
 
   const { group } = router.query
@@ -27,8 +27,8 @@ const ListOfProduct = ({ filter, products, h1 = true }) => {
     <div>
 
       <div className={Styles.list}>
-        {h1 ? <Title className={Styles.title}>{group || filter}</Title>
-          : <SubTitle className={Styles.title}>{group || filter}</SubTitle>}
+        {h1 ? <Title className={Styles.title}>{title || filter}</Title>
+          : <SubTitle className={Styles.title}>{title || filter}</SubTitle>}
 
         {getList()}
       </div>

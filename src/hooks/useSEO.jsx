@@ -13,12 +13,12 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
         <meta name="keywords" content={keywords} />
         <meta name="author" content="luigitercero" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <meta name="keywords" content="Lavatrastos de Lujo, Griferia de Lujo, Bidet, bide, fregaderos de lujos, lavatrastes lujo , lavaplatos de lujo, chorros de acero inoxidable, lavatrastos de acero inoxidable, lavatrastos para concina, griferia de baño, griferia de cocina, lavatrastos,chorros,bidet, grifos, lujo, acero inoxidable" />
         <meta property="og:title" content={title} />
         <meta property="og:type" content="Productos para cocina" />
         <meta property="og:url" content={url} />
         <meta property="og:image" content={img} />
-
+        <html lang="es" />
         <link rel="image_src" href={img} />
 
         <meta name="twitter:card" content="summary" />

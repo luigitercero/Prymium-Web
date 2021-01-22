@@ -33,7 +33,7 @@ const Principal = ({ singleProduct }) => {
   return (
 
     <Head
-      title={`Prymium|${title}`}
+      title={`Prymium | ${title}`}
       description={`${content}, Lavatrastos Prymium tiene todo lo que necesistas para tu fregadero`}
       img={imagen}
       url="https://lavatrastosprymium.com/"

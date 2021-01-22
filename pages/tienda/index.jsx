@@ -20,8 +20,8 @@ const Principal = ({ products }) => {
 
   return (
     <Head
-      title="Lavatrastos|Prymium"
-      description="Encuntra accesorios lavatrastos, fregaderos o bidets de grandes fosas y deacero inoxidable para tu nueva cocina"
+      title="Todos los Productos | Lavatrastos | Grifos | Bidets"
+      description="Encuntra accesorios, lavatrastos de lujo, fregaderos o bidets de grandes fosas y de acero inoxidable 202 y 304 para tu nueva cocina, todo los productos calibre 1.2mm el más grueso del mercado"
       img="https://lavatrastosprymium.com/wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg"
       url="https://lavatrastosprymium.com/"
     >

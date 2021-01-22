@@ -22,8 +22,8 @@ const Principal = ({ products }) => {
 
   return (
     <Head
-      title={`Prymium|${group}`}
-      description="Elige entre muchas opciones un lavatrastos o fregadero que se pueda apapatar a tus necesidades"
+      title={`Prymium | ${group}`}
+      description="Encuentra lavatrastos de lujo, grifos y bidet, en acero inoxidable y plástico, grifos de 23 cm y lavatrastos de 55 cm a 120 cm con y sin ala de acero inxidable 202 y 304"
       img="https://lavatrastosprymium.com/wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg"
       url="https://lavatrastosprymium.com/"
     >
