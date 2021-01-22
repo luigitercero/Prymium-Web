@@ -88,6 +88,9 @@
     font-size: 1.5em;
     font-weight: bold;
     grid-area: price;
+    position: relative;
+    z-index: 3;
+    background-color: rgba($color: #fff, $alpha: 0.8);
     align-self: end;
   }
   .medidas {

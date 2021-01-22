@@ -1,5 +1,4 @@
-
-import React from 'react';
+ import React from 'react';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
 import BidetFrame from '../components/BidetFrame';

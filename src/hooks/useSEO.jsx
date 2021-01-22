@@ -7,6 +7,7 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
     <>
       <Head>
         <meta charSet="UTF-8" />
+        <link rel="shortcut icon" href="/images/icons/water-tap.ico" type="image/x-icon" />
         <title>{title}</title>
         <meta name="title" content={title} />
         <meta name="description" content={description} />

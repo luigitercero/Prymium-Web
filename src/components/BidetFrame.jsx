@@ -39,7 +39,7 @@ const BidetItem = ({ item }) => {
       <img src={image} alt={alt} decoding="async" loading="lazy" />
       <span>{description}</span>
       <div className="overlay" />
-      {/* <div className="bottom-overlay" /> */}
+      <div className="bottom-overlay" />
     </div>
   );
 }; 

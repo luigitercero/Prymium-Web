@@ -1,7 +1,7 @@
 @import '../../styles/globals/settings.scss';
 
 %children-extend{
-  z-index: 2;
+  z-index: 3;
   background-color: rgba($color: $backgroundLightColor, $alpha: 0.4);
   padding: 0 4px 0 0;
   margin-right: $margin-left-right;
