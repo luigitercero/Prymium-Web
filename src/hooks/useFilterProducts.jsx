@@ -16,4 +16,15 @@ export const getGroup = (query,products) => {
 
   
 }
+
+export const singleFilter = (query,products) => {
+
+  const single = products.filter(producto =>
+
+    producto.link.toLowerCase().includes(query.toLowerCase())
+  )
+
+  return single
+
+}
 export default getGroup;

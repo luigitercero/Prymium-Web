@@ -1,9 +1,9 @@
 import React from 'react';
-import { useRouter } from 'next/router'
 import { Title, Price, Pre } from "./Title";
 
-const SingleProduct = ({ id, product }) => {
-  const router = useRouter()
+
+const SingleProduct = ({ id, product, }) => {
+
   return (
     <section className='container-single-product' key={id}>
       
@@ -18,6 +18,8 @@ const SingleProduct = ({ id, product }) => {
           <Pre>{product.content}</Pre>
         </section>
       </div>
+
+      
     </section>
 
   )

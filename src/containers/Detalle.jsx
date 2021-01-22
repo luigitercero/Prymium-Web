@@ -1,17 +1,10 @@
-import React, { useEffect, useContext } from 'react';
-import { useRouter } from 'next/router'
-import ContextApp from '../context/AppContext';
+
+import React from 'react';
+import ListOfProduct from '../components/ListOfProduct';
 import SingleProduct from '../components/SingleProduct'
 
-const Detalle = () => {
-  const router = useRouter()
-  const { singleFilter, singleProduct, products } = useContext(ContextApp);
-  const { modelo } = router.query
- 
+const Detalle = ({ singleProduct, listRelevant }) => {
 
-  useEffect(() => {
-    singleFilter(modelo);
-  }, [products]);
 
   const ProductComponent = () => {
     return (
@@ -27,6 +20,8 @@ const Detalle = () => {
   return (
     <div>
       {ProductComponent()}
+
+      <ListOfProduct filter='relevante' products={listRelevant||[]} h1={false}  />
     </div>
   );
 };

@@ -43,14 +43,12 @@ const Item = ({ item }) => {
 
 }
 
-const BaseAPIPage = ({ title, subtitle, url }) => {
+const BaseAPIPage = ({ title, subtitle, question }) => {
 
   const [data, setData] = useState([]);
 
   useEffect(() =>{
-    fetch(url)      
-    .then(response => response.json())
-    .then(info => { setData(info) })
+    setData(question)
   }, []);
 
   return(

@@ -6,7 +6,7 @@ const useOnScreen = (ref) => {
 
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const observer = new window.IntersectionObserver(
       ([entry]) => setIntersecting(entry.isIntersecting)
     )
 

@@ -1,0 +1,33 @@
+
+@import '../../styles/globals/settings.scss';
+
+.link{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: $margin-left-right;
+  
+  a {
+    text-decoration: none;
+    background-color: $textColor;
+    border-radius: 40px;
+    width: 140px;
+    text-align: center;
+    line-height: 32px;
+    margin-top: 5px;
+    border: 3px solid $primaryColor;
+    @include font-set(1, 1.1em, $primaryColor);
+
+    @include mq('small-screen','min'){
+      line-height: 40px;
+      font-size: 1.3em;
+    }
+
+    &:hover{
+      transform: scale(1.05);
+    }
+
+    &:active{
+      transform: scale(1);
+    }
+  }
+}

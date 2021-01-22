@@ -12,7 +12,8 @@
     "build:static": "webpack && babel-node tools/index.js",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "debug":"NODE_OPTIONS='--inspect' next"
   },
   "keywords": [
     "lavatrastos",

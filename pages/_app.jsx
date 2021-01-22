@@ -15,19 +15,15 @@ import '../src/styles/components/footer.scss';
 import '../src/styles/components/gallery.scss';
 import '../src/styles/components/header.scss';
 import '../src/styles/components/hero.scss';
-import '../src/styles/components/listOfProduct.scss';
 import '../src/styles/components/singleProduct.scss';
 import '../src/styles/components/schedule.scss';
-import '../src/styles/components/title.scss';
 import '../src/styles/components/youtube-video.scss';
 import Layout from '../src/components/Layout';
-import AppContext from '../src/context/AppContext';
-import useInitialState from '../src/hooks/useInitialState'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const initialState = useInitialState();
-  return <AppContext.Provider value={initialState}><CustomLayout pathname={router.pathname}><Component {...pageProps} /></CustomLayout></AppContext.Provider>
+ 
+  return <CustomLayout pathname={router.pathname}><Component {...pageProps} /></CustomLayout>
 }
 
 const CustomLayout = ({ pathname, children }) => (

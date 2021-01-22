@@ -17,6 +17,7 @@
       }
     ],
     "arrow-body-style": ["off", "as-needed", { "requireReturnForObjectLiteral": true }],
+    "import/no-unresolved": [2, { "ignore": ["@.*"] }],
     // eslint-disable-next-line react/jsx-props-no-spreading
     "react/jsx-props-no-spreading": [0,
       {

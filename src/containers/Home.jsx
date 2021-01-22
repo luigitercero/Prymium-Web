@@ -1,17 +1,15 @@
  
 import React from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
 import BidetFrame from '../components/BidetFrame';
 import bidets from './bidetitems.json';
+import YoutubeVideo from '../components/YoutubeVideo'
+import HomeLink from '../../src/components/HomeLink'
 
+const Home = ({sliderSink,sliderBidet}) => {
 
-const YoutubeVideo = dynamic(() => import('../components/YoutubeVideo'));
-
-const Home = () => {
-  const GALLERY_URL = 'https://lavatrastosprymium.com/wp-json/pg/v1/sliders/'
   // const imagesObject = {
   //   queryType: 'max',
   //   images:[
@@ -27,24 +25,25 @@ const Home = () => {
         title="Lavatrastos Prymium"
         subtitle="Más de 25,000 unidades vendidas"
         linktext="QUIERO VER MÁS!>>"
-        url="/store-lavatrastos-grifos-bidet-guatemala/"
+        url="/tienda/"
         image="/images/backgrounds/hero-image.webp"
       />
       <section className="products-container">
-        <Gallery title="Galería" url={GALLERY_URL} />
+        <Gallery title="Galería" sliderSink={sliderSink} />
+        <HomeLink url="/tienda/lavatrastos" title="Lavatrastos" />
         <span className="home-link">
           <Link href="/tienda/lavatrastos">Lavatrastos</Link>
         </span>
         <YoutubeVideo title='Accesorios' vid='zEAHyUCb_Rc' />
+        <HomeLink url="/tienda/accesorios" title="Accesorios" />
         <span className="home-link">
           <Link href="/tienda/accesorios">Accesorios</Link>
         </span>
       </section>
       <section className="bidetframe-container">
-        <BidetFrame itemsArray={bidets} />
-        <span className="home-link">
-          <Link href="/tienda/bidet">Bidet</Link>
-        </span>
+        <BidetFrame itemsArray={bidets} sliderBidet={sliderBidet} />
+        <HomeLink url="/tienda/bidet" title="Bidet" />
+       
       </section>
     </div>
   );

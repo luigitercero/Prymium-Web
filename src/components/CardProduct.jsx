@@ -6,16 +6,11 @@ const CardProduct = ({ product }) => {
   const { imagen, alt, title, link } = product;
   
   return (
-    <Link href={`/detalle/${link}`}>
+    <Link href={`/tienda/detalle/${link}`}>
       <div className='card-container'>
-
-
-
-        <Image img={imagen} alt={alt || "foto de lavatrastosO"} />
+        <Image img={imagen} alt={alt || "foto de lavatrastos"} />
         <Title3ForCard className="center-text">{title || "Lavatrastos mod 7807F"}</Title3ForCard>
-
         <Button link={link} />
-
       </div>
     </Link>
   )

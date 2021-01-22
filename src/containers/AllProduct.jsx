@@ -1,13 +1,13 @@
 import React from 'react';
 import ListOfProduct from '../components/ListOfProduct';
 
-const AllProduct = () => {
+const AllProduct = ({ products }) => {
   return (
     <div>
-      <ListOfProduct filter="lavatrastos" />
-      <ListOfProduct filter="grifos" />
-      <ListOfProduct filter="bidet" />
-      <ListOfProduct filter="accesorios" />
+      <ListOfProduct products={products} filter="lavatrastos" h1={false} />
+      <ListOfProduct products={products} filter="grifos" h1={false} />
+      <ListOfProduct products={products} filter="bidet" h1={false} />
+      <ListOfProduct products={products} filter="accesorios" h1={false} />
     </div>
   );
 };
