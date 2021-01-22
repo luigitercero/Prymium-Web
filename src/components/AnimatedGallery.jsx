@@ -24,19 +24,6 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationT
     }
   }
 
-
-  const setVariables = () => {
-    try {
-      for (let index = 0; index < (maxPosition+1); index+=1) {
-        gallery.current.children[index].style.width = `${galleryContainer.current.offsetWidth}px`;
-      }
-      translatePosition(10);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-
   const moveLeft = () =>{
     for (let index = 0; index < maxPosition; index+=1) {
       if(gallery.current.classList.contains(`${baseName}-${index}`)){
@@ -64,15 +51,14 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationT
   }, [isVisible])
 
   useEffect(() => {
-    window.addEventListener('resize', () => {setTimeout(setVariables, 20)})
     try {
       const firstItem = gallery.current.children[0].cloneNode(true);
       gallery.current.appendChild(firstItem);
+      gallery.current.style.width = `${(maxPosition + 1)*100}%`;
     } catch (err) {
       console.log(err);
     }
-    setVariables();
-  },[])
+  }, [])
 
   return(
     <div className='agal-cont' ref={galleryContainer}>
