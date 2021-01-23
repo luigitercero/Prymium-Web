@@ -10,11 +10,17 @@
 
 .agal-cont{
   @extend %gallery-extend;
-
-  .agal{
-    @extend %gallery-extend;
-    display: inline-flex;
-    transition-timing-function: ease-out;
-  }
 }
 
+.agal{
+  @extend %gallery-extend;
+  display: inline-flex;
+  transition-timing-function: ease-out;
+}
+
+.check{
+  position: absolute;
+  font-size: 1px;
+  top:0;
+  color: transparent;
+}
