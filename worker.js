@@ -7,22 +7,10 @@ self.__precacheManifest = [].concat(self.__precacheManifest || [])
 precacheAndRoute(self.__precacheManifest);
 precacheAndRoute(self.__WB_MANIFEST);
 
-// This assumes /app-shell.html has been precached.
-const handler = createHandlerBoundToURL('/index.html');
-const navigationRoute = new NavigationRoute(handler, {
-  allowlist: [
-    new RegExp('/tienda/'),
-  ],
-  denylist: [
-    new RegExp('/blog/restricted/'),
-  ],
-});
-registerRoute(navigationRoute);
-
 
 registerRoute(
   /\\.(?:js|css|webp|png|svg)$/,
-  new StaleWhileRevalidate(), 'GET'
+  new NetworkFirst(), 'GET'
 );
 
 registerRoute(
