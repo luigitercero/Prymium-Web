@@ -12,7 +12,7 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <meta name="author" content="luigitercero" />
+        <meta name="author" content="luigitercero,chunfer" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Lavatrastos de Lujo, Griferia de Lujo, Bidet, bide, fregaderos de lujos, lavatrastes lujo , lavaplatos de lujo, chorros de acero inoxidable, lavatrastos de acero inoxidable, lavatrastos para concina, griferia de baño, griferia de cocina, lavatrastos,chorros,bidet, grifos, lujo, acero inoxidable" />
         <meta property="og:title" content={title} />

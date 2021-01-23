@@ -8,7 +8,7 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationT
   const galleryContainer = useRef();
   const checkMark = useRef();
   const isVisible = useOnScreen(checkMark);
-  const [interval, setMovementInterval] = useState(undefined);
+  const [intervalId, setIntervalId] = useState(undefined);
   let position = 0;
 
   const translatePosition = (atime = animationTime) => {
@@ -34,20 +34,22 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationT
   }
 
   const startMovement = () => {
-    setMovementInterval(setInterval(moveLeft, transitionTime))
+    const interval = setInterval(moveLeft, transitionTime);
+    setIntervalId(interval);
   }
 
   const stopMovement = () => {
-    setMovementInterval(clearInterval(interval))
+    clearInterval(intervalId);
   }
 
   useEffect(() => {
     
     if(isVisible){
-      startMovement();  
+      startMovement();
     }else{
       stopMovement();
     }
+
   }, [isVisible])
 
   useEffect(() => {
@@ -62,7 +64,7 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationT
 
   return(
     <div className='agal-cont' ref={galleryContainer}>
-      <div ref={checkMark} />
+      <span className='check' ref={checkMark}>a</span>
       <div className={`agal ${baseName}-0`} ref={gallery}>
         {children}
       </div>
