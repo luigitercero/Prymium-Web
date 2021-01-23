@@ -58,6 +58,9 @@
     grid-area: img;
     margin: 0;
     padding: 0;
+    opacity: 0;
+    animation: fadeInImage 3s forwards;
+
     img{
       width:100%
     }
@@ -96,6 +99,8 @@
   .medidas {
     grid-area: medidas;
     align-self: center;
+    opacity: 0;
+    animation: fadeInImage 3s forwards;
     
     img{
       width:100%;

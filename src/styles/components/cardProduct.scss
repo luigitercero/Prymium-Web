@@ -7,12 +7,22 @@
   
   background-color: $primaryColor;
   max-height: 300px;
+  
   .img-container {
-    padding: 5px;
-    min-height: 205px;
+    margin: 5px;
+    height: 200px;
+    min-width: 95%;
+    display: flex;
+    justify-content: center;
+    background-color: $white;
+
     .image {
       display: flex;
       max-width: 100%;
+      height: 100%;
+      opacity: 0;
+      object-fit: cover;
+      animation: fadeInImage 2000ms forwards;
     }
    
   }
@@ -27,6 +37,7 @@
   }
   .button {
     text-decoration: none;
+    cursor: pointer;
    
     @include font-set(1, 1em, $enfasisColor, 400);
     margin-top: 10px;
@@ -42,5 +53,15 @@
       color:$primaryColor;
       background-color:$secondaryColor;
     }
+  }
+}
+
+
+@keyframes fadeInImage{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }
