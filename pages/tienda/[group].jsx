@@ -27,7 +27,7 @@ const Principal = ({ products }) => {
       img="https://lavatrastosprymium.com/wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg"
       url="https://lavatrastosprymium.com/"
     >
-      <Tienda products={products} />
+      <Tienda products={products} title={group} />
     </Head>
   );
 

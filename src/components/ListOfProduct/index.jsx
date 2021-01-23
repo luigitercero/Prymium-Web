@@ -6,7 +6,7 @@ import { Title, SubTitle } from "../Title";
 import useFilterProducts from '../../hooks/useFilterProducts'
 import Styles from './styles.module.scss'
 
-const ListOfProduct = ({ filter, products, h1 = true, title }) => {
+const ListOfProduct = ({ filter, products, h1 = true, title=null }) => {
   const router = useRouter()
 
   const { group } = router.query

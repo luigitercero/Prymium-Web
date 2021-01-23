@@ -1,10 +1,10 @@
 import React from 'react';
 import ListOfProduct from '../components/ListOfProduct';
 
-const Tienda = ({products}) => {
+const Tienda = ({products,title}) => {
   return (
     <div>
-      <ListOfProduct products={products} />
+      <ListOfProduct products={products} title={title} />
     </div>
   );
 };
