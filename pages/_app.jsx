@@ -1,7 +1,7 @@
 // import App from 'next/app'
-import React from 'react';
+import React,{useEffect} from 'react';
 import { useRouter } from 'next/router';
-
+import { Workbox } from "workbox-window";
 import '../src/styles/globals/root_vars.scss';
 import '../src/styles/container/layout.scss';
 import '../src/styles/container/home.scss';
@@ -22,7 +22,17 @@ import Layout from '../src/components/Layout';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
- 
+  useEffect(() => {
+    if (
+      !("serviceWorker" in navigator) ||
+      process.env.NODE_ENV !== "production"
+    ) {
+      console.warn("Progressive Web App support is disabled");
+      return;
+    }
+const wb = new Workbox("sw.js", { scope: "/" });
+    wb.register();
+  }, []);
   return <CustomLayout pathname={router.pathname}><Component {...pageProps} /></CustomLayout>
 }
 

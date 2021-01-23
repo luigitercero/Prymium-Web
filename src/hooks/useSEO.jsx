@@ -19,7 +19,10 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
         <meta property="og:type" content="Productos para cocina" />
         <meta property="og:url" content={url} />
         <meta property="og:image" content={img} />
-        <html lang="es" />
+
+
+        <link rel="manifest" href="/manifest.json" />
+
         <link rel="image_src" href={img} />
 
         <meta name="twitter:card" content="summary" />

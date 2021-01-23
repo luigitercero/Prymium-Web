@@ -3,7 +3,7 @@ import Head from '@hooks/useSEO';
 import Home from '../src/containers/Home';
 import {  getSlidersSinks,getSlidersBidet} from '../src/routes/Config';
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   // eslint-disable-next-line no-undef
   const response = await fetch(getSlidersSinks.url)
   const sliderSink = await response.json()
