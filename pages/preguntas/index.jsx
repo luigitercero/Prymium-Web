@@ -3,7 +3,7 @@ import Head from '@hooks/useSEO';
 import Questions from '../../src/containers/Questions/App';
 import { getQuestion } from '../../src/routes/Config';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   // eslint-disable-next-line no-undef
   const response = await fetch(getQuestion.url);
   const question = await response.json()
