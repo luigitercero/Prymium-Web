@@ -34,7 +34,7 @@ const Home = ({sliderSink,sliderBidet}) => {
       </section>
       <section className="bidetframe-container">
         <BidetFrame itemsArray={bidets} sliderBidet={sliderBidet} />
-        <HomeLink url="/tienda/bidet" title="Bidet" />
+        <HomeLink url="/tienda/bidets" title="Bidet" />
        
       </section>
     </div>

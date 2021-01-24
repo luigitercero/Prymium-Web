@@ -104,8 +104,8 @@ const NavItem = ({ id, to, name, children }) => {
 const SubMenu = ({ close }) => (
   <ul className="sub-menu">
     <li id="lavatrastos" onClick={close} aria-hidden><Link href={`${_route.products.to}lavatrastos`}>Lavatrastos</Link></li>
-    <li id="grifo" onClick={close} aria-hidden><Link href={`${_route.products.to}grifo`}>Grifos</Link></li>
-    <li id="bidet" onClick={close} aria-hidden><Link href={`${_route.products.to}bidet`} onClick={close}>Bidet</Link></li>
+    <li id="grifo" onClick={close} aria-hidden><Link href={`${_route.products.to}grifos`}>Grifos</Link></li>
+    <li id="bidet" onClick={close} aria-hidden><Link href={`${_route.products.to}bidets`} onClick={close}>Bidet</Link></li>
     <li id="all" onClick={close} aria-hidden><Link href={`${_route.products.to}`}>Todos</Link></li>
   </ul>
 

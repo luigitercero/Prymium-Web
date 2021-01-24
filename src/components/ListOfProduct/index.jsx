@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable no-else-return */
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import CardProduct from '../CardProduct';
 
@@ -6,21 +7,29 @@ import { Title, SubTitle } from "../Title";
 import useFilterProducts from '../../hooks/useFilterProducts'
 import Styles from './styles.module.scss'
 
-const ListOfProduct = ({ filter, products, h1 = true, title=null }) => {
+const ListOfProduct = ({ filter, products, h1 = true, title=null, isFiltered = false }) => {
   const router = useRouter()
 
   const { group } = router.query
   const [ListFilter, setListFilter] = useState(products);
 
   useEffect(() => {
-    setListFilter(useFilterProducts(group || filter, products))
+    if(!isFiltered){
+      setListFilter(useFilterProducts(group || filter, products))
+    }
   }, [products, group]);
 
   const getList = () => {
-    return (
-      ListFilter.map((single) => { return <CardProduct key={single.id} product={single} /> }
+    if (isFiltered){
+      return (
+        products.map((single) => { return <CardProduct key={single.id} product={single} /> })
       )
-    )
+    }else{
+
+      return (
+        ListFilter.map((single) => { return <CardProduct key={single.id} product={single} /> })
+      )
+    }
   }
 
   return (
