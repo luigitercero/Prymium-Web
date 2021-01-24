@@ -1,13 +1,23 @@
+/* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react';
 import Head from '@hooks/useSEO';
-
 import Detalle from '../../../src/containers/Detalle';
-import { singleProductUrl, getRecomended } from '../../../src/routes/Config';
+import { getProducts, singleProductUrl, getRecomended } from '../../../src/routes/Config';
 
-export const getServerSideProps = async ({ params }) => {
-  // eslint-disable-next-line no-undef
-  const response = await fetch(singleProductUrl(params.modelo))
-  const singleProduct = await response.json()
+export const getStaticPaths = async () => {
+  const response = await fetch(getProducts.url);
+  const products = await response.json();  
+
+  const paths = products.map((product) => ({
+    params: { modelo: `${product.link}` },
+  }))
+
+  return { paths, fallback: false };
+}
+
+export const getStaticProps = async ({ params }) => {
+  const response = await fetch(singleProductUrl(params.modelo));
+  const singleProduct = await response.json();
   return {
     props: {
       singleProduct
