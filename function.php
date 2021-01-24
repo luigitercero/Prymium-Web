@@ -1,3 +1,4 @@
+
 <?php
 
 register_nav_menus(
@@ -116,19 +117,16 @@ function pgRegisterTax() {
    register_taxonomy ('categoria-productos',array('producto'),$args);
 }
 
-
-
-
 add_action('rest_api_init','getCategory' );
 function getCategory(){
-   register_rest_route( 
-      'pg/v1',
-      'per-category/(?P<taxonomy>\w+)',
-      array(
-         'methods'=>'GET',
-         'callback'=>'perCategory'
-      )
-   );
+  register_rest_route( 
+    'pg/v1',
+    'per-category/(?P<taxonomy>\w+)',
+    array(
+      'methods'=>'GET',
+      'callback'=>'perCategory'
+    )
+  );
 }
 function perCategory($data) {
 
@@ -264,24 +262,24 @@ function pedidoNovedades($data){
 
 add_action('rest_api_init','singleProductApi' );
 function singleProductApi(){
-   register_rest_route( 
-      'pg/v1',
-      'product/(?P<name>[a-zA-Z0-9_-]+)',
-      array(
-         'methods'=>'GET',
-         'callback'=>'singleProduct'
-      )
-   );
+  register_rest_route( 
+    'pg/v1',
+    'product/(?P<name>[a-zA-Z0-9_-]+)',
+    array(
+      'methods'=>'GET',
+      'callback'=>'singleProduct'
+    )
+  );
 }
 
 function singleProduct($data){
     $args = array (
-       'post_type' => 'producto',
-       'posts_per_page'=> 100,
-       'order' => 'DESC',
-       'orderby' => 'post_date',
-		'paged' => 1,
-		'name'=>$data['name']
+      'post_type' => 'producto',
+      'posts_per_page'=> 100,
+      'order' => 'DESC',
+      'orderby' => 'post_date',
+		  'paged' => 1,
+		  'name'=>$data['name']
     );
     $productos =new WP_Query($args);
     if ($productos->have_posts()) {
@@ -386,6 +384,36 @@ function singlePregunta($data){
           );
        }
     }
+    return $return;
+}
+
+
+add_action('rest_api_init','categoriasAPI' );
+function categoriasAPI(){
+   register_rest_route( 
+      'pg/v1',
+      'categories/',
+      array(
+         'methods'=>'GET',
+         'callback'=>'singleCategory'
+      )
+   );
+}
+
+function singleCategory($data){
+    $return = array();
+    $return[] = array (
+      'category' =>'fregaderos',
+    );
+    $return[] = array (
+      'category' =>'bidets',
+    );
+    $return[] = array (
+      'category' =>'grifos',
+    );
+    $return[] = array (
+      'category' =>'accesories',
+    );
     return $return;
 }
 
