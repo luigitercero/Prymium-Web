@@ -12,7 +12,7 @@ const Contact = () => {
 
   return(
     <div className="container">
-      <SubHero image="/images/backgrounds/contact-image.webp" overlay>
+      <SubHero image="/images/backgrounds/contact-image.webp" alt="3a. calle 3-54 boulevard San Cristobal, zona 8 de Mixco, Guatemala, Guatemala" overlay>
         <Title id="title">Contáctenos</Title>
         <span id="subtitle">Y empiece a disfrutar de su nuevo lavatrastos</span>
       </SubHero>

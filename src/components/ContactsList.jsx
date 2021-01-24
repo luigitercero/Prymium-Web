@@ -3,13 +3,13 @@ import  Link  from 'next/link';
 import Image from 'next/image';
 
 const ContactItem = ({ item }) =>{
-  const { icon, itemName, itemInfo, linkTo } = item;
+  const { icon, alt, itemName, itemInfo, linkTo } = item;
 
   return(
     <Link href={linkTo}>
       <a target="_blank" className="contact-item">
         <div className="contact-icon">
-          <Image src={icon} height={64} width={64} />
+          <Image src={icon} alt={alt} height={64} width={64} />
         </div>
         <span className="item-title">{itemName}</span>
         <span className="info">{itemInfo}</span>

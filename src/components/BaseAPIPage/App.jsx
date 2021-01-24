@@ -53,7 +53,7 @@ const BaseAPIPage = ({ title, subtitle, question }) => {
 
   return(
     <div className={styles.container}>
-      <SubHero>
+      <SubHero isCentered>
         <Title id="title">{title}</Title>
         <span id="subtitle">{subtitle}</span>
       </SubHero>
