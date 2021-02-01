@@ -10,6 +10,7 @@ const Hero = ({ title, image, subtitle, linktext, url}) => {
       <div className="image">
         <Image 
           src={image}
+          alt="lavatrastos 1820T calibre 18, instalado bajo topo de granito o formica, renderizado a computadora de acero inoxidable"
           priority
           objectFit="cover"
           layout="fill"

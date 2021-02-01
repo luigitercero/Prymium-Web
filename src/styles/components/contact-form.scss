@@ -31,6 +31,6 @@
   }
   
   .note{
-    @include font-set(1, 0.8em, gray);
+    @include font-set(1, 0.8em, rgba(black, 0.7));
   }
 }

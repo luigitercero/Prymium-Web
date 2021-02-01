@@ -34,7 +34,7 @@
 
 .link_simple{
   display: flex;  
-  padding-left: $margin-left-right;
+  padding: 0 $margin-left-right/2;
   a {
     text-decoration: none;
     background-color: $textColor;

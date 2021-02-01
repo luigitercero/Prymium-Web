@@ -1,13 +1,24 @@
+/* eslint-disable no-undef */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import Head from '@hooks/useSEO';
 import { useRouter } from 'next/router';
 import Tienda from '../../src/containers/Tienda';
-import { getProducts } from '../../src/routes/Config';
+import { getCatergories, singleCategoryUrl } from '../../src/routes/Config';
 
-export const getServerSideProps = async () => {
-  // eslint-disable-next-line no-undef
-  const response = await fetch(getProducts.url)
+export const getStaticPaths = async () => {
+  const response = await fetch(getCatergories.url);
+  const products = await response.json();  
+
+  const paths = products.map(({ alias }) => ({
+    params: { group: `${alias}` },
+  }))
+
+  return { paths, fallback: false };
+}
+
+export const getStaticProps = async ({ params }) => {
+  const response = await fetch(singleCategoryUrl(params.group))
   const products = await response.json()
 
   return {
@@ -27,7 +38,7 @@ const Principal = ({ products }) => {
       img="https://lavatrastosprymium.com/wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg"
       url="https://lavatrastosprymium.com/"
     >
-      <Tienda products={products} title={group} />
+      <Tienda products={products} title={group} isFiltered />
     </Head>
   );
 

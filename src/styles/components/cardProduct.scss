@@ -1,5 +1,7 @@
 @import '../globals/colors.scss';
 @import '../globals/fonts.scss';
+@import '../globals/mq.scss';
+
 .card-container {
   display: flex;
   flex-direction: column;
@@ -11,8 +13,8 @@
   .img-container {
     margin: 5px;
     height: 200px;
-    min-width: 95%;
     display: flex;
+    min-width: 96%;
     justify-content: center;
     background-color: $white;
 
@@ -23,9 +25,20 @@
       opacity: 0;
       object-fit: cover;
       animation: fadeInImage 2000ms forwards;
+      
     }
-   
+  
+    @include mq('x-small-screen', 'min'){
+      height: auto;
+      min-width: unset;
+
+      .image{
+        height: auto;
+      }
+    }
   }
+
+
   a{
     display: flex;
     flex-direction: column;
