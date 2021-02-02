@@ -7,19 +7,19 @@ $font_family_lora: 'Lora-Regular';
 
 @font-face {
   font-family: $font_family_regular;
-  src: url('../fonts/Lato/Lato-Regular.woff2');
+  src: url('../fonts/Lato/Lato-Regular-kern-latin.woff2');
   font-display: swap;
 }
 
 @font-face {
   font-family: $font_family_lora;
-  src: url('../fonts/Lora/Lora-Regular.woff2');
+  src: url('../fonts/Lora/Lora-Regular-kern-latin.woff2');
   font-display: swap;
 }
 
 @mixin font-set($type: false, $size: false, $colour: false, $weight: false,  $lh: false) {
   @if ($type == 1) {
-    font-family: $mainFont, $font_family_regular, sans-serif;
+    font-family: $font_family_regular, sans-serif;
   }
 
   @if ($type == 2) {
