@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
 import BidetFrame from '../components/BidetFrame';
@@ -6,16 +6,8 @@ import bidets from './bidetitems.json';
 import YoutubeVideo from '../components/YoutubeVideo';
 import HomeLink from "../components/HomeLink";
 
-const Home = ({sliderSink,sliderBidet}) => {
+const HomePage = ({sliderSink,sliderBidet}) => {
 
-  // const imagesObject = {
-  //   queryType: 'max',
-  //   images:[
-  //     {querySize: 'default', image:'/images/hero.webp'},
-  //     {querySize: '991', image:'/images/hero-querysize-652.webp'},
-  //     {querySize: '575', image:'/images/hero-querysize-480.webp'}
-  //   ]
-  // }
   return (
     <div className="home">
 
@@ -40,5 +32,7 @@ const Home = ({sliderSink,sliderBidet}) => {
     </div>
   );
 };
+
+const Home = React.memo(HomePage);
 
 export default Home;
