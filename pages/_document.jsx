@@ -1,8 +1,9 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import TagManager from 'react-gtm-module'
+
 const tagManagerArgs = {
-  id: 'GTM-XXXX'
+  id: 'GTM-MRX968C'
 }
 class MyDocument extends Document {
   
