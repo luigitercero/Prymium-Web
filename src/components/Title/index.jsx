@@ -14,6 +14,11 @@ export const SubTitle = ({ children, className,id }) => {
     <h2 className={`${styles.subtitle} ${className||''}`} id={id}>{children}</h2>
   );
 };
+export const SubTitlen = ({ children, className,id }) => {
+  return (
+    <h2 className={`${styles.subtitle_n} ${className||''}`} id={id}>{children}</h2>
+  );
+};
 
 export const SubTitle2 = ({ children, className }) => {
   return (

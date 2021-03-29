@@ -3,7 +3,7 @@
 /* eslint-disable prefer-destructuring */
 import React, { useState, useEffect, useRef } from 'react';
 import SubHero from '../SubHero/App';
-import { Title, SubTitle, Pre } from "../Title";
+import { Title, SubTitlen, Pre } from "../Title";
 
 import styles from './styles.module.scss';
 
@@ -28,7 +28,7 @@ const Item = ({ item }) => {
   return(
     <div className={styles.item}>
       <div onClick={onPress} className={styles.title_container}>
-        <SubTitle className={styles.item_title}>{titulo}</SubTitle>
+        <SubTitlen className={styles.item_title}>{titulo}</SubTitlen>
         <img ref={arrow} src="/images/icons/left-arrow.png" alt="arrow" />
       </div>
       <div className={styles.content_container} ref={content}>

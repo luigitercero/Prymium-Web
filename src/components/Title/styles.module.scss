@@ -56,6 +56,18 @@
   // }
 }
 
+.subtitle_n{
+  @extend %subtitle;
+  // @include font-set(3, 3.2rem, $textColor, 400); 
+  // margin: 0;
+  // padding-top: 48px;
+  // padding-bottom: 5px;
+
+  // @include mq('small-screen', 'm'){
+  //   font-size: 2.5rem;
+  // }
+}
+
 .subtitle2{
   @extend %subtitle;
   border-bottom: 3px solid $primaryColor;

@@ -1,8 +1,10 @@
 import React from 'react';
 import Head from "next/head";
+import { useRouter } from 'next/router'
 
 const useSEO = ({ description, keywords, title, children, img, url }) => {
-
+  const router = useRouter()
+  console.log(router);
   return (
     <>
       <Head>
@@ -19,12 +21,12 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
         <meta property="og:type" content="Productos para cocina" />
         <meta property="og:url" content={url} />
         <meta property="og:image" content={img} />
-
+        
 
         <link rel="manifest" href="/manifest.json" />
 
         <link rel="image_src" href={img} />
-
+        <link rel="canonical" href={`https://lavatrastosprymium.com${router.asPath}`} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
