@@ -1,9 +1,9 @@
 $mainFont: 'Lato';
-$secondaryFont: 'Lora';
+$secondaryFont: 'Lato';
 
 $font_family_regular:'Lato-Regular';
 $font_family_bold:'Lato-Regular';
-$font_family_lora: 'Lora-Regular';
+$font_family_lora: 'Lato-Regular';
 
 @font-face {
   font-family: $font_family_regular;
@@ -13,7 +13,7 @@ $font_family_lora: 'Lora-Regular';
 
 @font-face {
   font-family: $font_family_lora;
-  src: url('../fonts/Lora/Lora-Regular-kern-latin.woff2');
+  src: url('../fonts/Lato/Lato-Regular-kern-latin.woff2');
   font-display: swap;
 }
 
