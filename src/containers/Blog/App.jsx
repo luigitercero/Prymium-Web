@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import SubHero from '../../components/SubHero/App'
 import { Title, Pre } from '../../components/Title';
+import {preguntas} from '../../routes/Config';
 
 const Blog = () => {
-  const API_URL = 'https://lavatrastosprymium.com/wp-json/pg/v1/preguntas/';
+  const API_URL = preguntas;
   const [data, setData] = useState({
     titulo:"",
     description:""

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SubTitle2 } from './Title';
-
+import {feedback} from '../routes/Config'
 
 const useContact = (initialState) => {
   const [value, setValue] = useState(initialState);
@@ -11,7 +11,7 @@ const ContactForm = () => {
   const yourname = useContact('');
   const email = useContact('');
   const message = useContact('');
-  const url = "https://lavatrastosprymium.com/wp-json/contact-form-7/v1/contact-forms/15/feedback";
+  const url = feedback;
   const sendEmail = (event) => {
     event.preventDefault();
 

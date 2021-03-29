@@ -56,3 +56,16 @@ export const singleProductUrl = (product) => {
 export const singleCategoryUrl = (category) => {
   return `${url}wp-json/pg/v1/per-category/${category}`
 }
+
+export const preguntas = () => {
+  return `${url}wp-json/pg/v1/preguntas/`
+}
+
+export const feedback = () => {
+  return `${url}wp-json/contact-form-7/v1/contact-forms/15/feedback`
+}
+
+export const sobreAzulejo = () => {
+  return `${url}wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg`
+  
+}
