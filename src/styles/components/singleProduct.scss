@@ -1,5 +1,8 @@
 @import '../globals/mq.scss';
 @import '../globals/colors.scss';
+:root {
+  --swiper-theme-color: #e2b85c;
+}
 .container-single-product {
   display: grid;
   grid-template-columns: minmax(auto,1024px);
@@ -60,7 +63,19 @@
     padding: 0;
     opacity: 0;
     animation: fadeInImage 1s forwards;
+    .carrousel {
+      max-width: 80vw;
+      
+      @include mq ("small-screen",'min'){
+        max-width: 340px;
+        width: 48vw;
+      } 
 
+      @include mq("mid-large-screen",'min'){
+        width: 40vw;
+        max-width: 400px;
+      }
+    }
     img{
       width:100%
     }

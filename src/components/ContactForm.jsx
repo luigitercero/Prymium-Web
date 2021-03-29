@@ -25,10 +25,10 @@ const ContactForm = () => {
     })
       .then(response => response.json())
       .then(result => {
-        console.log('Success:', result);
+       // console.log('Success:', result);
       })
       .catch(error => {
-        console.error('Error:', error);
+        //console.error('Error:', error);
       });
   }
   return (

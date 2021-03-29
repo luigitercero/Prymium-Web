@@ -23,10 +23,10 @@ import App from '../src/containers/Home';
 
     fs.writeFile(path.join(staticPath, 'home.html'), html, (err) => {
         if (err) {
-            console.error('[!] something went wrong!');
+            console.error('[!] something went wrong! index.js');
             throw err;
         }
 
-        console.log('Complete!');
+        //console.log('Complete!');
     });
 })();

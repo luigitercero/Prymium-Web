@@ -1,17 +1,32 @@
 import React from 'react';
-import { Title, Price, Pre } from "./Title";
+import { Title, Price, Pre } from "../Title";
+import Carrusel from './Carrusel';
 
 
 const SingleProduct = ({ id, product, }) => {
-
+  
   return (
     <section className='container-single-product' key={id}>
       
       <div className="container-product">
        
         <Title className="title-single-product">{product.title}</Title>
-        <Image className="img-single-product" src={product.accesorio || product.imagen} alt={product.content} />
-        {product.medidas && <Image className="medidas" imgClass="img" src={product.medidas} alt={product.content} />}
+        <Carrusel alt={product.content} src={product.accesorio || [product.imagen]} className="img-single-product" />
+        {/* <Image
+          className="img-single-product" 
+          src={product.accesorio || product.imagen} 
+          alt={product.content} 
+        /> */}
+        {
+          product.medidas && (
+          <Image 
+            className="medidas" 
+            imgClass="img" 
+            src={product.medidas} 
+            alt={product.content} 
+          />
+          )
+        }
         <Price className="price-single-product">{product.price}</Price>
         <DatosTecnicos datosTecnicos={product.datos_tecnicos} />
         <section className="text-single-product">

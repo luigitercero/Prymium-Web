@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ListOfProduct from '../components/ListOfProduct';
-import SingleProduct from '../components/SingleProduct'
+import SingleProduct from '../components/SingleProduct/SingleProduct'
 import ArrayNavigationButton from '../components/ArrayNavigationButton';
 
 const Detalle = ({ singleProduct, listRelevant }) => {

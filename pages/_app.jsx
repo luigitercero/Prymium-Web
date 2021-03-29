@@ -2,6 +2,9 @@
 import React,{useEffect} from 'react';
 import { useRouter } from 'next/router';
 import { Workbox } from "workbox-window";
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
 import '../src/styles/globals/root_vars.scss';
 import '../src/styles/container/layout.scss';
 import '../src/styles/container/home.scss';
@@ -18,6 +21,7 @@ import '../src/styles/components/hero.scss';
 import '../src/styles/components/singleProduct.scss';
 import '../src/styles/components/schedule.scss';
 import '../src/styles/components/youtube-video.scss';
+
 import Layout from '../src/components/Layout';
 
 function MyApp({ Component, pageProps }) {
