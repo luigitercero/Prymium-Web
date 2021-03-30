@@ -6,6 +6,7 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
   const router = useRouter()
   return (
     <>
+    
       <Head>
         <meta charSet="UTF-8" />
         <link rel="shortcut icon" href="/images/icons/water-tap.ico" type="image/x-icon" />
@@ -18,7 +19,7 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
         <meta name="keywords" content="Lavatrastos de Lujo, Griferia de Lujo, Bidet, bide, fregaderos de lujos, lavatrastes lujo , lavaplatos de lujo, chorros de acero inoxidable, lavatrastos de acero inoxidable, lavatrastos para concina, griferia de baño, griferia de cocina, lavatrastos,chorros,bidet, grifos, lujo, acero inoxidable" />
         <meta property="og:title" content={title} />
         <meta property="og:type" content="Productos para cocina" />
-        <meta property="og:url" content={url} />
+        <meta property="og:url" content={`https://lavatrastosprymium.com${router.asPath}`} />
         <meta property="og:image" content={img} />
         
 
@@ -29,7 +30,7 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:url" content={url} />
+        <meta name="twitter:url" content={`https://lavatrastosprymium.com${router.asPath}`} />
         <meta name="twitter:image" content={img} />
         <script
           type="application/ld+json"
