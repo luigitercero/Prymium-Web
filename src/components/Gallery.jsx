@@ -91,7 +91,7 @@ const Gallery = ({ title, url,sliderSink }) => {
       translatePosition(10);
       
     } catch (err) {
-      console.log(err)
+      //console.log(err)
     }
   }
 

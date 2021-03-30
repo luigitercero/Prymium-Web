@@ -58,7 +58,7 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 5000, animationT
       gallery.current.appendChild(firstItem);
       gallery.current.style.width = `${(maxPosition + 1)*100}%`;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   }, [])
 

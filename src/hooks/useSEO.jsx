@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 
 const useSEO = ({ description, keywords, title, children, img, url }) => {
   const router = useRouter()
-  console.log(router);
   return (
     <>
       <Head>
