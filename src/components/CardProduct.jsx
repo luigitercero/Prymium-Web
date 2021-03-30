@@ -8,7 +8,7 @@ const CardProduct = ({ product }) => {
   return (
     <Link href={`/tienda/detalle/${link}`}>
       <div className='card-container'>
-        <Image img={imagen} alt={alt || "foto de lavatrastos"} />
+        <Image img={imagen} alt={alt || `foto de lavatrastos ${title}`} />
         <Title3ForCard className="center-text">{title || "Lavatrastos mod 7807F"}</Title3ForCard>
         <Button link={link} />
       </div>
@@ -25,10 +25,12 @@ const Image = ({ img, alt }) => {
 
 }
 
-const Button = () => {
+const Button = ({link}) => {
   return (
-
-    <div className="button">Ver detalles</div>
+    <Link href={`/tienda/detalle/${link}`}>
+      <a className="button">Ver detalles</a>
+    </Link>
+   
 
   )
 }
