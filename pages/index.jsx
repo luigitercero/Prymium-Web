@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from '@hooks/useSEO';
 import Home from '../src/containers/Home';
-import {  getSlidersSinks,getSlidersBidet,sobreAzulejo} from '../src/routes/Config';
+import { getSlidersSinks, getSlidersBidet, sobreAzulejo } from '../src/routes/Config';
 
 export const getServerSideProps = async () => {
   // eslint-disable-next-line no-undef

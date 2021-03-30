@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import useOnScreen from '../hooks/useOnScreen';
 
-const AnimatedGallery = ({ children, baseName, transitionTime = 3800, animationTime = 1000 }) =>{
+const AnimatedGallery = ({ children, baseName, transitionTime = 5000, animationTime = 1000 }) =>{
   const maxPosition = React.Children.count(children);
   const gallery = useRef();
   const galleryContainer = useRef();

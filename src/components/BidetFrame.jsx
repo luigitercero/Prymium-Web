@@ -33,10 +33,10 @@ const BidetInfo = () =>{
 }
 
 const BidetItem = ({ item }) => {
-  const { image, alt, description } = item;
+  const { imagen_medium, alt, description } = item;
   return (
     <div className="bidetitem">
-      <img src={image} alt={alt} decoding="async" loading="lazy" />
+      <img src={imagen_medium} alt={alt} decoding="async" loading="lazy" />
       <span>{description}</span>
       <div className="overlay" />
       <div className="bottom-overlay" />
@@ -44,10 +44,10 @@ const BidetItem = ({ item }) => {
   );
 }; 
 
-const BidetFrame = ({ itemsArray }) => {
+const BidetFrame = ({ sliderBidet }) => {
   const getList = () =>{
     return(
-      itemsArray.map(item => { return(<BidetItem key={item.id} item={item} />) } )
+      sliderBidet.map(item => { return(<BidetItem key={item.id} item={item} />) } )
     )  
   }
 

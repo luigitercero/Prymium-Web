@@ -2,7 +2,6 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
 import BidetFrame from '../components/BidetFrame';
-import bidets from './bidetitems.json';
 import YoutubeVideo from '../components/YoutubeVideo';
 import HomeLink from "../components/HomeLink";
 
@@ -25,7 +24,7 @@ const HomePage = ({sliderSink,sliderBidet}) => {
         <HomeLink url="/tienda/accesorios" title="Accesorios" />
       </section>
       <section className="bidetframe-container">
-        <BidetFrame itemsArray={bidets} sliderBidet={sliderBidet} />
+        <BidetFrame sliderBidet={sliderBidet} />
         <HomeLink url="/tienda/bidets" title="Bidet" />
        
       </section>
