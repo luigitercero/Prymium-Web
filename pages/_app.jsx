@@ -23,10 +23,15 @@ import '../src/styles/components/schedule.scss';
 import '../src/styles/components/youtube-video.scss';
 
 import Layout from '../src/components/Layout';
+import TagManager from 'react-gtm-module'
 
+const tagManagerArgs = {
+  id: 'GTM-NKSQN8N '
+}
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-NKSQN8N' });
     if (
       !("serviceWorker" in navigator) ||
       process.env.NODE_ENV !== "production"
