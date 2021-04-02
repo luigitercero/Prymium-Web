@@ -12,8 +12,10 @@ class MyDocument extends Document {
     return { ...initialProps }
   }
 
-  componentDidMount () {
+  constructor (props) {
+    super(props)
     TagManager.initialize(tagManagerArgs)
+
   }
 
   render() {
