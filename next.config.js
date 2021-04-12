@@ -15,6 +15,16 @@
     async redirects() {
       return [
         {
+          source: '/producto-2/',
+          destination: '/tienda',
+          permanent: true,
+        },
+        {
+          source: '/product-2/',
+          destination: '/tienda',
+          permanent: true,
+        },
+        {
           source: '/store-lavatrastos-grifos-bidet-guatemala/',
           destination: '/tienda',
           permanent: true,

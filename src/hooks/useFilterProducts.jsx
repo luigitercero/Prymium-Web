@@ -1,5 +1,5 @@
 export const getGroup = (query,products) => {
-
+if (products.filter) {
   // eslint-disable-next-line array-callback-return
   // eslint-disable-next-line consistent-return
   // eslint-disable-next-line array-callback-return
@@ -13,7 +13,7 @@ export const getGroup = (query,products) => {
       }
       return false;
     });
-
+  }
   
 }
 

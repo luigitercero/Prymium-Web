@@ -22,8 +22,8 @@ import '../src/styles/components/singleProduct.scss';
 import '../src/styles/components/schedule.scss';
 import '../src/styles/components/youtube-video.scss';
 
-import Layout from '../src/components/Layout';
 import TagManager from 'react-gtm-module'
+import Layout from '../src/components/Layout';
 
 const tagManagerArgs = {
   id: 'GTM-NKSQN8N '
@@ -31,7 +31,7 @@ const tagManagerArgs = {
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-NKSQN8N' });
+    TagManager.initialize({ gtmId: tagManagerArgs });
     if (
       !("serviceWorker" in navigator) ||
       process.env.NODE_ENV !== "production"

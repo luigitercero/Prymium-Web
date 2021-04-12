@@ -7,29 +7,29 @@ import { Title, SubTitle } from "../Title";
 import useFilterProducts from '../../hooks/useFilterProducts'
 import Styles from './styles.module.scss'
 
-const ListOfProduct = ({ filter, products, h1 = true, title=null, isFiltered = false }) => {
+const ListOfProduct = ({ filter, products, h1 = true, title = null, isFiltered = false }) => {
   const router = useRouter()
 
   const { group } = router.query
   const [ListFilter, setListFilter] = useState(products);
 
   useEffect(() => {
-    if(!isFiltered){
+    if (!isFiltered) {
       setListFilter(useFilterProducts(group || filter, products))
     }
   }, [products, group]);
 
   const getList = () => {
-    if (isFiltered){
+    if (isFiltered) {
       return (
         products.map((single) => { return <CardProduct key={single.id} product={single} /> })
       )
-    }else{
+    } else if (ListFilter && ListFilter.map) {
 
-      return (
-        ListFilter.map((single) => { return <CardProduct key={single.id} product={single} /> })
-      )
-    }
+        return (
+          ListFilter.map((single) => { return <CardProduct key={single.id} product={single} /> })
+        )
+      }else { return <></>}
   }
 
   return (

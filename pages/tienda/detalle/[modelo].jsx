@@ -19,6 +19,7 @@ export const getServerSideProps = async ({ params }) => {
   try {
     const response = await fetch(singleProductUrl(params.modelo));
     const singleProduct = await response.json();
+   
     return {
       props: {
         singleProduct
