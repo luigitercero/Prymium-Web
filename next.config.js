@@ -15,6 +15,11 @@
     async redirects() {
       return [
         {
+          source: '/productos-2/',
+          destination: '/tienda',
+          permanent: true,
+        },
+        {
           source: '/producto-2/',
           destination: '/tienda',
           permanent: true,
