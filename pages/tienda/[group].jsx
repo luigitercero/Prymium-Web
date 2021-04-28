@@ -4,10 +4,20 @@ import React from 'react';
 import Head from '@hooks/useSEO';
 import { useRouter } from 'next/router';
 import Tienda from '../../src/containers/Tienda';
-import { singleCategoryUrl, sobreAzulejo, url } from '../../src/routes/Config';
+import { singleCategoryUrl, sobreAzulejo, url,getCatergories } from '../../src/routes/Config';
 
+export const getStaticPaths = async () => {
+  const response = await fetch(getCatergories.url);
+  const products = await response.json();  
 
-export const getServerSideProps = async ({ params }) => {
+  const paths = products.map(({ alias }) => ({
+    params: { group: `${alias}` },
+  }))
+
+  return { paths, fallback: false };
+}
+
+export const getStaticProps = async ({ params }) => {
   try {
     const response = await fetch(singleCategoryUrl(params.group))
     const products = await response.json()

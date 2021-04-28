@@ -2,20 +2,20 @@
 import React, { useEffect, useState } from 'react';
 import Head from '@hooks/useSEO';
 import Detalle from '../../../src/containers/Detalle';
-import { singleProductUrl, getRecomended, url } from '../../../src/routes/Config';
+import { singleProductUrl, getRecomended, url, getProducts } from '../../../src/routes/Config';
 
-// export const getStaticPaths = async () => {
-//   const response = await fetch(getProducts.url);
-//   const products = await response.json();  
+export const getStaticPaths = async () => {
+  const response = await fetch(getProducts.url);
+  const products = await response.json();  
 
-//   const paths = products.map((product) => ({
-//     params: { modelo: `${product.link}` },
-//   }))
+  const paths = products.map((product) => ({
+    params: { modelo: `${product.link}` },
+  }))
 
-//   return { paths, fallback: false };
-// }
+  return { paths, fallback: false };
+}
 
-export const getServerSideProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   try {
     const response = await fetch(singleProductUrl(params.modelo));
     const singleProduct = await response.json();

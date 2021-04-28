@@ -3,7 +3,7 @@ import Head from '@hooks/useSEO';
 import All from '../../src/containers/AllProduct';
 import { getProducts, sobreAzulejo, url } from '../../src/routes/Config';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   // eslint-disable-next-line no-undef
   const response = await fetch(getProducts.url)
   const products = await response.json()
