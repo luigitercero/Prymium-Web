@@ -56,14 +56,16 @@ const DatosTecnicos = (datosTecnicos) => {
 
     return (
       datosTecnicos.datosTecnicos.map((data, index) => {
-        return <span key={`D${index + 1}`}><Pre>{data}</Pre></span>
+        return <li key={`D${index + 1}`}><Pre>{data}</Pre></li>
       })
     )
   }
 
   return (
     <section className="tecnicos-single-product">
-      {splitDatos()}
+      <ul className='list-tecnico'>
+        {splitDatos()}
+      </ul>
     </section>
   )
 }

@@ -3,6 +3,16 @@
 :root {
   --swiper-theme-color: #e2b85c;
 }
+.list-tecnico {
+  
+  line-height: 1.54;
+  li::before {
+   
+            /* Adjust this value so that it appears where you want. */
+    font-size: 5em;  
+  }
+  
+}
 .container-single-product {
   display: grid;
   grid-template-columns: minmax(auto,1024px);
