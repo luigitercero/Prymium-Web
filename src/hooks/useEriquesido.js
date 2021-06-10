@@ -22,23 +22,19 @@ const DatoEriquesido = ({singleProduct,url}) => {
                   "reviewRating": {
                     "@type": "Rating",
                     "ratingValue": "0",
-                    "bestRating": "0"
+                    "bestRating": "0",
+                    "worstRating": "0"
                   },
                   "author": {
                     "@type": "Person",
                     "name": "Luis"
                   }
                 },
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "0",
-                  "reviewCount": "0"
-                },
                 "offers": {
                   "@type": "Offer",
                   "url": "${url || ""}",
                   "priceCurrency": "GUA",
-                  "price": "${singleProduct[0]?.price || ""}",
+                  "price": "${singleProduct[0]?.price.replace(",","") || ""}",
                   "priceValidUntil": "2022-01-01",
                   "itemCondition": "https://schema.org/UsedCondition",
                   "availability": "https://schema.org/InStock"

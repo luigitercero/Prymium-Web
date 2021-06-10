@@ -40,26 +40,6 @@ const useSEO = ({ description, keywords, title, children, img, url,DatoEriquesid
         <meta name="twitter:description" content={description} />
         <meta name="twitter:url" content={`https://lavatrastosprymium.com${router.asPath}`} />
         <meta name="twitter:image" content={img} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: `
-            {
-              "@context" : "http://schema.org",
-              "@type" : "LocalBusiness",
-              "name" : "Lavatrastos Prymium",
-              "image" : "https://www.lavatrastosprymium.com/wp-content/themes/nuevo_estilo_theme/image/prymium.jpg",
-              "telephone" : "2485-5176",
-              "address" : {
-                "@type" : "PostalAddress",
-                "streetAddress" : "3a. calle 3-54 boulevard San Cristobal",
-                "addressLocality" : "zona 8",
-                "addressRegion" : "Mixco"
-              }
-            }
-          `,
-          }}
-        />
         {DatoEriquesido?(
           <script
             type="application/ld+json"
@@ -68,6 +48,28 @@ const useSEO = ({ description, keywords, title, children, img, url,DatoEriquesid
           }}
           />
 ):<></>}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
+              "@context" : "http://schema.org",
+              "@type" : "LocalBusiness",
+              "name" : "Lavatrastos Prymium",
+              "image" : ${img},
+              "priceRange": "$$$$",
+              "telephone" : "2485-5176",
+              "address" : {
+                "@type" : "PostalAddress",
+                "streetAddress" : "3a. calle 3-54 boulevard San Cristobal",
+                "addressLocality" : "zona 8",
+                "addressRegion" : "Mixco",
+              }
+            }
+          `,
+          }}
+        />
+
         
 
       </Head>
