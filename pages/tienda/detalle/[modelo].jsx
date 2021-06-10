@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react';
 import Head from '@hooks/useSEO';
+import DatoEriquesido from '@hooks/useEriquesido';
 import Detalle from '../../../src/containers/Detalle';
 import { singleProductUrl, getRecomended, url, getProducts } from '../../../src/routes/Config';
 
@@ -32,6 +33,7 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
+
 const Principal = ({ singleProduct }) => {
   const title = singleProduct[0]?.title || "Producto de fregadero "
   const content = singleProduct[0]?.content || "Producto de fregadero "
@@ -54,11 +56,14 @@ const Principal = ({ singleProduct }) => {
       description={`${content}, Lavatrastos Prymium tiene todo lo que necesistas para tu fregadero`}
       img={imagen}
       url={url}
+      DatoEriquesido={DatoEriquesido ({singleProduct, url})}
     >
       <Detalle singleProduct={singleProduct} listRelevant={relevante} />
     </Head>
   )
 
 };
+
+
 
 export default Principal;

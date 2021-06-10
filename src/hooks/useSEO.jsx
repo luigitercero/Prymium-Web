@@ -2,7 +2,7 @@ import React from 'react';
 import Head from "next/head";
 import { useRouter } from 'next/router'
 
-const useSEO = ({ description, keywords, title, children, img, url }) => {
+const useSEO = ({ description, keywords, title, children, img, url,DatoEriquesido }) => {
   const router = useRouter()
   return (
     <>
@@ -60,6 +60,16 @@ const useSEO = ({ description, keywords, title, children, img, url }) => {
           `,
           }}
         />
+        {DatoEriquesido?(
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+            __html: DatoEriquesido
+          }}
+          />
+):<></>}
+        
+
       </Head>
       {children}
     </>

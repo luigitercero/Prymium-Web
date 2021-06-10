@@ -7,7 +7,7 @@ const ArrayNavigationButton = () => {
     <div className={styles.container}>
       <HomeLinkSimple url="/tienda/lavatrastos" title="Lavatrastos" />
       <HomeLinkSimple url="/tienda/grifos" title="Grifos" />
-      <HomeLinkSimple url="/tienda/bidet" title="Bidet" />
+      <HomeLinkSimple url="/tienda/bidets" title="Bidet" />
       <HomeLinkSimple url="/tienda/accesorios" title="Accesorios" />
       <HomeLinkSimple url="/tienda/" title="Todo" />
     </div>
