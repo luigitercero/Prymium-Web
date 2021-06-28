@@ -33,7 +33,7 @@ const DatoEriquesido = ({singleProduct,url}) => {
                 "offers": {
                   "@type": "Offer",
                   "url": "${url || ""}",
-                  "priceCurrency": "GUA",
+                  "priceCurrency": "GTQ",
                   "price": "${singleProduct[0]?.price.replace(",","") || ""}",
                   "priceValidUntil": "2022-01-01",
                   "itemCondition": "https://schema.org/UsedCondition",
