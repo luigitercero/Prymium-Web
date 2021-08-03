@@ -14,28 +14,17 @@ const Item = ({ item }) => {
   let hasClicked = false;
 
   const onPress = () => {
-    if (!hasClicked) {
-      content.current.style.height = 'auto';
-      arrow.current.style.transform = "rotate(90deg)";
-    }else{
-      content.current.style.height = '0';
-      arrow.current.style.transform = "rotate(-90deg)";
-    }
 
-    hasClicked = !hasClicked;
   }
 
   return(
     <div className={styles.item}>
       <div onClick={onPress} className={styles.title_container}>
         <SubTitlen className={styles.item_title}>{titulo}</SubTitlen>
-        <img ref={arrow} src="/images/icons/left-arrow.png" alt="arrow" />
+        <img ref={arrow} src="/images/icons/right-arrow.png" alt="arrow" />
       </div>
       <div className={styles.content_container} ref={content}>
         <div className={styles.item_content}>
-          <Pre>
-            {description}
-          </Pre>
         </div>
       </div>
     </div>

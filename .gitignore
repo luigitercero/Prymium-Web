@@ -22,3 +22,5 @@ public/worker-*.js.map
 *.css
 
 *.css.map
+
+.idea/
