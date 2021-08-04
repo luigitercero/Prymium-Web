@@ -28,7 +28,13 @@
 
 .item{
   margin: 0 3vw;
+  img{
+    width: 100%;
+  }
 
+  iframe{
+    width: 100%;
+  }
   @include mq('small-screen', 'min'){
     margin: 0 10vw;
   }
