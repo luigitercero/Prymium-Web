@@ -1,12 +1,26 @@
 import React from 'react';
 import {useRouter} from  'next/router'
+import Head from '@hooks/useSEO';
+import BaseQuestionsPage from "../../src/components/BaseQuestionsPage/App";
 
 const questionDetail = ( ) => {
 
     const router = useRouter();
-    const questionID = router.query.description;
+    const {title, description} = router.query;
 
-    return <div>asdfsd</div>
+    return (
+
+        <Head
+            title='Prymium | Bidet | Grifos | Preguntas'
+            description="Preguntas resueltas y buenas prácticas para instalar y cuidar tu lavatrastos o grifo, obten de manera inmediata todas las respuestas "
+        >
+
+            <BaseQuestionsPage title={title} description={description}></BaseQuestionsPage>
+
+        </Head>
+
+
+    )
 
 
 }

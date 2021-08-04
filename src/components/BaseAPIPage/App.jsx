@@ -24,7 +24,7 @@ const Item = ({ item }) => {
           pathname: '/preguntas/[id]',
           query: {
               id: id,
-              titulo: titulo,
+              title: titulo,
               description: description
           },
       }}>
