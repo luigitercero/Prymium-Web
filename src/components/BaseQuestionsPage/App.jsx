@@ -1,7 +1,22 @@
-import React from 'react';
-import {Title, SubTitlen, Pre, SubTitle} from "../Title";
+import React, { useRef } from 'react';
 import styles from "./styles.module.scss";
 import SubHero from "../SubHero/App";
+import {Pre} from "../Title";
+
+
+const InfoQuestion = ({description}) => {
+    const content = useRef();
+
+    return(
+      <div className={styles.item}>
+        <Pre>
+            {description}
+        </Pre>
+
+      </div>
+    )
+
+}
 
 const BaseQuestionsPage = ({title, description}) => {
 
@@ -10,11 +25,11 @@ const BaseQuestionsPage = ({title, description}) => {
 
       <div className={styles.container}>
         <SubHero isCentered>
-            <span id="subtitle">{title}</span>
+          <span id="subtitle">{title}</span>
         </SubHero>
         <div className={styles.content}>
-          <section className={styles.items_container} >
-            Description
+          <section className={styles.items_container}>
+            <InfoQuestion description={description} />
           </section>
 
         </div>
