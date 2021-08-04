@@ -6,9 +6,10 @@ import SubHero from '../SubHero/App';
 import { Title, SubTitlen, Pre } from "../Title";
 
 import styles from './styles.module.scss';
+import Link from 'next/link'
 
 const Item = ({ item }) => {
-  const { titulo, description } = item;
+  const { titulo, description, id } = item;
   const content = useRef();
   const arrow = useRef();
   let hasClicked = false;
@@ -18,16 +19,29 @@ const Item = ({ item }) => {
   }
 
   return(
-    <div className={styles.item}>
-      <div onClick={onPress} className={styles.title_container}>
-        <SubTitlen className={styles.item_title}>{titulo}</SubTitlen>
-        <img ref={arrow} src="/images/icons/right-arrow.png" alt="arrow" />
-      </div>
-      <div className={styles.content_container} ref={content}>
-        <div className={styles.item_content}>
+
+      <Link href={{
+          pathname: '/preguntas/[id]',
+          query: {
+              id: id,
+              titulo: titulo,
+              description: description
+          },
+      }}>
+        <div className={styles.item}>
+          <div onClick={onPress} className={styles.title_container}>
+            <SubTitlen className={styles.item_title}>{titulo}</SubTitlen>
+            <img ref={arrow} src="/images/icons/right-arrow.png" alt="arrow" />
+
+          </div>
+
+
+          <div className={styles.content_container} ref={content}>
+            <div className={styles.item_content}>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </Link>
   )
 
 }
