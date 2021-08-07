@@ -12,7 +12,7 @@ const Item = ({ item }) => {
 
   return(
 
-    <Link href="/preguntas/[ID]" as={`/preguntas/${item.id}`}>
+    <Link href="/preguntas/[id]" as={`/preguntas/${item.id}`}>
       <div className={styles.item}>
         <div className={styles.title_container}>
           <SubTitlen className={styles.item_title}>{titulo}</SubTitlen>
