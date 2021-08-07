@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {getOneQuestion, getQuestion} from "../../src/routes/Config";
+import Head from "@hooks/useSEO";
+import {useRouter} from "next/router";
+import BaseQuestionsPage from "../../src/components/BaseQuestionsPage/App";
 
 export async function getStaticPaths() {
 
@@ -17,7 +20,7 @@ export async function getStaticPaths() {
 
     return{
         paths,
-        fallback:true
+        fallback:false
     }
 
 }
@@ -43,14 +46,24 @@ export async function  getStaticProps({params}){
 
 }
 
-const Principal = ( ) => {
+const Principal = ( {question}) => {
+
+
+    const [element,setElement] = useState(question[0]);
+
 
 
     return (
 
-        <div>
-            hola
-        </div>
+        <Head
+            title='Prymium | Bidet | Grifos | Preguntas'
+            description="Preguntas resueltas y buenas prácticas para instalar y cuidar tu lavatrastos o grifo, obten de manera inmediata todas las respuestas "
+        >
+
+            <BaseQuestionsPage description={element.description} title={element.titulo}></BaseQuestionsPage>
+
+
+        </Head>
 
     )
 
