@@ -70,3 +70,7 @@ export const sobreAzulejo = () => {
   return `${url}wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg`
   
 }
+
+export const getOneQuestion = (idQuestion) => {
+  return `${url}wp-json/pg/v1/preguntas/${idQuestion}`
+}
