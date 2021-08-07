@@ -1,47 +1,31 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable no-undef */
-/* eslint-disable prefer-destructuring */
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link'
 import SubHero from '../SubHero/App';
-import { Title, SubTitlen, Pre } from "../Title";
+import { Title, SubTitlen } from "../Title";
 
 import styles from './styles.module.scss';
-import Link from 'next/link'
 
 const Item = ({ item }) => {
-  const { titulo, description, id } = item;
+  const { titulo } = item;
   const content = useRef();
   const arrow = useRef();
-  let hasClicked = false;
-
-  const onPress = () => {
-
-  }
 
   return(
 
-      <Link href={{
-          pathname: '/preguntas/[id]',
-          query: {
-              id: id,
-              title: titulo,
-              description: description
-          },
-      }}>
-        <div className={styles.item}>
-          <div onClick={onPress} className={styles.title_container}>
-            <SubTitlen className={styles.item_title}>{titulo}</SubTitlen>
-            <img ref={arrow} src="/images/icons/right-arrow.png" alt="arrow" />
+    <Link href="/preguntas/[questionID]" as={`/users/${item.id}`}>
+      <div className={styles.item}>
+        <div className={styles.title_container}>
+          <SubTitlen className={styles.item_title}>{titulo}</SubTitlen>
+          <img ref={arrow} src="/images/icons/right-arrow.png" alt="arrow" />
 
-          </div>
-
-
-          <div className={styles.content_container} ref={content}>
-            <div className={styles.item_content}>
-            </div>
-          </div>
         </div>
-      </Link>
+
+
+        <div className={styles.content_container} ref={content}>
+          <div className={styles.item_content} />
+        </div>
+      </div>
+    </Link>
   )
 
 }
