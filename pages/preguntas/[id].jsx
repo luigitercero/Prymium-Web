@@ -6,9 +6,9 @@ const Principal = ( ) => {
 
     return (
 
-        <di>
+        <div>
             hola
-        </di>
+        </div>
 
     )
 

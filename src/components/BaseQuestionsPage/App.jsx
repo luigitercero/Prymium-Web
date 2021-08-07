@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React,  from 'react';
 import styles from "./styles.module.scss";
 import SubHero from "../SubHero/App";
 import {Pre} from "../Title";
 
 
 const InfoQuestion = ({description}) => {
-    const content = useRef();
+
 
     return(
       <div className={styles.item}>
