@@ -21,9 +21,9 @@ const InfoQuestion = ({title, description}) => {
                     <div className={styles.content}>
                         <section className={styles.items_container}>
                             <div className={styles.item}>
-                                <div className={styles.textAling}>
-                                    <div dangerouslySetInnerHTML={{ __html: description }} />
-                                </div>
+
+                                <div dangerouslySetInnerHTML={{ __html: description }} />
+
                             </div>
                         </section>
 
