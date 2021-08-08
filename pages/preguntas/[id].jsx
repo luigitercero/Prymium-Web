@@ -60,7 +60,7 @@ const Principal = ( {question}) => {
         >
 
 
-            <InfoQuestion title={question[0].titulo} description={question[0].titulo}></InfoQuestion>
+            <InfoQuestion title={question[0].titulo} description={question[0].description}></InfoQuestion>
 
         </Head>
 
