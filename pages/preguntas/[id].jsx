@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {getOneQuestion, getQuestion} from "../../src/routes/Config";
 import Head from "@hooks/useSEO";
-import {useRouter} from "next/router";
-import BaseQuestionsPage from "../../src/components/BaseQuestionsPage/App";
+import InfoQuestion from "../../src/components/InfoQuestion";
 
 export async function getStaticPaths() {
 
@@ -49,7 +48,7 @@ export async function  getStaticProps({params}){
 const Principal = ( {question}) => {
 
 
-    const [element,setElement] = useState(question[0]);
+
 
 
 
@@ -60,8 +59,8 @@ const Principal = ( {question}) => {
             description="Preguntas resueltas y buenas prácticas para instalar y cuidar tu lavatrastos o grifo, obten de manera inmediata todas las respuestas "
         >
 
-            <BaseQuestionsPage description={element.description} title={element.titulo}></BaseQuestionsPage>
 
+            <InfoQuestion title={question[0].titulo} description={question[0].titulo}></InfoQuestion>
 
         </Head>
 

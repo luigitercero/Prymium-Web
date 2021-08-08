@@ -1,0 +1,23 @@
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+.container {
+  display: grid;
+  grid-template-columns: 0.4fr 2.2fr 0.4fr;
+  grid-template-rows: 0.3fr 1.5fr 1.2fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+.a1 { grid-area: 1 / 1 / 2 / 4; }
+
+.Probando { grid-area: 1 / 2 / 2 / 3; }
+
+
+
