@@ -7,30 +7,21 @@ import SubHero from "../SubHero/App";
 const InfoQuestion = ({title, description}) => {
 
     return(
-        <div className="container">
-            <div className="conteiner"></div>
-            <div className="cabezera">
-                <div className="titulo">
-                    <h2 className={styles.centered}>
-                        {title}
-                    </h2>
+       <div className={styles.body}>
+        <div className={styles.center}>
+            <div className={styles.contenido}>
+                <h2 className={styles.fuente}>
+                    {title}
+                </h2>
+
+                <div className={styles.fuenteBody}>
+                    <div dangerouslySetInnerHTML={{ __html: description }} />
                 </div>
-            </div>
-            <div className="cuerpo">
-                <div className="contenedorinfo">
-                    <div className={styles.content}>
-                        <section className={styles.items_container}>
-                            <div className={styles.item}>
 
-                                <div dangerouslySetInnerHTML={{ __html: description }} />
 
-                            </div>
-                        </section>
-
-                    </div>
-                </div>
             </div>
         </div>
+       </div>
 
 
     );
