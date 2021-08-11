@@ -43,6 +43,12 @@
     }
   }
 
+  h2{
+    @include mq('small-screen', 'min'){
+      font-size: 1.55em;
+    }
+  }
+
 
 
 }
@@ -70,9 +76,9 @@
 
   font-family: "Times New Roman";
   text-align: justify;
-
-
-
+  @include mq('small-screen', 'min'){
+    font-size: 1.2em;
+  }
 }
 
 
