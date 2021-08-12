@@ -52,6 +52,7 @@
     text-align: center;
     padding: 20px 0px 5px;
     font-size: 30px;
+    text-transform: capitalize;
     @include mq('small-screen', 'min'){
       font-size: 35px;
     }
