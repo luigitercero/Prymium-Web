@@ -39,18 +39,31 @@ const BaseAPIPage = ({ title, subtitle, question }) => {
   }, []);
 
   return(
-    <div className={styles.container}>
-      <SubHero isCentered>
-        <Title id="title">{title}</Title>
-        <span id="subtitle">{subtitle}</span>
-      </SubHero>
-      <div className={styles.content}>
-        <section className={styles.items_container}>
-          {data.map(item => {
+
+    <div className={styles.body}>
+
+      <div className={styles.center}>
+        <div className={styles.contenido}>
+
+          <div className={styles.container}>
+            <SubHero isCentered>
+              <Title id="title">{title}</Title>
+              <span id="subtitle">{subtitle}</span>
+            </SubHero>
+            <div className={styles.content}>
+              <section className={styles.items_container}>
+                {data.map(item => {
             return <Item key={item.id} item={item} />
           })}
-        </section>
+              </section>
+            </div>
+
+
+          </div>
+        
+        </div>
       </div>
+
     </div>
   )
 }

@@ -91,3 +91,22 @@
     font-size: 0.9em;
   }
 }
+
+
+.body {
+  background: green;
+}
+
+.contenido {
+  background: white;
+  max-width: 1500px;
+  padding: 16px;
+  flex-grow: 1;
+
+  min-height: 600px;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+}
