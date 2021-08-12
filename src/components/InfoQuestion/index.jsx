@@ -14,7 +14,7 @@ const InfoQuestion = ({title, description}) => {
                     {title}
                 </h2>
 
-                <div className={styles.fuenteBody}>
+                <div>
                     <div dangerouslySetInnerHTML={{ __html: description }} />
                 </div>
 
