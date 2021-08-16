@@ -1,0 +1,30 @@
+@import '../../styles/globals/mq.scss';
+
+.list{
+  margin: 0 3vw;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4,minmax(150px,210px)) ;
+  gap: 3em;
+  justify-content: center;
+  margin-bottom: 2em;
+
+
+  @include mq ("large-screen",'max'){
+    grid-template-columns: repeat(3,minmax(150px,210)) ;
+    gap: 2em;
+  }
+  @include mq ("medium-screen",'max'){
+    grid-template-columns: repeat(2,minmax(150px,210px)) ;
+    gap: 1.5em ;
+  }
+  @include mq ("x-small-screen",'max'){
+    grid-template-columns:  100% ;
+    gap: 15px;
+  }
+  .title{
+    grid-column-start: 1;
+    grid-column-end: -1;
+
+  }
+}
