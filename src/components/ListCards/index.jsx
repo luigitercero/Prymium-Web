@@ -17,10 +17,14 @@ const ListCards = ({products}) => {
         <div className={style.list}>
 
 
-            <CardProduct product={products[0]} isCatalog></CardProduct>
-            <CardProduct product={products[1]} isCatalog></CardProduct>
-            <CardProduct product={products[2]} isCatalog></CardProduct>
-            <CardProduct product={products[3]} isCatalog></CardProduct>
+            {
+                products.map(
+                    (element) => {
+                        return <CardProduct key={element.id} product={element} isCatalog></CardProduct>
+                    }
+
+                )
+            }
 
         </div>
         </div>
