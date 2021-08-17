@@ -13,8 +13,8 @@ const Principal = () => {
                 {
                     id: 0,
                     imagen: "https://luisazurdia.me/wp-content/uploads/2021/03/3043R-225-1.jpg",
-                    alt:"Lavatrastos",
-                    title:"Lavatrastos",
+                    alt:"lavatrastos",
+                    title:"lavatrastos",
                     link:"/tienda/lavatrastos"
 
                 },
@@ -22,8 +22,8 @@ const Principal = () => {
                 {
                     id: 1,
                     imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/SD-200-ACCESORIOS.jpg",
-                    alt:"Bidet",
-                    title:"Bidet",
+                    alt:"bidets",
+                    title:"bidets",
                     link:"/tienda/bidets"
 
                 },
@@ -31,8 +31,8 @@ const Principal = () => {
                 {
                     id: 2,
                     imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/HJ-3123-1.jpg",
-                    alt:"Grifo",
-                    title:"Grifo",
+                    alt:"Grifos",
+                    title:"Grifos",
                     link:"/tienda/grifos"
 
                 },
@@ -40,8 +40,8 @@ const Principal = () => {
                 {
                     id: 3,
                     imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/5144T-300x300.jpg",
-                    alt:"Todos",
-                    title:"Todos",
+                    alt:"todos",
+                    title:"todos",
                     link:"/tienda/tienda"
 
                 }
