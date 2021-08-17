@@ -1,27 +1,58 @@
 import React, {useState} from 'react';
 import Head from '@hooks/useSEO'
-import {getProducts, sobreAzulejo, url} from "../../src/routes/Config";
-import All from "../../src/containers/AllProduct";
-import AllProduct from "../../src/containers/AllProduct";
-import CardProduct from "../../src/components/CardProduct";
+import {sobreAzulejo, url} from "../../src/routes/Config";
+import ListCards from "../../src/components/ListCards";
 
-export const getStaticProps = async () => {
-    // eslint-disable-next-line no-undef
-    const response = await fetch(getProducts.url)
-    const products = await response.json()
 
-    return {
-        props: {
-            products
-        }
+const Principal = () => {
+
+    const data =() => {
+
+        return (
+            [
+                {
+                    id: 0,
+                    imagen: "https://luisazurdia.me/wp-content/uploads/2021/03/3043R-225-1.jpg",
+                    alt:"Lavatrastos",
+                    title:"Lavatrastos",
+                    link:"/tienda/lavatrastos"
+
+                },
+
+                {
+                    id: 1,
+                    imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/SD-200-ACCESORIOS.jpg",
+                    alt:"Bidet",
+                    title:"Bidet",
+                    link:"/tienda/bidets"
+
+                },
+
+                {
+                    id: 2,
+                    imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/HJ-3123-1.jpg",
+                    alt:"Grifo",
+                    title:"Grifo",
+                    link:"/tienda/grifos"
+
+                },
+
+                {
+                    id: 3,
+                    imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/5144T-300x300.jpg",
+                    alt:"Todos",
+                    title:"Todos",
+                    link:"/tienda/tienda"
+
+                }
+
+
+            ]
+        );
+
     }
-}
 
-const Principal = ({ products }) => {
-
-    const [productList, setProductList] = useState(products);
-
-
+    const [products, setProducts] = useState(data());
 
 
     return (
@@ -32,8 +63,12 @@ const Principal = ({ products }) => {
             url={url}
         >
 
+            <div>
 
 
+                <ListCards products={products}></ListCards>
+
+            </div>
         </Head>
     );
 
