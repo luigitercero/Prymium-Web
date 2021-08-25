@@ -49,9 +49,8 @@ const Header = () => {
 const NavigationList = () => (
   <ul>
     <NavItem {..._route.home} />
-    <NavItem key={_route.products.key} to='#product' name={_route.products.name}>
-      <SubMenu />
-    </NavItem>
+    <NavItem {..._route.products} />
+
     <NavItem {..._route.asks} />
     {/* <NavItem {..._route.blog} /> */}
     <NavItem {..._route.contact} />

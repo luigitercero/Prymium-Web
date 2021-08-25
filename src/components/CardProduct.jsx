@@ -30,7 +30,7 @@ const Image = ({ img, alt }) => {
 const Button = ({link, isCatalog, title}) => {
   return (
     <Link href={isCatalog?link: `/tienda/detalle/${link}`}>
-      <a className="button">{isCatalog?`Ver ${title}`:"Ver detalles"}</a>
+      <a className="button">{isCatalog?`${title}`:"Ver detalles"}</a>
     </Link>
 
   )
