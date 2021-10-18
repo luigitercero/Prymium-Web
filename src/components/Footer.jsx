@@ -14,7 +14,7 @@ const Footer = () => {
       <section>
 
         <p>Tel: 2485-5176</p>
-        <p>Cel: 5510-3370</p>
+        <p>Cel: 3617-2878</p>
 
       </section>
       <section>

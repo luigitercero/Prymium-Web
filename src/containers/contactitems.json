@@ -4,7 +4,7 @@
     "icon": "/images/icons/whatsapp.webp",
     "alt": "Icono para enviar mensajes por Whatsapp a lavatrastos",
     "itemName":"Whatsapp",
-    "itemInfo": "(+502) 5510-3370",  
+    "itemInfo": "(+502) 3617-2878",  
     "linkTo": "https://wa.me/c/50236172878"
   },
   {
@@ -13,7 +13,7 @@
     "alt": "Icono para llamar a lavatrastos",
     "itemName":"Teléfono",
     "itemInfo": "(+502) 2485-5176",  
-    "linkTo": "tel:+55103370"
+    "linkTo": "tel:36172878"
   },
   {
     "id": "43",
