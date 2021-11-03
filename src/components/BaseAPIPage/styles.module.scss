@@ -14,7 +14,6 @@
   img{
     cursor: pointer;
     padding: 10px;
-    transform: rotate(-90deg);
   }
 }
 
@@ -31,7 +30,7 @@
   margin: 0 3vw;
   
   @include mq('small-screen', 'min'){
-    margin: 0 10vw;
+    margin: 0 0vw;
   }
 }
 
@@ -91,4 +90,23 @@
     font-style: italic;
     font-size: 0.9em;
   }
+}
+
+
+.body {
+  background:rgba(255, 247, 226, 0.4);
+}
+
+.contenido {
+  background: white;
+  max-width: 1000px;
+  padding: 16px;
+  flex-grow: 1;
+
+  min-height: 600px;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
 }

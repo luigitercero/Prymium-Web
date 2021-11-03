@@ -22,3 +22,6 @@ public/worker-*.js.map
 *.css
 
 *.css.map
+
+.idea/
+.DS_Store

@@ -6,7 +6,7 @@ export default {
   },
   products:{
     name:"Productos",
-    to:"/tienda/",
+    to:"/productos",
     id:2
   },
   asks:{
@@ -69,4 +69,8 @@ export const feedback = () => {
 export const sobreAzulejo = () => {
   return `${url}wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg`
   
+}
+
+export const getOneQuestion = (idQuestion) => {
+  return `${url}wp-json/pg/v1/preguntas/${idQuestion}`
 }

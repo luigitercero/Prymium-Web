@@ -2,15 +2,17 @@ import React from 'react';
 import Link from 'next/link';
 import { Title3ForCard } from './Title'
 
-const CardProduct = ({ product }) => {
+const CardProduct = ({ product, isCatalog=false }) => {
   const { imagen, alt, title, link } = product;
+
+
   
   return (
-    <Link href={`/tienda/detalle/${link}`}>
+    <Link href={isCatalog?link: `/tienda/detalle/${link}`}>
       <div className='card-container'>
         <Image img={imagen} alt={alt || "foto de lavatrastos" } />
-        <Title3ForCard className="center-text">{title || "Lavatrastos mod 7807F"}</Title3ForCard>
-        <Button link={link} />
+        <Title3ForCard className="center-text">{isCatalog?"":title || "Lavatrastos mod 7807F"}</Title3ForCard>
+        <Button link={link} isCatalog={isCatalog} title={title} />
       </div>
     </Link>
   )
@@ -25,12 +27,11 @@ const Image = ({ img, alt }) => {
 
 }
 
-const Button = ({link}) => {
+const Button = ({link, isCatalog, title}) => {
   return (
-    <Link href={`/tienda/detalle/${link}`}>
-      <a className="button">Ver detalles</a>
+    <Link href={isCatalog?link: `/tienda/detalle/${link}`}>
+      <a className="button">{isCatalog?`${title}`:"Ver detalles"}</a>
     </Link>
-   
 
   )
 }
