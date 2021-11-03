@@ -19,40 +19,44 @@ const Principal = () => {
         },
 
         {
-            id: 1,
-            imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/SD-200-ACCESORIOS.jpg",
-            alt:"Bidets",
-            title:"Bidets",
-            link:"/tienda/bidets"
+          id: 1,
+          imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/HJ-3123-1.jpg",
+          alt:"Grifos",
+          title:"Grifos",
+          link:"/tienda/grifos"
 
-        },
+      },
 
-        {
-            id: 2,
-            imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/HJ-3123-1.jpg",
-            alt:"Grifos",
-            title:"Grifos",
-            link:"/tienda/grifos"
+      {
+        id: 2,
+        imagen: "https://luisazurdia.me/wp-content/uploads/2021/04/Matel-Metalico01-300x300.jpg",
+        alt:"Accesorios",
+        title:"Accesorios",
+        link:"/tienda/accesorios"
 
-        },
+      },
 
-        {
-            id: 3,
-            imagen: "https://luisazurdia.me/wp-content/uploads/2021/04/Matel-Metalico01-300x300.jpg",
-            alt:"Accesorios",
-            title:"Accesorios",
-            link:"/tienda/accesorios"
+      {
+        id: 3,
+        imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/SD-200-ACCESORIOS.jpg",
+        alt:"Bidets",
+        title:"Bidets",
+        link:"/tienda/bidets"
 
-        },
+      },
 
-        {
-            id: 4,
-            imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/5144T-300x300.jpg",
-            alt:"Todos",
-            title:"Todos",
-            link:"/tienda/tienda"
+      
 
-        }
+        
+
+      {
+          id: 4,
+          imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/5144T-300x300.jpg",
+          alt:"Todos",
+          title:"Todos",
+          link:"/tienda/"
+
+      }
 
     ]);
 

@@ -30,7 +30,7 @@
   margin: 0 3vw;
   
   @include mq('small-screen', 'min'){
-    margin: 0 10vw;
+    margin: 0 0vw;
   }
 }
 
