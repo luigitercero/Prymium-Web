@@ -44,14 +44,10 @@ const Principal = () => {
         link:"/tienda/bidets"
 
       },
-
       
-
-        
-
       {
           id: 4,
-          imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/5144T-300x300.jpg",
+          imagen: "https://luisazurdia.me/wp-content/uploads/2021/07/7807F-01-300x300.png",
           alt:"Todos",
           title:"Todos",
           link:"/tienda/"
