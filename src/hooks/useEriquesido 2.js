@@ -39,7 +39,6 @@ const DatoEriquesido = ({singleProduct,url}) => {
                   "priceValidUntil": "2022-01-01",
                   "itemCondition": "https://schema.org/NewCondition",
                   "availability": "https://schema.org/InStock"
-                  "condition": "new",
                 },
                 "additionalProperty": [{
                   "@type": "PropertyValue",
