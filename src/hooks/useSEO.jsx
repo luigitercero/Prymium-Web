@@ -56,22 +56,19 @@ const useSEO = ({ description, keywords, title, children, img, url,DatoEriquesid
               "@context" : "http://schema.org",
               "@type" : "LocalBusiness",
               "name" : "Lavatrastos Prymium",
-              "image" : ${img},
+              "image" : "${img}",
               "priceRange": "$$$$",
               "telephone" : "2485-5176",
               "address" : {
                 "@type" : "PostalAddress",
                 "streetAddress" : "3a. calle 3-54 boulevard San Cristobal",
                 "addressLocality" : "zona 8",
-                "addressRegion" : "Mixco",
+                "addressRegion" : "Mixco"
               }
             }
-          `,
+          `
           }}
         />
-
-        
-
       </Head>
       {children}
     </>
