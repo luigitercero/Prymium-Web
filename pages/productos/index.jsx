@@ -21,9 +21,9 @@ const Principal = () => {
         {
           id: 1,
           imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/HJ-3123-1.jpg",
-          alt:"Grifos",
-          title:"Grifos",
-          link:"/tienda/grifos"
+          alt:"Mezcladoras",
+          title:"Mezcladoras",
+          link:"/tienda/mezcladoras"
 
       },
 
@@ -44,16 +44,24 @@ const Principal = () => {
         link:"/tienda/bidets"
 
       },
+      {
+        id: 4,
+        imagen: " https://luisazurdia.me/wp-content/uploads/2021/12/5003A.png",
+        alt:"Grifos de Baño",
+        title:"Grifos de Baño",
+        link:"/tienda/bath"
+
+      },
       
       {
-          id: 4,
+          id: 5,
           imagen: "https://luisazurdia.me/wp-content/uploads/2021/07/7807F-01-300x300.png",
           alt:"Todos",
           title:"Todos",
           link:"/tienda/"
 
-      }
-
+      },
+      
     ]);
 
 

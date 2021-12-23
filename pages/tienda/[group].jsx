@@ -10,8 +10,8 @@ export const getStaticPaths = async () => {
   const response = await fetch(getCatergories.url);
   const products = await response.json();  
 
-  const paths = products.map(({ alias }) => ({
-    params: { group: `${alias}` },
+  const paths = products.map(({ alias}) => ({
+    params: { group: `${alias}`},
   }))
 
   return { paths, fallback: false };
@@ -36,16 +36,19 @@ export const getStaticProps = async ({ params }) => {
 const Principal = ({ products }) => {
   const router = useRouter()
   const { group } = router.query
+  const title = (group === "bath")? "Griferia de baño" : group
+  
 
   return (
     
     <Head
-      title={`Prymium | ${group}`}
+      title={`Prymium | ${title}`}
       description="Encuentra lavatrastos de lujo, grifos y bidet, en acero inoxidable y plástico, grifos de 23 cm y lavatrastos de 55 cm a 120 cm con y sin ala de acero inxidable 202 y 304"
       img={sobreAzulejo()}
       url={url}
     >
-      <Tienda products={products} title={group} isFiltered />
+      
+      <Tienda products={products} title={title} isFiltered />
     </Head>
   );
 

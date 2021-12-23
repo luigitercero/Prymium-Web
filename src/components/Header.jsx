@@ -13,6 +13,7 @@ const Header = () => {
   const onClick = () => {
     setOpen(!open);
     setkeyOpen(keyOpen === "#openMenu" ? '#closeMenu' : '#openMenu');
+    
   }
   return (
 
@@ -34,7 +35,7 @@ const Header = () => {
         </div>
         <div className="menu-container">
           <HambuergerMenu open={open} keyOpen={keyOpen} onClick={onClick}>
-            <NavigationList />
+            <NavigationList onClick={onClick} />
           </HambuergerMenu>
           <div className='hide'>
             <NavigationList />
@@ -46,27 +47,30 @@ const Header = () => {
   )
 }
 
-const NavigationList = () => (
+const NavigationList = ({onClick}) => (
   <ul>
-    <NavItem {..._route.home} />
-    <NavItem {..._route.products} />
+    <NavItem onClick={onClick} {..._route.home} />
+    <NavItem onClick={onClick} {..._route.products} />
 
-    <NavItem {..._route.asks} />
+    <NavItem onClick={onClick} {..._route.asks} />
     {/* <NavItem {..._route.blog} /> */}
-    <NavItem {..._route.contact} />
+    <NavItem onClick={onClick} {..._route.contact} />
   </ul>
   )
 
-const NavItem = ({ id, to, name, children }) => {
+const NavItem = ({ id, to, name, children, onClick }) => {
   const [showSubMenu, setSubMenu] = useState(false);
 
   const onPress = () => {
     setSubMenu(!showSubMenu);
+    onClick(); 
   }
 
   const close = () => {
 
     setSubMenu(false);
+    onClick(); //close menut principal
+  
   }
 
   const childrenWithProps = React.Children.map(children, child => {
@@ -86,14 +90,14 @@ const NavItem = ({ id, to, name, children }) => {
 
   return (
 
-    <li key={id}>
+    <li key={id} onClick={close}>
       {
         children ? (
           <OutsideAlerter onClick={close}>
             {menu()}
           </OutsideAlerter>
         )
-          : <Link href={to}>{name}</Link>
+          : <Link onClick={close} href={to}>{name}</Link>
       }
     </li>
 
