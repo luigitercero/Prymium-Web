@@ -57,6 +57,11 @@ module.exports = withWorkbox({
         destination: '/',
         permanent: false,
       },
+      {
+        source: '/el-periodico',
+        destination: '/',
+        permanent: false,
+      },
     ]
   },
 })
