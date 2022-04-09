@@ -18,7 +18,7 @@
   grid-template-columns: minmax(auto,1024px);
   justify-content: center;
   margin: 0 3vw;
-  min-height: 100vh;
+  //min-height: 100vh;
   button {
     border-radius: 20px;
     max-width: 5.8em;
@@ -73,6 +73,18 @@
     padding: 0;
     opacity: 0;
     animation: fadeInImage 1s forwards;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    figure{
+
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    }
     .carrousel {
       max-width: 80vw;
       
