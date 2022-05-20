@@ -11,7 +11,7 @@ const SingleProduct = ({ id, product, }) => {
       <div className="container-product">
        
         <Title className="title-single-product">{product.title}</Title>
-        <Carrusel alt={product.content} src={product.accesorio || [product.imagen]} className="img-single-product" />
+        <Carrusel alt={product.content} src={product.accesorio || [product.imagen]} className="img-single-product" title={product.title} />
         {/* <Image
           className="img-single-product" 
           src={product.accesorio || product.imagen} 

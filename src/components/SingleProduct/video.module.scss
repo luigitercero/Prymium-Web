@@ -1,0 +1,47 @@
+@import '../../styles/globals/settings.scss';
+
+
+.video_container{
+  .video{
+    padding: 6px 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    //background-image: linear-gradient(to right, transparent, $primaryColor, transparent);
+  }
+
+  .video_to_play{
+    width: 100%;
+    // margin: 0 14vw;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .player{
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+    background-color: black;
+
+    .youtube_video{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  
+  @include mq("large-screen","max"){
+    .video_to_play{
+      margin: 0 $margin-left-right;
+      border-radius: 10px;
+    }
+  }
+}

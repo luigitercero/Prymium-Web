@@ -1,5 +1,8 @@
 @import '../globals/mq.scss';
 @import '../globals/colors.scss';
+.swiper-wrapper {
+  align-items: center; /* add this will all relevant prefixes */
+}
 :root {
   --swiper-theme-color: #e2b85c;
 }

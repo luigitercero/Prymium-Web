@@ -63,13 +63,13 @@ const NavItem = ({ id, to, name, children, onClick }) => {
 
   const onPress = () => {
     setSubMenu(!showSubMenu);
-    onClick(); 
+    //onClick(); 
   }
 
   const close = () => {
 
     setSubMenu(false);
-    onClick(); //close menut principal
+    //onClick(); //close menut principal
   
   }
 
