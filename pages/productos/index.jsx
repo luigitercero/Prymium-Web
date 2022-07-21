@@ -53,14 +53,32 @@ const Principal = () => {
 
       },
       
+      
       {
-          id: 5,
-          imagen: "https://luisazurdia.me/wp-content/uploads/2021/07/7807F-01-300x300.png",
-          alt:"Todos",
-          title:"Todos",
-          link:"/tienda/"
+        id: 5,
+        imagen: "https://luisazurdia.me/wp-content/uploads/2022/07/DUCHA-NEGRA-DORADA-300x300-1.jpg",
+        alt:"Duchas",
+        title:"Duchas",
+        link:"/tienda/duchas/"
 
       },
+
+      {
+        id: 6,
+        imagen: "https://luisazurdia.me/wp-content/uploads/2022/07/01-Campana-extractora.jpg",
+        alt:"Extractores",
+        title:"Extractores",
+        link:"/tienda/extractores/"
+
+      },
+      {
+        id: 7,
+        imagen: "https://luisazurdia.me/wp-content/uploads/2021/07/7807F-01-300x300.png",
+        alt:"Todos",
+        title:"Todos",
+        link:"/tienda/"
+
+    },
       
     ]);
 
