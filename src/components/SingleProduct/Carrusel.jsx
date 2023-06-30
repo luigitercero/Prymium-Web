@@ -8,11 +8,11 @@ import YoutubeVideo from "./Video";
 import './carrusel.module.scss';
 
 SwiperCore.use([Navigation, Pagination,]);
-export default ({ src, className, alt,title='' }) => {
+export default ({ src, className, video, alt,title='' }) => {
 
   return (
     <div className={className}>
-
+      
       <div className="carrousel">
         <Swiper
           spaceBetween={0}
@@ -20,21 +20,24 @@ export default ({ src, className, alt,title='' }) => {
           navigation
           pagination={{ clickable: true }}
         >
-          {title.toLocaleLowerCase() === "sanitario con bidet" && (
-            <SwiperSlide key="102l234s">
-              <Video key="102l234s" />
-            </SwiperSlide>
-          )}
+          
           
           {src.map((single, index)=>(
-            <SwiperSlide key={index}>
-              <Image
-                src={single}
-                alt={alt}
-                key={index}
-                SwiperSlide={SwiperSlide}
-              />
-            </SwiperSlide>
+            <>
+              <SwiperSlide key={index}>
+                <Image
+                  src={single}
+                  alt={alt}
+                  key={index}
+                  index={index} />
+              </SwiperSlide> 
+
+              {( index === 0) && (
+                <SwiperSlide key={index}>
+                  <Video key={index} vid={video} />
+                </SwiperSlide>
+              )}
+            </>
           ))}
         </Swiper>
       </div>
@@ -43,21 +46,20 @@ export default ({ src, className, alt,title='' }) => {
 };
 
 
-const Image = ({ src, alt, className, imgClass }) => {
+const Image = ({ src, alt, className, imgClass, index }) => {
   return (
     
     <figure className={className}>
-      <img src={src} alt={alt} className={imgClass || ''} />
-      
+      <img src={src} alt={alt} index={index} className={imgClass || ''} />
     </figure>
     
   )
 }
-const Video = ({className }) => {
+const Video = ({className, vid }) => {
   
     return (
       <figure className={className}>
-        <YoutubeVideo title='Sanitarios' vid='WB7dplMV6CI' />
+        <YoutubeVideo title='Sanitarios' vid={vid} />
       </figure>
     )
 }

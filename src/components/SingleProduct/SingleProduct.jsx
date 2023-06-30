@@ -9,9 +9,8 @@ const SingleProduct = ({ id, product, }) => {
     <section className='container-single-product' key={id}>
       
       <div className="container-product">
-       
         <Title className="title-single-product">{product.title}</Title>
-        <Carrusel alt={product.content} src={product.accesorio || [product.imagen]} className="img-single-product" title={product.title} />
+        <Carrusel alt={product.content} src={product.accesorio || [product.imagen]} video={product.video} className="img-single-product" title={product.title} />
         {/* <Image
           className="img-single-product" 
           src={product.accesorio || product.imagen} 
