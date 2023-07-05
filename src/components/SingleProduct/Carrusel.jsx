@@ -32,8 +32,9 @@ export default ({ src, className, video, alt,title='' }) => {
                   index={index} />
               </SwiperSlide> 
 
-              {( index === 0) && (
+              {( index === 0 && video !== "") && (
                 <SwiperSlide key={index}>
+                  {console.log('video', video)}
                   <Video key={index} vid={video} />
                 </SwiperSlide>
               )}
