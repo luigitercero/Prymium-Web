@@ -29,7 +29,7 @@
     "react/destructuring-assignment": "off",
     "react/no-danger": "off",
     "consistent-return": "off",
-    "react/no-deprecated": "off",
+    // "react/no-deprecated": "off",
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": [
       1,

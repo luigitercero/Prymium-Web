@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 const HomeLink = ({url,title}) => {
   return (
     <span className={styles.link}>
-      <Link href={url}>{title}</Link>
+      <a href={url}>{title}</a>
     </span>
   )
 }
@@ -13,7 +13,7 @@ const HomeLink = ({url,title}) => {
 export const HomeLinkSimple = ({url,title}) => {
   return (
     <span className={styles.link_simple}>
-      <Link href={url}>{title}</Link>
+      <a href={url}>{title}</a>
     </span>
   )
 }
