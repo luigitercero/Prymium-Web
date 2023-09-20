@@ -1,5 +1,5 @@
 import React from 'react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Navigation, Pagination } from 'swiper/modules';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import YoutubeVideo from "./Video";
@@ -7,7 +7,7 @@ import YoutubeVideo from "./Video";
 // Import Swiper styles
 import './carrusel.module.scss';
 
-SwiperCore.use([Navigation, Pagination,]);
+
 export default ({ src, className, video, alt,title='' }) => {
 
   return (

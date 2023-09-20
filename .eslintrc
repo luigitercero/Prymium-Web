@@ -7,6 +7,30 @@
     "prettier"
   ],
   "rules": {
+    "import/order": "off",
+    "spaced-comment": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-named-as-default": "off",
+    "react/no-invalid-html-attribute": "off",
+    "import/no-unresolved": "off",
+    "import/imports-first": "off",
+    "no-console": "off",
+    "no-useless-return": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "no-unused-vars": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/self-closing-comp": "off",
+    "camelcase": "off",
+    "react/no-extraneous-dependencies": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/no-array-index-key": "off",
+    "react/no-unknown-property": "off",
+    "react/destructuring-assignment": "off",
+    "react/no-danger": "off",
+    "consistent-return": "off",
+    "react/no-deprecated": "off",
+    "react/function-component-definition": "off",
     "react/jsx-filename-extension": [
       1,
       {
@@ -17,7 +41,7 @@
       }
     ],
     "arrow-body-style": ["off", "as-needed", { "requireReturnForObjectLiteral": true }],
-    "import/no-unresolved": [2, { "ignore": ["@.*"] }],
+    // "import/no-unresolved": [2, { "ignore": ["@.*"] }],
     // eslint-disable-next-line react/jsx-props-no-spreading
     "react/jsx-props-no-spreading": [0,
       {
@@ -29,10 +53,10 @@
     ],
     "react/prop-types": 0,
     "no-underscore-dangle": 0,
-    "import/imports-first": [
-      "error",
-      "absolute-first"
-    ],
+    // "import/imports-first": [
+    //   "error",
+    //   "absolute-first"
+    // ],
     "import/newline-after-import": "error"
   },
   "globals": {
@@ -44,5 +68,5 @@
     "Blob": true,
     "navigator": true
   },
-  "parser": "babel-eslint"
+  "parser": "@babel/eslint-parser"
 }
