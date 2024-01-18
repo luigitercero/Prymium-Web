@@ -1,6 +1,6 @@
 @import '../../styles/container/main.scss';
-.body {
 
+.body {
   background: none;
 }
 
@@ -9,7 +9,6 @@
   max-width: 1000px;
   padding: 20px;
   flex-grow: 1;
-
   min-height: 600px;
 
   img{
@@ -21,7 +20,6 @@
     max-height: 80%;
     height: 80%;
     width: 80%;
-
     @include mq('medium-screen', 'min'){
       max-width: 80%;
       max-height: 80%;
@@ -39,15 +37,12 @@
     height: 220px;
     margin-bottom: 32px;
     border-radius: 20px;
-
     @include mq('small-screen', 'min'){
       height: 560px;
-
     }
   }
 
   h2{
-
     font-family: Lato, Lato-Regular,sans-serif;
     text-align: center;
     padding: 20px 0px 5px;

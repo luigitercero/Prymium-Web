@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from '@hooks/useSEO';
-import Home from '../src/containers/Home';
-import { getSlidersSinks, getSlidersBidet, sobreAzulejo } from '../src/routes/Config';
+import Home from '@containers/Home';
+import { getSlidersSinks, getSlidersBidet, sobreAzulejo } from '@routes/Config';
 
 export const getStaticProps = async () => {
   // eslint-disable-next-line no-undef
@@ -17,6 +17,7 @@ export const getStaticProps = async () => {
     }
   }
 }
+
 const Principal = ({sliderSink,sliderBidet}) => {
   return (
     <>
@@ -28,7 +29,6 @@ const Principal = ({sliderSink,sliderBidet}) => {
       <Home sliderSink={sliderSink} sliderBidet={sliderBidet} />
     </>
   )
-
 };
 
 export default Principal;

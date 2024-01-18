@@ -1,5 +1,5 @@
-import React from 'react';
-import Iframe from './Iframe/App';
+import React  from 'react';
+import Iframe from './Iframe';
 import { SubTitle } from './Title';
 
 const YoutubeVideo = ({ title, vid }) => {

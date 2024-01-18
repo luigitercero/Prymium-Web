@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState, useEffect, useRef } from 'react';
-import useOnScreen from '../hooks/useOnScreen';
+import useOnScreen from '@hooks/useOnScreen';
 
 const AnimatedGallery = ({ children, baseName, transitionTime = 5000, animationTime = 1000 }) =>{
   const maxPosition = React.Children.count(children);
@@ -12,26 +12,34 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 5000, animationT
   let position = 0;
 
   const translatePosition = (atime = animationTime) => {
-    gallery.current.classList.remove(`${baseName}-${position - 1}`);
-    gallery.current.style.transitionDuration = `${atime}ms`;
-    gallery.current.classList.add(`${baseName}-${position}`);
-    if(position >= maxPosition){
-      setTimeout(() =>{
-        gallery.current.classList.remove(`${baseName}-${maxPosition}`);
-        gallery.current.style.transitionDuration = `unset`;
-        gallery.current.classList.add(`${baseName}-0`);;
-      }, animationTime * 1.5)
-    }
-  }
+    if (gallery.current) {
+      gallery.current.classList.remove(`${baseName}-${position - 1}`);
+      gallery.current.style.transitionDuration = `${atime}ms`;
+      gallery.current.classList.add(`${baseName}-${position}`);
 
-  const moveLeft = () =>{
-    for (let index = 0; index < maxPosition; index+=1) {
-      if(gallery.current.classList.contains(`${baseName}-${index}`)){
-        position = index + 1;
+      if(position >= maxPosition){
+        setTimeout(() =>{
+          if (gallery.current) {
+            gallery.current.classList.remove(`${baseName}-${maxPosition}`);
+            gallery.current.style.transitionDuration = `unset`;
+            gallery.current.classList.add(`${baseName}-0`);
+          }
+        }, 
+        animationTime * 1.5);
       }
     }
-    translatePosition();
-  }
+  };
+
+  const moveLeft = () => {
+    if (gallery.current) {
+      for (let index = 0; index < maxPosition; index += 1) {
+        if (gallery.current.classList && gallery.current.classList.contains(`${baseName}-${index}`)) {
+          position = index + 1;
+        }
+      }
+      translatePosition();
+    }
+  };
 
   const startMovement = () => {
     const interval = setInterval(moveLeft, transitionTime);
@@ -43,13 +51,11 @@ const AnimatedGallery = ({ children, baseName, transitionTime = 5000, animationT
   }
 
   useEffect(() => {
-    
     if(isVisible){
       startMovement();
     }else{
       stopMovement();
     }
-
   }, [isVisible])
 
   useEffect(() => {

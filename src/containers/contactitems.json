@@ -7,22 +7,25 @@
     "itemInfo": "(+502) 3617-2878",  
     "linkTo": "https://wa.me/c/50236172878"
   },
+
   {
     "id": "42",
     "icon": "/images/icons/phone.webp",
     "alt": "Icono para llamar a lavatrastos",
     "itemName":"Teléfono",
     "itemInfo": "(+502) 2485-5176",  
-    "linkTo": "tel:36172878"
+    "linkTo": "tel:24855176"
   },
+
   {
     "id": "43",
     "icon": "/images/icons/email.webp",
     "alt": "Icono para enviar correo electronico a lavatrastos",
     "itemName":"Email",
     "itemInfo": "@prymium.com",  
-    "linkTo": "mailto: lavatrastosprymium@gmail.com"
+    "linkTo": "mailto:lavatrastosprymium@gmail.com"
   },
+  
   {
     "id": "44",
     "icon": "/images/icons/location.webp",

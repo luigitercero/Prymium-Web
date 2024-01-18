@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDom from 'react-dom/server';
-
 import fs from 'fs';
 import path from 'path';
-
-import App from '../src/containers/Home';
+import App from '@containers/Home';
 
 (async () => {
-   
     const root = (
       <html>
         <head />
         <body>
           <div id="root"><App /></div>
-
           <script src="/static/bundle.js" />
         </body>
       </html>
@@ -26,7 +22,6 @@ import App from '../src/containers/Home';
             console.error('[!] something went wrong! index.js');
             throw err;
         }
-
         //console.log('Complete!');
     });
 })();

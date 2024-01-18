@@ -3,9 +3,7 @@ import styles from './styles.module.scss';
 
 export const Title = ({ children, className, id }) => {
   return (
-
     <h1 className={`${styles.title} ${className||''}`} id={id}>{children}</h1>
-
   );
 };
 
@@ -14,6 +12,7 @@ export const SubTitle = ({ children, className,id }) => {
     <h2 className={`${styles.subtitle} ${className||''}`} id={id}>{children}</h2>
   );
 };
+
 export const SubTitlen = ({ children, className,id }) => {
   return (
     <h2 className={`${styles.subtitle_n} ${className||''}`} id={id}>{children}</h2>
@@ -42,7 +41,6 @@ export const Title3ForCard = ({ children, className }) => {
   );
 }
 
-
 export const Paragraph = ({ children, className }) => {
   return (
     <p className={`${styles.title3} ${className || ''}`}>{children}</p>
@@ -54,12 +52,11 @@ export const Price = ({ children, className }) => {
     <span className={`${styles.title3} ${className}`}>{`Q. ${children}`}</span>
   )
 }
+
 export const Pre = ({ children, className }) => {
   return (
     <p className={`${styles.title3} ${className}`} dangerouslySetInnerHTML={{ __html: children }} />
   )
 }
-
-
 
 export default Title;

@@ -11,20 +11,16 @@ if (products.filter) {
       if (fitler.length > 0) {
         return true;
       }
-      return false;
+        return false;
     });
   }
-  
 }
 
 export const singleFilter = (query,products) => {
-
   const single = products.filter(producto =>
-
     producto.link.toLowerCase().includes(query.toLowerCase())
   )
-
   return single
-
 }
+
 export default getGroup;

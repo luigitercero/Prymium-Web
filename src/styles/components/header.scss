@@ -4,10 +4,8 @@
   
   .hide{
     margin-top: -2px;
-
     @include mq ("medium-screen",'max'){
       display: none;
-      
     } 
   }
   .direction{
@@ -20,16 +18,10 @@
     justify-content: space-between;
     align-content: center;
     align-items: center;
-
     .image-container{
       position: relative;
       height: 52px;
       width: 174px;
-
-      @include mq('medium-screen', 'min'){
-        height: 67px;
-        width: 227px;
-      }
     }
     
     .menu-container {
@@ -43,17 +35,13 @@
 
       @include mq ("medium-screen",'min'){
         display: none;
-        
       } 
       .hamburger {
-
         @include mq ("medium-screen",'min'){
           display: none;
-          
         } 
         &:hover{
           width: 1.05em;
-        
         }
       }
     }
@@ -72,7 +60,6 @@
         display: flex;
         justify-content: center   ;
         @include mq ("medium-screen",'max'){ 
-          
           flex-direction: column;
         }
       }
@@ -84,13 +71,11 @@
         background-color: $primaryColor;
         padding-left: 5px;
         padding-right: 5px;
-       
         ul{
           position: initial;
         }
       } 
       li:last-child{
-        
         border-bottom: initial;
       }
       li{
@@ -112,8 +97,6 @@
         display: flex;
         flex-direction: column;
         position: relative;
-       
-        
         .sub-menu {
           display: flex;
           flex-direction: column;
@@ -126,7 +109,6 @@
           border-radius: 0.3em;
           padding: 0.8em;
           @include mq ("medium-screen",'min'){
-          
             background-color: $secondaryColor;
             top: 2.10em;
             position: absolute;
@@ -144,7 +126,6 @@
             &:hover{
               color: $textColor;    
               background-color: $primaryColor;   
-              
             }
             @include mq ("medium-screen",'max'){
               text-align: initial;
@@ -173,7 +154,6 @@
       @include mq ("medium-screen",'max'){
         padding-left: 0.5em;
         padding-right: 0.5em;
-
         &:hover, &:focus{
           color: $enfasisColorHover;
         }
@@ -211,21 +191,21 @@
   transition: opacity 0.6s;
 }
 
-
 .fade-enter {
   opacity: 0;
 }
 .fade-enter-active {
   opacity: 1;
- 
 }
+
 .fade-exit {
   opacity: 1;
 }
+
 .fade-exit-active {
   opacity: 0;
-  
 }
+
 .overlay{
   background-color: rgba(0,0,0,0.6);
   position: fixed;

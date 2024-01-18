@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { SubTitle2 } from './Title';
-import {feedback} from '../routes/Config'
+import {feedback} from '@routes/Config'
 
 const useContact = (initialState) => {
   const [value, setValue] = useState(initialState);
   const onChange = e => setValue(e.target.value)
   return { value, onChange }
 }
+
 const ContactForm = () => {
   const yourname = useContact('');
   const email = useContact('');
@@ -14,7 +15,6 @@ const ContactForm = () => {
   const url = feedback;
   const sendEmail = (event) => {
     event.preventDefault();
-
     const formData = new FormData();
     formData.append('yourname', yourname.value);
     formData.append('email', email.value);
@@ -31,6 +31,7 @@ const ContactForm = () => {
         //console.error('Error:', error);
       });
   }
+  
   return (
     <div className="form-container">
       <SubTitle2>Envía tus comentarios</SubTitle2>

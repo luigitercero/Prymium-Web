@@ -1,12 +1,12 @@
 import React from 'react';
-import  Link  from 'next/link';
-import Image from 'next/image';
+import Link  from 'next/link';
+import Image from "next/legacy/image";
 
 const ContactItem = ({ item }) =>{
   const { icon, alt, itemName, itemInfo, linkTo } = item;
 
   return(
-    <Link href={linkTo}>
+    <Link href={linkTo} legacyBehavior>
       <a target="_blank" className="contact-item">
         <div className="contact-icon">
           <Image src={icon} alt={alt} height={64} width={64} />

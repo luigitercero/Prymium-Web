@@ -1,5 +1,5 @@
 import React from 'react';
-import Iframe from '../Iframe/App';
+import Iframe from '@components/Iframe';
 import Styles from './video.module.scss'
 
 const Video = ({ title, vid }) => {

@@ -1,10 +1,8 @@
 import React from 'react';
 import Head from '@hooks/useSEO';
-import Detalle from '../../src/containers/Contact';
+import Detalle from '@containers/Contact';
 
 const Principal = () => {
-
-
   return (
     <Head
       title="Lavatrastos| Bidet | Grifos | Prymium"
@@ -14,7 +12,6 @@ const Principal = () => {
       <Detalle />
     </Head>
   );
-
 };
 
 export default Principal;

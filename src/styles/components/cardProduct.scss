@@ -26,13 +26,12 @@
       opacity: 0;
       object-fit: cover;
       animation: fadeInImage 2000ms forwards;
-      
+  
     }
   
     @include mq('x-small-screen', 'min'){
       height: auto;
       min-width: unset;
-
       .image{
         height: auto;
       }
@@ -52,7 +51,6 @@
   .button {
     text-decoration: none;
     cursor: pointer;
-   
     @include font-set(1, 1em, $enfasisColor, 400);
     margin-top: 10px;
     margin-bottom: 10px;
@@ -69,7 +67,6 @@
     }
   }
 }
-
 
 @keyframes fadeInImage{
   0%{

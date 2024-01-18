@@ -1,5 +1,5 @@
 import React from 'react';
-import Blog from '../../src/containers/Blog/App';
+import Blog from '@containers/Blog';
 
 const Principal = () => {
   return(

@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { SubTitle } from './Title';
 
-
 const GalleryItem = ({ element }) => {
   const { imagen_medium, alt, name, description, link } = element
   return (
@@ -37,13 +36,11 @@ const Gallery = ({ title, url,sliderSink }) => {
   let firstStep;
   let scrollRight = false;
 
-
   function calcFirstStep(){
     const allowedSpaces = parseInt(width / stepSize)
     const spaceLeft = width - allowedSpaces*stepSize
     return stepSize - parseInt(spaceLeft / 2) + (width*0.03) - 5
   }
-
 
   function displayArrowsControl(){
     if(position <= 0){
@@ -68,7 +65,6 @@ const Gallery = ({ title, url,sliderSink }) => {
       acumMovement = firstStep + (position - 1)*stepSize;  
     }
 
-    
     gallery.current.style.transform = `translateX(${-acumMovement + offset}px)`;
 
     displayArrowsControl();
@@ -166,9 +162,7 @@ const Gallery = ({ title, url,sliderSink }) => {
     setVariables();
   })
 
-  useEffect(async () => {
-  
-  
+  useEffect(() => {
     setImages(sliderSink);
   },[])
   

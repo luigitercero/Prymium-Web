@@ -10,15 +10,22 @@
       "@hooks/*": [
         "hooks/*"
       ],
-      "@component/*": [
-        "component/*"
+      "@components/*": [
+        "components/*"
       ],
       "@context/*": [
         "context/*"
       ],
+      "@containers/*": [
+        "containers/*"
+      ],      
+      "@routes/*": [
+        "routes/*"
+      ],      
+      "@styles/*": [
+        "styles/*"
+      ],                  
     },
     "strict": true,
-    
-
   }
 }

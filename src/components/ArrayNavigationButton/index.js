@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import {HomeLinkSimple} from '../HomeLink';
+import {HomeLinkSimple} from '@components/HomeLink';
 
 const ArrayNavigationButton = () => {
   return(

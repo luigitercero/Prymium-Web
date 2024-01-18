@@ -9,7 +9,6 @@
   justify-content: center;
   margin-bottom: 2em;
 
-  
   @include mq ("large-screen",'max'){
     grid-template-columns: repeat(3,minmax(150px,210)) ;
     gap: 2em;
@@ -25,6 +24,5 @@
   .title{
     grid-column-start: 1;
     grid-column-end: -1;
-    
   }
 }

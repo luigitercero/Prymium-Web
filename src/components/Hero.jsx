@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-
+import Image from "next/legacy/image";
 
 const Hero = ({ title, image, subtitle, linktext, url}) => {
 
@@ -20,7 +19,7 @@ const Hero = ({ title, image, subtitle, linktext, url}) => {
       <h1 id="line-one">{title}</h1>
       <span id="line-two">{subtitle}</span>
       <div className="link">
-        <Link href={url}>
+        <Link href={url} legacyBehavior>
           {linktext}
         </Link>
       </div>

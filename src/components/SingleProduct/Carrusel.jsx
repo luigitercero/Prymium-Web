@@ -1,46 +1,51 @@
-import React from 'react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
-// Import Swiper React components
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import YoutubeVideo from "./Video";
-
-// Import Swiper styles
 import './carrusel.module.scss';
 
-SwiperCore.use([Navigation, Pagination,]);
-export default ({ src, className, video, alt,title='' }) => {
+export default ({ src, className, video, alt, title='' }) => {
 
   return (
     <div className={className}>
-      
       <div className="carrousel">
+        
         <Swiper
-          spaceBetween={0}
           slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-        >
-          
-          
-          {src.map((single, index)=>(
-            <>
+          spaceBetween={0}
+          navigation={true}
+          rewind={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Navigation, Pagination]}
+          >
+        
+          {src.map((single, index) => (
+            <React.Fragment key={index}>
+            
               <SwiperSlide key={index}>
                 <Image
                   src={single}
-                  alt={alt}
                   key={index}
                   index={index} />
-              </SwiperSlide> 
+              </SwiperSlide>
 
               {( index === 0 && video !== "") && (
-                <SwiperSlide key={index}>
-                  {console.log('video', video)}
-                  <Video key={index} vid={video} />
+                <SwiperSlide key={`video-${index}`}>
+                  <Video 
+                    key={`video-${index}`}
+                    index={index} 
+                    vid={video} />
                 </SwiperSlide>
               )}
-            </>
+              
+            </React.Fragment>
+
           ))}
+
         </Swiper>
+     
       </div>
     </div>
   );
@@ -49,15 +54,13 @@ export default ({ src, className, video, alt,title='' }) => {
 
 const Image = ({ src, alt, className, imgClass, index }) => {
   return (
-    
     <figure className={className}>
       <img src={src} alt={alt} index={index} className={imgClass || ''} />
     </figure>
-    
   )
 }
+
 const Video = ({className, vid }) => {
-  
     return (
       <figure className={className}>
         <YoutubeVideo title='Sanitarios' vid={vid} />

@@ -1,14 +1,13 @@
 import React from 'react';
-import Hero from '../../components/Hero';
-import BidetFrame from '../../components/BidetFrame';
-import YoutubeVideo from '../../components/YoutubeVideo';
-import HomeLink from "../../components/HomeLink";
+import Hero from '@components/Hero';
+import BidetFrame from '@components/BidetFrame';
+import YoutubeVideo from '@components/YoutubeVideo';
+import HomeLink from "@components/HomeLink";
 
 const HomePage = ({sliderBidet}) => {
 
   return (
     <div className="home">
-
       <Hero
         title="Lavatrastos Prymium"
         subtitle="Más de 25,000 unidades vendidas"
@@ -24,7 +23,6 @@ const HomePage = ({sliderBidet}) => {
       <section className="bidetframe-container">
         <BidetFrame sliderBidet={sliderBidet} />
         <HomeLink url="/tienda/bidets" title="Bidet" />
-       
       </section>
     </div>
   );

@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
 import React, { useState, useEffect } from 'react';
-import SubHero from '../../components/SubHero/App'
-import { Title, Pre } from '../../components/Title';
-import {preguntas} from '../../routes/Config';
+import SubHero from '@components/SubHero'
+import { Title, Pre } from '@components/Title';
+import {preguntas} from '@routes/Config';
 
 const Blog = () => {
   const API_URL = preguntas;

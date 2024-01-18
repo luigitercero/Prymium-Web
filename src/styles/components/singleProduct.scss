@@ -10,11 +10,9 @@
   
   line-height: 1.54;
   li::before {
-   
-            /* Adjust this value so that it appears where you want. */
+    /* Adjust this value so that it appears where you want. */
     font-size: 5em;  
   }
-  
 }
 .container-single-product {
   display: grid;
@@ -50,10 +48,8 @@
                             "title title"
                             "price price"
                             "img tecnicos"
-                            "  tex medidas"
-                            
+                            "  tex medidas"        
                             ;
-          
     }
     @include mq ("small-screen",'max'){
       grid-template-columns:  1fr  ;
@@ -67,7 +63,6 @@
                             "medidas"
                             "tex"
                             ;
-          
     } 
   }
   .img-single-product {
@@ -81,7 +76,6 @@
     justify-content:center;
     align-items: center;
     figure{
-
     display: block;
     margin-block-start: 0em;
     margin-block-end: 0em;
@@ -90,12 +84,10 @@
     }
     .carrousel {
       max-width: 80vw;
-      
       @include mq ("small-screen",'min'){
         max-width: 340px;
         width: 48vw;
       } 
-
       @include mq("mid-large-screen",'min'){
         width: 40vw;
         max-width: 400px;
@@ -114,18 +106,13 @@
     line-height: 1.5em;
     @include mq ("medium-screen",'max'){
       align-self: center;
-    
     }
-    
-   
   }
   .text-single-product{
     grid-area: tex;
     @include mq ("medium-screen",'max'){
       align-self: center;
-    
     }
-    
   }
   .price-single-product{
     font-size: 1.5em;
@@ -146,7 +133,5 @@
       width:100%;
       max-width: 300px;
     }
-   
   }
-
 } 

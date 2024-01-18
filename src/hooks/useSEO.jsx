@@ -1,14 +1,15 @@
 import React from 'react';
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import Script from 'next/script';
+import { useRouter } from 'next/router'  
 
-const useSEO = ({ description, keywords, title, children, img, url,DatoEriquesido }) => {
+const useSEO = ({ description, keywords, title, children, img, url, DatoEriquesido }) => {
   const router = useRouter()
   return (
     <>
-    
       <Head>
-        <script dangerouslySetInnerHTML={{
+
+        <Script dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -29,10 +30,7 @@ const useSEO = ({ description, keywords, title, children, img, url,DatoEriquesid
         <meta property="og:type" content="Productos para cocina" />
         <meta property="og:url" content={`https://lavatrastosprymium.com${router.asPath}`} />
         <meta property="og:image" content={img} />
-        
-
         <link rel="manifest" href="/manifest.json" />
-
         <link rel="image_src" href={img} />
         <link rel="canonical" href={`https://lavatrastosprymium.com${router.asPath}`} />
         <meta name="twitter:card" content="summary" />
@@ -40,35 +38,35 @@ const useSEO = ({ description, keywords, title, children, img, url,DatoEriquesid
         <meta name="twitter:description" content={description} />
         <meta name="twitter:url" content={`https://lavatrastosprymium.com${router.asPath}`} />
         <meta name="twitter:image" content={img} />
+
         {DatoEriquesido?(
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-            __html: DatoEriquesido
-          }}
+              __html: DatoEriquesido
+            }}
           />
-):<></>}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: `
-            {
-              "@context" : "http://schema.org",
-              "@type" : "LocalBusiness",
-              "name" : "Lavatrastos Prymium",
-              "image" : "${img}",
-              "priceRange": "$$$$",
-              "telephone" : "2485-5176",
-              "address" : {
-                "@type" : "PostalAddress",
-                "streetAddress" : "3a. calle 3-54 boulevard San Cristobal",
-                "addressLocality" : "zona 8",
-                "addressRegion" : "Mixco"
-              }
+        ):<></>
+        }
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: `
+          {
+            "@context" : "http://schema.org",
+            "@type" : "LocalBusiness",
+            "name" : "Lavatrastos Prymium",
+            "image" : "${img}",
+            "priceRange": "$$$$",
+            "telephone" : "2485-5176",
+            "address" : {
+              "@type" : "PostalAddress",
+              "streetAddress" : "3a. calle 3-54 boulevard San Cristobal",
+              "addressLocality" : "zona 8",
+              "addressRegion" : "Mixco"
             }
-          `
-          }}
-        />
+          }`
+        }} />
+
       </Head>
       {children}
     </>

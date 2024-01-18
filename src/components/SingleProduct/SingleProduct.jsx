@@ -1,7 +1,7 @@
 import React from 'react';
-import { Title, Price, Pre } from "../Title";
+import ReactDOM from "react-dom";
+import { Title, Price, Pre } from "@components/Title";
 import Carrusel from './Carrusel';
-
 
 const SingleProduct = ({ id, product, }) => {
   
@@ -10,12 +10,14 @@ const SingleProduct = ({ id, product, }) => {
       
       <div className="container-product">
         <Title className="title-single-product">{product.title}</Title>
-        <Carrusel alt={product.content} src={product.accesorio || [product.imagen]} video={product.video} className="img-single-product" title={product.title} />
-        {/* <Image
-          className="img-single-product" 
-          src={product.accesorio || product.imagen} 
+        
+        <Carrusel 
           alt={product.content} 
-        /> */}
+          src={product.accesorio || [product.imagen]} 
+          video={product.video} 
+          className="img-single-product" 
+          title={product.title} />
+
         {
           product.medidas && (
           <Image 
@@ -26,27 +28,24 @@ const SingleProduct = ({ id, product, }) => {
           />
           )
         }
+
         <Price className="price-single-product">{product.price}</Price>
         <DatosTecnicos datosTecnicos={product.datos_tecnicos} />
         <section className="text-single-product">
           <Pre>{product.content}</Pre>
         </section>
       </div>
-
       
     </section>
-
   )
 }
 
 export default SingleProduct;
-
 const Image = ({ src, alt, className, imgClass }) => {
   return (
     <figure className={className}>
       <img src={src} alt={alt} className={imgClass || ''} />
     </figure>
-
   )
 }
 
@@ -68,5 +67,3 @@ const DatosTecnicos = (datosTecnicos) => {
     </section>
   )
 }
-
-

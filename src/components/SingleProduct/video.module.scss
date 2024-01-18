@@ -1,6 +1,5 @@
 @import '../../styles/globals/settings.scss';
 
-
 .video_container{
   .video{
     padding: 6px 0;
@@ -37,7 +36,6 @@
     }
   }
 
-  
   @include mq("large-screen","max"){
     .video_to_play{
       margin: 0 $margin-left-right;

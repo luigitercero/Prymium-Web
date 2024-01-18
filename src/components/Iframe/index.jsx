@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import useOnScreen from '../../hooks/useOnScreen';
+import useOnScreen from '@hooks/useOnScreen';
 import styles from './styles.module.scss';
-
 
 const Iframe = ({ src, title, className, isYoutube = false, opts = "" }) => {
   const [url, setUrl] = useState('about:blank');
@@ -9,7 +8,6 @@ const Iframe = ({ src, title, className, isYoutube = false, opts = "" }) => {
   const videoFrame = useRef();
   const isVisible = useOnScreen(videoFrame);
   const allowOpts = isYoutube ? "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" : opts;
-
   const hideLoad = () => {
     setLoading(false);
   }

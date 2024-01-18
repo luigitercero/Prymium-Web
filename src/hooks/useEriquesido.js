@@ -47,11 +47,6 @@ const DatoEriquesido = ({singleProduct,url}) => {
     }]
   }
 `
-//           ,
-//           }}
-// />
-
-
 
 }
 

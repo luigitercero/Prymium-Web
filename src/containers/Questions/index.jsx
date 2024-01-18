@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseAPIPage from '../../components/BaseAPIPage/App';
+import BaseAPIPage from '@components/BaseAPIPage';
 
 const Questions = ({question}) => {
   return(

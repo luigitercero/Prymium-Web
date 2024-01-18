@@ -30,6 +30,7 @@ export const url ="https://luisazurdia.me/";
 export const getProducts = {
   url:`${url}wp-json/pg/v1/novedades/100`
 }
+
 export const getQuestion = {
   url: `${url}wp-json/pg/v1/preguntas/`
 }
@@ -50,6 +51,7 @@ export const getCatergories = {
 export const getRecomended = (relevante) => {
   return `${url}wp-json/pg/v1/per-category/${relevante}`
 }
+
 export const singleProductUrl = (product) => {
   return `${url}wp-json/pg/v1/product/${product}`
 }
@@ -68,7 +70,6 @@ export const feedback = () => {
 
 export const sobreAzulejo = () => {
   return `${url}wp-content/uploads/2020/09/7807-sobre-azulejo.jpeg`
-  
 }
 
 export const getOneQuestion = (idQuestion) => {

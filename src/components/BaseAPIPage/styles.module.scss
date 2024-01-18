@@ -10,7 +10,6 @@
   grid-template-columns: 1fr auto;
   align-items:center;
   gap: 0;
-
   img{
     cursor: pointer;
     padding: 10px;
@@ -28,7 +27,6 @@
 
 .item{
   margin: 0 3vw;
-  
   @include mq('small-screen', 'min'){
     margin: 0 0vw;
   }
@@ -41,7 +39,6 @@
 }
 
 .item_content{
-
   h2{
     font-size: 1.1em;
     padding-top: 20px;
@@ -55,6 +52,7 @@
     margin: 0;
     text-align: center;
   }
+
   img{
     // font-size: 7px;
     object-fit: cover;
@@ -62,16 +60,13 @@
     max-height: 99%;
     height: 99%;
     width: 99%;
-    
     border: 1px solid $textColor;
     // margin: 0;
     @include mq('medium-screen', 'min'){
-     // font-size: 16px;
-     max-width: 37em;
-    
+      // font-size: 16px;
+      max-width: 37em;
       height: unset;
       width: unset;
-     
     }
   }
 
@@ -80,7 +75,6 @@
     height: 220px;
     margin-bottom: 32px;
     border-radius: 20px;
-
     @include mq('medium-screen', 'min'){
       height: 560px;
      }
@@ -102,7 +96,6 @@
   max-width: 1000px;
   padding: 16px;
   flex-grow: 1;
-
   min-height: 600px;
 }
 

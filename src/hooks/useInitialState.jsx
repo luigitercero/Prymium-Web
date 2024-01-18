@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProducts } from '../routes/Config';
+import { getProducts } from '@routes/Config';
 
 const useInitialState = () => {
 
@@ -16,17 +16,11 @@ const useInitialState = () => {
   }, []);
 
   const singleFilter = (query) => {
-
     const single = products.filter(producto =>
-
       producto.link.toLowerCase().includes(query.toLowerCase())
     )
-
     setSingleProduct(single);
-
   }
-
-
 
   return {
     products,
@@ -35,6 +29,5 @@ const useInitialState = () => {
     groupFilterd, setGroup
   }
 }
-
 
 export default useInitialState

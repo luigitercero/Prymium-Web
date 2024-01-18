@@ -2,9 +2,10 @@
 import React,{useEffect} from 'react';
 import { useRouter } from 'next/router';
 import { Workbox } from "workbox-window";
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import '../src/styles/globals/root_vars.scss';
 import '../src/styles/container/layout.scss';
 import '../src/styles/container/home.scss';
@@ -21,13 +22,13 @@ import '../src/styles/components/hero.scss';
 import '../src/styles/components/singleProduct.scss';
 import '../src/styles/components/schedule.scss';
 import '../src/styles/components/youtube-video.scss';
-
 import TagManager from 'react-gtm-module'
-import Layout from '../src/components/Layout';
+import Layout from '@components/Layout';
 
 const tagManagerArgs = {
   id: 'GTM-NKSQN8N '
 }
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
@@ -39,9 +40,11 @@ function MyApp({ Component, pageProps }) {
       console.warn("Progressive Web App support is disabled");
       return;
     }
-const wb = new Workbox("sw.js", { scope: "/" });
+
+    const wb = new Workbox("sw.js", { scope: "/" });
     wb.register();
   }, []);
+
   return <CustomLayout pathname={router.pathname}><Component {...pageProps} /></CustomLayout>
 }
 

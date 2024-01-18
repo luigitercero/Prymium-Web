@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from '@hooks/useSEO';
-import Questions from '../../src/containers/Questions/App';
-import { getQuestion,sobreAzulejo,url } from '../../src/routes/Config';
+import Questions from '@containers/Questions';
+import { getQuestion,sobreAzulejo,url } from '@routes/Config';
 
 export const getStaticProps = async () =>{
   // eslint-disable-next-line no-undef

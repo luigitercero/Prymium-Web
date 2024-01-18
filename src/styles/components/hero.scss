@@ -37,7 +37,6 @@
     z-index: 3;
     display: flex;
     flex-direction: column;
-
     @include mq('large-screen', 'min'){
       right: 3vw;
     }
@@ -80,7 +79,6 @@
     @include hero-item(3.4em, 0.2em);
   }
 
-
   span{
     @include font-set(1, 2em);
     @include hero-item(4.5em, 0.2em);
@@ -94,7 +92,6 @@
     border: 3px solid $primaryColor;
     border-radius: 40px;
     background-color: $textColor;
-    
     &:hover{
       transform: scale(1.05);
     }
@@ -112,7 +109,6 @@
   @include mq('large-screen', 'max'){
     height: 520px;
     // @include hero-background('/images/backgrounds/hero-730w.webp');
-    
     .link a, h1, span{
       right: 10vw;
     }

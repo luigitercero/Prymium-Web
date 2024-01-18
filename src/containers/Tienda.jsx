@@ -1,5 +1,5 @@
 import React from 'react';
-import ListOfProduct from '../components/ListOfProduct';
+import ListOfProduct from '@components/ListOfProduct';
 
 const Tienda = ({products,title}) => {
 

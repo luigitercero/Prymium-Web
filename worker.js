@@ -8,7 +8,6 @@ self.__precacheManifest = [].concat(self.__precacheManifest || [])
 precacheAndRoute(self.__precacheManifest);
 precacheAndRoute(self.__WB_MANIFEST);
 
-
 registerRoute(
   /\\.(?:webp|png|svg)$/,
   new CacheFirst({

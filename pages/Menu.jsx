@@ -1,13 +1,12 @@
 import React from 'react';
 import Head from '@hooks/useSEO';
-import All from '../src/containers/AllProduct';
-import { getProducts, sobreAzulejo, url } from '../src/routes/Config';
+import All from '@containers/AllProduct';
+import { getProducts, sobreAzulejo, url } from '@routes/Config';
 
 export const getStaticProps = async () => {
   // eslint-disable-next-line no-undef
   const response = await fetch(getProducts.url)
   const products = await response.json()
-
   return {
     props: {
       products
@@ -16,8 +15,6 @@ export const getStaticProps = async () => {
 }
 
 const Principal = ({ products }) => {
-
-
   return (
     <Head
       title="Todos los Productos | Lavatrastos | Grifos | Bidets"
@@ -28,7 +25,6 @@ const Principal = ({ products }) => {
       <All products={products} />
     </Head>
   );
-
 };
 
 export default Principal;

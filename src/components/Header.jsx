@@ -3,18 +3,16 @@ import Link from 'next/link';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { Logo } from '../initiaState';
-import _route from '../routes/Config';
+import _route from '@routes/Config';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [keyOpen, setkeyOpen] = useState("#closeMenu");
-
   const onClick = () => {
     setOpen(!open);
     setkeyOpen(keyOpen === "#openMenu" ? '#closeMenu' : '#openMenu');
-    
   }
+
   return (
 
     <div className='header'>
@@ -28,10 +26,9 @@ const Header = () => {
         <div className="overlay" onClick={onClick} aria-hidden="true" />
       </CSSTransition>
 
-
       <nav className="direction ">
         <div className="image-container">
-          <Image src="/images/logo/logotipo-Prymium.webp" alt={Logo.alt} width="227" height="67" layout='responsive' priority />
+          <Image src="/images/logo/logotipo-Prymium.webp" fill="true" sizes="(min-width: 600px) 600px, 100vw" alt='Prymium'/>
         </div>
         <div className="menu-container">
           <HambuergerMenu open={open} keyOpen={keyOpen} onClick={onClick}>
@@ -43,7 +40,6 @@ const Header = () => {
         </div>
       </nav>
     </div>
-
   )
 }
 
@@ -51,7 +47,6 @@ const NavigationList = ({onClick}) => (
   <ul>
     <NavItem onClick={onClick} {..._route.home} />
     <NavItem onClick={onClick} {..._route.products} />
-
     <NavItem onClick={onClick} {..._route.asks} />
     {/* <NavItem {..._route.blog} /> */}
     <NavItem onClick={onClick} {..._route.contact} />
@@ -60,14 +55,12 @@ const NavigationList = ({onClick}) => (
 
 const NavItem = ({ id, to, name, children, onClick }) => {
   const [showSubMenu, setSubMenu] = useState(false);
-
   const onPress = () => {
     setSubMenu(!showSubMenu);
     //onClick(); 
   }
 
   const close = () => {
-
     setSubMenu(false);
     //onClick(); //close menut principal
   
@@ -89,7 +82,6 @@ const NavItem = ({ id, to, name, children, onClick }) => {
     )
 
   return (
-
     <li key={id} onClick={close}>
       {
         children ? (
@@ -100,7 +92,6 @@ const NavItem = ({ id, to, name, children, onClick }) => {
           : <Link onClick={close} href={to}>{name}</Link>
       }
     </li>
-
   );
 }
 
@@ -111,7 +102,6 @@ const SubMenu = ({ close }) => (
     <li id="bidet" onClick={close} aria-hidden><Link href={`${_route.products.to}bidets`} onClick={close}>Bidet</Link></li>
     <li id="all" onClick={close} aria-hidden><Link href={`${_route.products.to}`}>Todos</Link></li>
   </ul>
-
   )
 
 const HambuergerMenu = ({ children, open, onClick, keyOpen }) => (
@@ -119,7 +109,6 @@ const HambuergerMenu = ({ children, open, onClick, keyOpen }) => (
     <a href={keyOpen} className="hamburger" onClick={onClick}>
       <span className="icon hamburger-icon"><img src="/images/icons/bars-solid.webp" alt="b" /></span>
     </a>
-
 
     <CSSTransition
       in={open}
@@ -130,13 +119,8 @@ const HambuergerMenu = ({ children, open, onClick, keyOpen }) => (
       {children}
     </CSSTransition>
 
-
   </div>
-
   )
-
-
-
 
 /**
  * Hook that alerts clicks outside of the passed ref
@@ -168,14 +152,11 @@ const UseOutsideAlerter = (ref, onClick) => {
 const OutsideAlerter = ({ children, onClick }) => {
   const wrapperRef = useRef(null);
   UseOutsideAlerter(wrapperRef, onClick);
-
   return <div ref={wrapperRef}>{children}</div>;
 }
 
 OutsideAlerter.propTypes = {
   children: PropTypes.element.isRequired
 };
-
-
 
 export default Header

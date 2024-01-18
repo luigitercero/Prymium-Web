@@ -1,6 +1,6 @@
-@import '../../styles/globals/colors.scss';
-@import '../../styles/globals/fonts.scss';
-@import '../../styles/globals/mq.scss';
+@import '@styles/globals/colors.scss';
+@import '@styles/globals/fonts.scss';
+@import '@styles/globals/mq.scss';
 
 .container{
   grid-area: map;
@@ -20,7 +20,6 @@
   height: 32vw;
   width: 100%;
   margin-bottom: 10px;
-
   @include mq('large-screen','max'){
     height: 66vw;
   }
