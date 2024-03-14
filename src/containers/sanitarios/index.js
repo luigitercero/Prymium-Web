@@ -10,7 +10,7 @@ const HomePage = ({sliderBidet}) => {
     <div className="home">
       <Hero
         title="Lavatrastos Prymium"
-        subtitle="Más de 25,000 unidades vendidas"
+        subtitle="Más de 500 mil unidades vendidas"
         linktext="QUIERO VER MÁS!>>"
         url="/tienda/"
         image="/images/backgrounds/hero-image.webp"
