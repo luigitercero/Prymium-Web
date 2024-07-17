@@ -25,3 +25,4 @@ public/worker-*.js.map
 
 .idea/
 *.DS_Store
+**/.DS_Store

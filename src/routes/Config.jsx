@@ -6,7 +6,7 @@ export default {
   },
   products:{
     name:"Productos",
-    to:"/productos",
+    to:"/tienda",
     id:2
   },
   asks:{

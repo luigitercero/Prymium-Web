@@ -65,11 +65,20 @@ const Principal = () => {
 
     {
       id: 7,
-      imagen: "https://luisazurdia.me/wp-content/uploads/2021/07/7807F-01-300x300.png",
-      alt:"Todos",
-      title:"Todos",
-      link:"/tienda/"
+      imagen: "https://zapatosaristocraft.com/wp-content/uploads/2023/07/73.png",
+      alt:"Zapatos",
+      title:"Zapatos",
+      link:"https://zapatosaristocraft.com/"
     },
+  {
+    id: 6,
+      imagen: "https://luisazurdia.me/wp-content/uploads/2022/07/01-Campana-extractora.jpg",
+      alt:"Oficina",
+      title:"Oficina",
+      link:"/tienda/oficina/"
+
+  }
+
       
   ]);
 
