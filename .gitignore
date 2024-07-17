@@ -24,4 +24,4 @@ public/worker-*.js.map
 *.css.map
 
 .idea/
-.DS_Store
+*.DS_Store
