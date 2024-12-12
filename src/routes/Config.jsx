@@ -26,7 +26,7 @@ export default {
   },
 }
 
-export const url ="https://luisazurdia.me/";
+export const url ="https://prymium.nuevoestilosa.com/";
 export const getProducts = {
   url:`${url}wp-json/pg/v1/novedades/100`
 }

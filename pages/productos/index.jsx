@@ -9,7 +9,7 @@ const Principal = () => {
     
     {
       id: 0,
-      imagen: "https://luisazurdia.me/wp-content/uploads/2021/03/3043R-225-1.jpg",
+      imagen: "https://prymium.nuevoestilosa.com/wp-content/uploads/2021/03/3043R-225-1.jpg",
       alt:"Lavatrastos",
       title:"Lavatrastos",
       link:"/tienda/lavatrastos"
@@ -17,7 +17,7 @@ const Principal = () => {
 
     {
       id: 1,
-      imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/HJ-3123-1.jpg",
+      imagen: "https://prymium.nuevoestilosa.com/wp-content/uploads/2020/06/HJ-3123-1.jpg",
       alt:"Mezcladoras",
       title:"Mezcladoras",
       link:"/tienda/mezcladoras"
@@ -25,7 +25,7 @@ const Principal = () => {
 
     {
       id: 2,
-      imagen: "https://luisazurdia.me/wp-content/uploads/2021/04/Matel-Metalico01-300x300.jpg",
+      imagen: "https://prymium.nuevoestilosa.com/wp-content/uploads/2021/04/Matel-Metalico01-300x300.jpg",
       alt:"Accesorios",
       title:"Accesorios",
       link:"/tienda/accesorios"
@@ -33,7 +33,7 @@ const Principal = () => {
 
     {
       id: 3,
-      imagen: "https://luisazurdia.me/wp-content/uploads/2020/06/SD-200-ACCESORIOS.jpg",
+      imagen: "https://prymium.nuevoestilosa.com/wp-content/uploads/2020/06/SD-200-ACCESORIOS.jpg",
       alt:"Bidets",
       title:"Bidets",
       link:"/tienda/bidets"
@@ -41,7 +41,7 @@ const Principal = () => {
 
     {
       id: 4,
-      imagen: " https://luisazurdia.me/wp-content/uploads/2021/12/5003A.png",
+      imagen: " https://prymium.nuevoestilosa.com/wp-content/uploads/2021/12/5003A.png",
       alt:"Grifos de Baño",
       title:"Grifos de Baño",
       link:"/tienda/bath"
@@ -49,7 +49,7 @@ const Principal = () => {
       
     {
       id: 5,
-      imagen: "https://luisazurdia.me/wp-content/uploads/2022/07/DUCHA-NEGRA-DORADA-300x300-1.jpg",
+      imagen: "https://prymium.nuevoestilosa.com/wp-content/uploads/2022/07/DUCHA-NEGRA-DORADA-300x300-1.jpg",
       alt:"Duchas",
       title:"Duchas",
       link:"/tienda/duchas/"
@@ -57,7 +57,7 @@ const Principal = () => {
 
     {
       id: 6,
-      imagen: "https://luisazurdia.me/wp-content/uploads/2022/07/01-Campana-extractora.jpg",
+      imagen: "https://prymium.nuevoestilosa.com/wp-content/uploads/2022/07/01-Campana-extractora.jpg",
       alt:"Extractores",
       title:"Extractores",
       link:"/tienda/extractores/"
@@ -65,7 +65,7 @@ const Principal = () => {
 
     {
       id: 7,
-      imagen: "https://luisazurdia.me/wp-content/uploads/2021/07/7807F-01-300x300.png",
+      imagen: "https://prymium.nuevoestilosa.com/wp-content/uploads/2021/07/7807F-01-300x300.png",
       alt:"Todos",
       title:"Todos",
       link:"/tienda/"
