@@ -31,57 +31,57 @@ export default async function handler(req, res) {
     const staticUrls = [
       {
         url: 'https://www.lavatrastosprymium.com/',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.85,
       },
       {
         url: 'https://www.lavatrastosprymium.com/preguntas',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.50,
       },
       {
         url: 'https://www.lavatrastosprymium.com/contacto',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.90,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.51,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda/lavatrastos',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.51,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda/mezcladoras',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.51,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda/accesorios',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.51,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda/bidets',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.51,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda/bath',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.51,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda/duchas',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.51,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda/extractores',
-        lastModified: '2024-12-30T21:52:02+00:00',
+        lastModified: '2024-12-30 21:52:02',
         priority: 0.51,
       },
 
