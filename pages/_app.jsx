@@ -26,7 +26,7 @@ import TagManager from 'react-gtm-module'
 import Layout from '@components/Layout';
 
 const tagManagerArgs = {
-  id: 'GTM-NKSQN8N '
+  id: 'GTM-NKSQN8N'
 }
 
 function MyApp({ Component, pageProps }) {
