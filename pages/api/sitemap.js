@@ -9,6 +9,14 @@ export async function getAllProducts() {
   return products;
 }
 
+
+const formatDate = (date) => {
+  const d = new Date(date);
+  const isoString = d.toISOString();
+  
+  // Slice off the milliseconds and adjust for timezone to match the desired format
+  return isoString.slice(0, 19) + '+00:00';  // "2021-03-30T21:52:02+00:00"
+};
 // Helper function to generate URLs for the sitemap
 const generateSitemapUrls = (products) => {
   return products.map((product) => ({
