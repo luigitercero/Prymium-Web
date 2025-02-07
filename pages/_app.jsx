@@ -32,7 +32,7 @@ const tagManagerArgs = {
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
-    TagManager.initialize({ gtmId: tagManagerArgs });
+    TagManager.initialize({ gtmId: tagManagerArgs.id });
     if (
       !("serviceWorker" in navigator) ||
       process.env.NODE_ENV !== "production"
