@@ -32,11 +32,11 @@ const useSEO = ({ description, keywords, title, children, img, url, DatoEriquesi
         <meta property="og:image" content={img} />
         <link rel="manifest" href="/manifest.json" />
         <link rel="image_src" href={img} />
-        <link rel="canonical" href={`https://lavatrastosprymium.com${router.asPath}`} />
+        <link rel="canonical" href={`https://www.lavatrastosprymium.com${router.asPath}`} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:url" content={`https://lavatrastosprymium.com${router.asPath}`} />
+        <meta name="twitter:url" content={`https://www.lavatrastosprymium.com${router.asPath}`} />
         <meta name="twitter:image" content={img} />
 
         {DatoEriquesido?(

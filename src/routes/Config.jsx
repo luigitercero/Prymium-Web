@@ -26,6 +26,8 @@ export default {
   },
 }
 
+
+export const BASE_URL ='https://www.lavatrastosprymium.com/'
 export const url ="https://prymium.nuevoestilosa.com/";
 export const getProducts = {
   url:`${url}wp-json/pg/v1/novedades/100`
