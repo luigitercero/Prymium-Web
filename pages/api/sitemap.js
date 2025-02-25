@@ -22,7 +22,7 @@ const generateSitemapUrls = (products) => {
   return products.map((product) => ({
     url: `${BASE_URL}tienda/detalle/${product.link}`,  // Build the product URL using the `link` field
     lastModified: product.update_date.date ? formatDate(product.update_date.date) : formatDate(new Date()),  // Assuming the product date is the last modified date
-    priority: product.price === '' ? 0.05 : 0.77,
+    priority: product.price === '' ? 0.05 : 0.85,
   }));
 };
 
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
       {
         url: 'https://www.lavatrastosprymium.com/',
         lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.85,
+        priority: 0.60,
       },
       {
         url: 'https://www.lavatrastosprymium.com/preguntas',
