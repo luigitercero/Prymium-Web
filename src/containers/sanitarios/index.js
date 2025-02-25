@@ -4,7 +4,7 @@ import BidetFrame from '@components/BidetFrame';
 import YoutubeVideo from '@components/YoutubeVideo';
 import HomeLink from "@components/HomeLink";
 
-const HomePage = ({sliderBidet}) => {
+function HomePage({sliderBidet}) {
 
   return (
     <div className="home">
@@ -26,7 +26,7 @@ const HomePage = ({sliderBidet}) => {
       </section>
     </div>
   );
-};
+}
 
 const Home = React.memo(HomePage);
 

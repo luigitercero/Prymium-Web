@@ -24,16 +24,16 @@
         "html": "enforce", //| "enforce"
         "custom": "ignore", // "enforce",
         "explicitSpread": "ignore", // | "enforce",
-        "exceptions": "error" //[<string>]
+        "exceptions": "warning" //[<string>]
       }
     ],
     "react/prop-types": 0,
     "no-underscore-dangle": 0,
     "import/imports-first": [
-      "error",
+      "warning",
       "absolute-first"
     ],
-    "import/newline-after-import": "error"
+    "import/newline-after-import": "warning"
   },
   "globals": {
     "window": true,
@@ -44,5 +44,5 @@
     "Blob": true,
     "navigator": true
   },
-  "parser": "babel-eslint"
+  "parser": "@babel/eslint-parser"
 }

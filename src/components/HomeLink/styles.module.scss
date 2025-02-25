@@ -1,4 +1,4 @@
-
+@use 'sass:math';
 @import '../../styles/globals/settings.scss';
 
 .link{
@@ -33,7 +33,7 @@
 
 .link_simple{
   display: flex;  
-  padding: 0 $margin-left-right/2;
+  padding: 0 math.div($margin-left-right, 2);
   a {
     text-decoration: none;
     background-color: $textColor;

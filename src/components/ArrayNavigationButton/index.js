@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './styles.module.scss';
 import {HomeLinkSimple} from '@components/HomeLink';
+import styles from './styles.module.scss';
 
-const ArrayNavigationButton = () => {
+function ArrayNavigationButton() {
   return(
     <div className={styles.container}>
       <HomeLinkSimple url="/tienda/lavatrastos" title="Lavatrastos" />

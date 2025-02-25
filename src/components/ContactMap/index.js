@@ -1,10 +1,10 @@
 import React from 'react';
 import { SubTitle2, Paragraph } from '@components/Title';
-import styles from './styles.module.scss';
 import Iframe from '@components/Iframe';
+import styles from './styles.module.scss';
 
-const ContactMap = () => (
-  <div className={styles.container}>
+function ContactMap() {
+  return <div className={styles.container}>
     <SubTitle2>Mapa</SubTitle2>
     <div className={styles.content}>
 
@@ -24,6 +24,6 @@ const ContactMap = () => (
       
     </div>
   </div>
-)
+}
 
 export default ContactMap;
