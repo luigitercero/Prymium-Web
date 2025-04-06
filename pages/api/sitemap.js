@@ -19,11 +19,31 @@ const formatDate = (date) => {
 };
 // Helper function to generate URLs for the sitemap
 const generateSitemapUrls = (products) => {
-  return products.map((product) => ({
-    url: `${BASE_URL}tienda/detalle/${product.link}`,  // Build the product URL using the `link` field
-    lastModified: product.update_date.date ? formatDate(product.update_date.date) : formatDate(new Date()),  // Assuming the product date is the last modified date
-    priority: product.price === '' ? 0.05 : 0.85,
-  }));
+  return products.map((product) => {
+    let priority = 0.85;
+
+    if (product.link === 'lavatrastos-7546b') {
+      priority = 0.75;
+    } else if 
+    (product.price === '') {
+      priority = 0.05;
+    } else if
+      (product.link === 'lavatrastos-modelo-3053r-black'){
+        priority = 0.86
+      } else if
+      (product.link === 'lavatrastos-670'){
+        priority = 0.87
+      } else if
+      (product.link === 'lavatrastos-7023f'){
+        priority = 0.88
+      }
+
+    return {
+      url: `${BASE_URL}tienda/detalle/${product.link}`,
+      lastModified: product.update_date.date ? formatDate(product.update_date.date) : formatDate(new Date()),
+      priority,
+    };
+  });
 };
 
 // API handler to generate the sitemap
@@ -50,7 +70,7 @@ export default async function handler(req, res) {
       {
         url: 'https://www.lavatrastosprymium.com/contacto',
         lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.90,
+        priority: 0.62,
       },
       {
         url: 'https://www.lavatrastosprymium.com/tienda',
