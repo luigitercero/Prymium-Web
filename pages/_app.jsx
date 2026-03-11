@@ -1,7 +1,6 @@
 // import App from 'next/app'
-import React,{useEffect} from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
-import { Workbox } from "workbox-window";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -31,18 +30,8 @@ const tagManagerArgs = {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  useEffect(() => {
+  React.useEffect(() => {
     TagManager.initialize({ gtmId: tagManagerArgs.id });
-    if (
-      !("serviceWorker" in navigator) ||
-      process.env.NODE_ENV !== "production"
-    ) {
-      console.warn("Progressive Web App support is disabled");
-      return;
-    }
-
-    const wb = new Workbox("sw.js", { scope: "/" });
-    wb.register();
   }, []);
 
   return <CustomLayout pathname={router.pathname}><Component {...pageProps} /></CustomLayout>
