@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {getOneQuestion, getQuestion} from "@routes/Config";
 import Head from "@hooks/useSEO";
 import InfoQuestion from "@components/InfoQuestion";
@@ -36,10 +36,14 @@ export async function  getStaticProps({params}){
 }
 
 const Principal = ( {question}) => {
+  const questionTitle = question?.[0]?.titulo || 'Pregunta frecuente';
+  const questionDescription = (question?.[0]?.description || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+
   return (
     <Head
-      title='Prymium | Bidet | Grifos | Preguntas'
-      description="Preguntas resueltas y buenas prácticas para instalar y cuidar tu lavatrastos o grifo, obten de manera inmediata todas las respuestas "
+      title={`${questionTitle} | Preguntas Prymium`}
+      description={questionDescription || 'Preguntas frecuentes sobre instalacion y mantenimiento de productos Prymium.'}
+      img={question?.[0]?.imagen}
     >
       <InfoQuestion title={question[0].titulo} description={question[0].description}></InfoQuestion>
     </Head>

@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Head from '@hooks/useSEO';
 import DatoEriquesido from '@hooks/useEriquesido';
 import Detalle from '@containers/Detalle';
-import { singleProductUrl, getRecomended, url, getProducts } from '@routes/Config';
+import { singleProductUrl, getRecomended, getProducts, BASE_URL } from '@routes/Config';
+
+const removeHtml = (text = '') => text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 
 export const getStaticPaths = async () => {
   const response = await fetch(getProducts.url);
@@ -34,8 +36,9 @@ export const getStaticProps = async ({ params }) => {
 
 const Principal = ({ singleProduct }) => {
   const title = singleProduct[0]?.title || "Producto de fregadero "
-  const content = singleProduct[0]?.content || "Producto de fregadero "
+  const content = removeHtml(singleProduct[0]?.content || "Producto de fregadero ")
   const imagen = singleProduct[0]?.imagen || "Producto de fregadero "
+  const productUrl = `${BASE_URL}tienda/detalle/${singleProduct[0]?.link || ''}`
   const [relevante, setRelevante] = useState([]);
 
   useEffect(() => {
@@ -49,8 +52,8 @@ const Principal = ({ singleProduct }) => {
       title={`Prymium | ${title}`}
       description={`${content}, Lavatrastos Prymium tiene todo lo que necesistas para tu fregadero`}
       img={imagen}
-      url={url}
-      DatoEriquesido={DatoEriquesido ({singleProduct, url})}
+      type="product"
+      DatoEriquesido={DatoEriquesido({ singleProduct, url: productUrl })}
     >
       <Detalle singleProduct={singleProduct} listRelevant={relevante} />
     </Head>

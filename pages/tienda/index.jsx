@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Head from '@hooks/useSEO'
-import {sobreAzulejo, url} from "@routes/Config";
+import { sobreAzulejo } from "@routes/Config";
 import ListCards from "@components/ListCards";
 
 const Principal = () => {
@@ -76,9 +76,8 @@ const Principal = () => {
   return (
     <Head
       title="Todos los Productos | Lavatrastos | Grifos | Bidets"
-      description="Encuntra accesorios, lavatrastos de lujo, fregaderos o bidets de grandes fosas y de acero inoxidable 202 y 304 para tu nueva cocina, todo los productos calibre 1.2mm el más grueso del mercado"
+      description="Encuentra accesorios, lavatrastos de lujo, fregaderos y bidets de acero inoxidable 202 y 304 para tu cocina en Guatemala."
       img={sobreAzulejo()}
-      url={url}
     >
       <div>
         <ListCards products={products}></ListCards>

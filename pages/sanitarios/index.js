@@ -22,8 +22,8 @@ const Principal = ({sliderSink,sliderBidet}) => {
   return (
     <>
       <Head
-        title="Lavatrastos Lujo | Grifos | Bidets | Prymium"
-        description="Lavatrastos de lujo de 1 y 2 fosas de 22 cm de profundidad de acero inoxidable 202 y 304, Grifos de Lujo de acero inoxidable y Bidets encuentra todo lo que le hace falta a tu cocina "
+        title="Grifos y Sanitarios de Lujo | Prymium Guatemala"
+        description="Conoce grifos y accesorios para sanitario Prymium con diseno elegante, durabilidad y acabados premium para tu bano."
         img={sobreAzulejo()}
       />
       <Home sliderBidet={sliderBidet} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from '@hooks/useSEO';
 import Questions from '@containers/Questions';
-import { getQuestion,sobreAzulejo,url } from '@routes/Config';
+import { getQuestion, sobreAzulejo } from '@routes/Config';
 
 export const getStaticProps = async () =>{
   // eslint-disable-next-line no-undef
@@ -15,12 +15,25 @@ export const getStaticProps = async () =>{
 }
 
 const Principal = ({ question }) => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: (question || []).map((item) => ({
+      '@type': 'Question',
+      name: item.titulo,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: (item.description || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+      }
+    }))
+  };
+
   return (
     <Head
-      title='Prymium | Bidet | Grifos | Preguntas'
-      description="Preguntas resueltas y buenas prácticas para instalar y cuidar tu lavatrastos o grifo, obten de manera inmediata todas las respuestas "
+      title="Preguntas Frecuentes | Lavatrastos Prymium Guatemala"
+      description="Resuelve dudas sobre instalacion, mantenimiento, garantia y cuidados de lavatrastos, grifos, duchas y bidets Prymium."
       img={sobreAzulejo()}
-      url={url}
+      structuredData={[faqSchema]}
     >
       <Questions question={question} />
     </Head>

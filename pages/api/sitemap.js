@@ -1,142 +1,87 @@
-// Ensure this import matches your project structure
-import { getProducts, singleProductUrl, BASE_URL } from '@routes/Config';  // Import your product APIs
+import { getProducts, getQuestion, BASE_URL } from '@routes/Config';
 
-// Fetch all products from the API or database
-export async function getAllProducts() {
-  const response = await fetch(getProducts.url);
-  const products = await response.json();
-  
-  return products;
-}
+const SITE_URL = BASE_URL.endsWith('/') ? BASE_URL.slice(0, -1) : BASE_URL;
 
-
-const formatDate = (date) => {
-  const d = new Date(date);
-  const isoString = d.toISOString();
-  
-  // Slice off the milliseconds and adjust for timezone to match the desired format
-  return isoString.slice(0, 19) + '+00:00';  // "2021-03-30T21:52:02+00:00"
+const toIsoDate = (value) => {
+  const fallback = new Date();
+  const parsed = value ? new Date(value) : fallback;
+  return Number.isNaN(parsed.getTime()) ? fallback.toISOString() : parsed.toISOString();
 };
-// Helper function to generate URLs for the sitemap
-const generateSitemapUrls = (products) => {
-  return products.map((product) => {
-    let priority = 0.85;
 
-    if (product.link === 'lavatrastos-7546b') {
-      priority = 0.75;
-    } else if 
-    (product.price === '') {
-      priority = 0.05;
-    } else if
-      (product.link === 'lavatrastos-modelo-3053r-black'){
-        priority = 0.86
-      } else if
-      (product.link === 'lavatrastos-670'){
-        priority = 0.87
-      } else if
-      (product.link === 'lavatrastos-7023f'){
-        priority = 0.88
-      }
+const escapeXml = (value = '') => String(value)
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&apos;');
 
-    return {
-      url: `${BASE_URL}tienda/detalle/${product.link}`,
-      lastModified: product.update_date.date ? formatDate(product.update_date.date) : formatDate(new Date()),
-      priority,
-    };
+const buildUrl = (path) => `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+
+const uniqueByUrl = (entries) => {
+  const map = new Map();
+  entries.forEach((entry) => {
+    map.set(entry.url, entry);
   });
+  return [...map.values()];
 };
 
-// API handler to generate the sitemap
 export default async function handler(req, res) {
   try {
-    // Fetch all products from the API
-    const products = await getAllProducts();
-    
-    // Generate URLs for the sitemap
-    const urls = generateSitemapUrls(products);
+    const [productsResponse, questionsResponse] = await Promise.all([
+      fetch(getProducts.url),
+      fetch(getQuestion.url)
+    ]);
 
-    // Static URLs to include in the sitemap
+    const products = await productsResponse.json();
+    const questions = await questionsResponse.json();
+    const nowIso = new Date().toISOString();
+
     const staticUrls = [
-      {
-        url: 'https://www.lavatrastosprymium.com/',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.60,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/preguntas',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.50,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/contacto',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.62,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/tienda',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.51,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/tienda/lavatrastos',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.51,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/tienda/mezcladoras',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.51,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/tienda/accesorios',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.51,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/tienda/bidets',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.51,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/tienda/bath',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.51,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/tienda/duchas',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.51,
-      },
-      {
-        url: 'https://www.lavatrastosprymium.com/tienda/extractores',
-        lastModified: '2021-03-30T21:52:02+00:00',
-        priority: 0.51,
-      },
-
-      
+      { url: buildUrl('/'), lastModified: nowIso, priority: 1.0 },
+      { url: buildUrl('/tienda'), lastModified: nowIso, priority: 0.9 },
+      { url: buildUrl('/productos'), lastModified: nowIso, priority: 0.85 },
+      { url: buildUrl('/preguntas'), lastModified: nowIso, priority: 0.85 },
+      { url: buildUrl('/contacto'), lastModified: nowIso, priority: 0.8 },
+      { url: buildUrl('/blog'), lastModified: nowIso, priority: 0.75 },
+      { url: buildUrl('/duchas'), lastModified: nowIso, priority: 0.7 },
+      { url: buildUrl('/extractores'), lastModified: nowIso, priority: 0.7 },
+      { url: buildUrl('/sanitarios'), lastModified: nowIso, priority: 0.7 },
+      { url: buildUrl('/tienda/lavatrastos'), lastModified: nowIso, priority: 0.8 },
+      { url: buildUrl('/tienda/mezcladoras'), lastModified: nowIso, priority: 0.8 },
+      { url: buildUrl('/tienda/accesorios'), lastModified: nowIso, priority: 0.75 },
+      { url: buildUrl('/tienda/bidets'), lastModified: nowIso, priority: 0.75 },
+      { url: buildUrl('/tienda/bath'), lastModified: nowIso, priority: 0.75 },
+      { url: buildUrl('/tienda/duchas'), lastModified: nowIso, priority: 0.75 },
+      { url: buildUrl('/tienda/extractores'), lastModified: nowIso, priority: 0.75 }
     ];
 
-    // Combine static URLs with dynamic product URLs
-    const allUrls = [...staticUrls, ...urls];
+    const productUrls = (products || []).map((product) => ({
+      url: buildUrl(`/tienda/detalle/${product.link}`),
+      lastModified: toIsoDate(product?.update_date?.date),
+      priority: product?.price ? 0.7 : 0.45
+    }));
 
-    // Create the XML structure for the sitemap
+    const questionUrls = (questions || []).map((question) => ({
+      url: buildUrl(`/preguntas/${question.id}`),
+      lastModified: nowIso,
+      priority: 0.6
+    }));
+
+    const allUrls = uniqueByUrl([...staticUrls, ...productUrls, ...questionUrls]);
+
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${allUrls
-        .map((url) => {
-          return `
-            <url>
-              <loc>${url.url}</loc>
-              <lastmod>${url.lastModified}</lastmod>
-              <priority>${url.priority}</priority>
-            </url>`;
-        })
-        .join('')}
-    </urlset>`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allUrls
+  .map((entry) => `  <url>
+    <loc>${escapeXml(entry.url)}</loc>
+    <lastmod>${entry.lastModified}</lastmod>
+    <priority>${entry.priority.toFixed(2)}</priority>
+  </url>`)
+  .join('\n')}
+</urlset>`;
 
-    // Set the correct response headers for XML
     res.setHeader('Content-Type', 'application/xml');
-    res.status(200).send(xml);  // Return the generated XML content
+    res.status(200).send(xml);
   } catch (error) {
     console.error('Error generating sitemap:', error);
     res.status(500).send('Error generating sitemap');

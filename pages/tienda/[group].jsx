@@ -4,7 +4,7 @@ import React from 'react';
 import Head from '@hooks/useSEO';
 import { useRouter } from 'next/router';
 import Tienda from '@containers/Tienda';
-import { singleCategoryUrl, sobreAzulejo, url, getCatergories } from '@routes/Config';
+import { singleCategoryUrl, sobreAzulejo, getCatergories } from '@routes/Config';
 
 export const getStaticPaths = async () => {
   const response = await fetch(getCatergories.url);
@@ -37,13 +37,13 @@ const Principal = ({ products }) => {
   const router = useRouter()
   const { group } = router.query
   const title = (group === "bath")? "Griferia de baño" : group
+  const cleanTitle = (title || 'productos').toString();
   
   return (
     <Head
-      title={`Prymium | ${title}`}
-      description="Encuentra lavatrastos de lujo, grifos y bidet, en acero inoxidable y plástico, grifos de 23 cm y lavatrastos de 55 cm a 120 cm con y sin ala de acero inxidable 202 y 304"
+      title={`Prymium | ${cleanTitle}`}
+      description={`Encuentra ${cleanTitle} de lujo Prymium en Guatemala con materiales premium y diseno moderno para cocina y bano.`}
       img={sobreAzulejo()}
-      url={url}
     >
       <Tienda products={products} title={title} isFiltered />
     </Head>
