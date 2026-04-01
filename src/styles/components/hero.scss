@@ -93,18 +93,18 @@
   }
 
   h1{
-    @include font-set(3, 5.2em);
-    font-weight: 700;
+    @include font-set(3, $hero-title-size-desktop);
+    font-weight: $theme-font-weight-bold;
     line-height: 1;
     @include hero-item(2.5em);
   }
 
   span{
-    @include font-set(1, 1.95em, $secondary, 600);
+    @include font-set(1, $hero-subtitle-size-desktop, $secondary, $theme-font-weight-semi-bold);
     line-height: 1.12;
     letter-spacing: -0.01em;
     width: min(82vw, 860px);
-    @include hero-item(4.1em);
+    @include hero-item(5.5em);
   }
 
   .link a{
@@ -121,7 +121,7 @@
     white-space: nowrap;
     text-decoration: none;
     @include font-set(1, 1.65em, $primary);
-    @include hero-item(0.25em);
+    @include hero-item(4em);
     padding: 0.28em 1.4em;
     border: 3px solid $primary;
     border-radius: 40px;
@@ -145,22 +145,22 @@
     // @include hero-background('/images/backgrounds/hero-730w.webp');
     margin-bottom: -6px;
     h1{
-      font-size: 3.8em;
+      font-size: $hero-title-size-lg;
       right: 7vw;
     }
 
     span{
-      font-size: 1.5em;
+      font-size: $hero-subtitle-size-lg;
       right: 7vw;
       width: min(82vw, 700px);
-      bottom: 4.9em;
+      bottom: 5em;
     }
 
     .link a{
       font-size: 1.35em;
       min-width: 300px;
       right: 7vw;
-      bottom: 3em;
+      bottom: 3.2em;
     }
   }
 
@@ -173,23 +173,23 @@
 
     h1{
       margin-bottom: 5px;
-      font-size: 2.6em;
+      font-size: $hero-title-size-sm;
       right: 4vw;
       width: min(92vw, 480px);
     }
 
     span{
-      font-size: 1.08em;
+      font-size: $hero-subtitle-size-sm;
       right: 4vw;
       width: min(90vw, 380px);
-      bottom: 5.1em;
+      bottom: 5em;
     }
 
     .link a{
       font-size: 1.05em;
       min-width: 230px;
       right: 4vw;
-      bottom: 3em;
+      bottom: 2.8em;
     }
   }
 }

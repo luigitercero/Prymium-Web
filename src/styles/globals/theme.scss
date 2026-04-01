@@ -1,0 +1,51 @@
+/* Global design tokens: edit this file to manage colors and typography centrally. */
+
+/* Brand colors */
+$theme-color-primary: #50a0a5;
+$theme-color-secondary: #ffffff;
+$theme-color-complement: #0a375a;
+$theme-color-black: #000000;
+
+/* Neutrals */
+$theme-color-gray-light: #f7f7f8;
+$theme-color-gray-medium: #edeef0;
+$theme-color-gray-semi-dark: #aeadb3;
+$theme-color-gray-dark: #87868a;
+$theme-color-gray-darker: #5b5b5f;
+$theme-color-brown: #60553f;
+
+/* Typography families */
+$theme-font-main: 'Lato';
+$theme-font-secondary: 'Lato';
+$theme-font-family-regular: 'Lato-Regular';
+$theme-font-family-bold: 'Lato-Regular';
+$theme-font-family-alt: 'Lato-Regular';
+
+/* Font weights */
+$theme-font-weight-regular: 400;
+$theme-font-weight-medium: 500;
+$theme-font-weight-semi-bold: 600;
+$theme-font-weight-bold: 700;
+
+/* Type scale */
+$theme-text-xs: 0.75rem;
+$theme-text-sm: 0.875rem;
+$theme-text-md: 1rem;
+$theme-text-lg: 1.125rem;
+$theme-text-xl: 1.25rem;
+$theme-text-2xl: 1.5rem;
+$theme-text-3xl: 2rem;
+$theme-text-4xl: 3rem;
+$theme-text-5xl: 4rem;
+
+/* Header/Hero admin tokens */
+$header-nav-size-desktop: 1.1em;
+$header-nav-size-mobile: 1em;
+
+$hero-title-size-desktop: 5.2em;
+$hero-title-size-lg: 3.8em;
+$hero-title-size-sm: 2.6em;
+
+$hero-subtitle-size-desktop: 1.95em;
+$hero-subtitle-size-lg: 1.5em;
+$hero-subtitle-size-sm: 1.08em;

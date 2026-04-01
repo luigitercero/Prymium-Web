@@ -1,11 +1,19 @@
 @import './mq.scss';
+@import './theme.scss';
 
 :root{
   --header-size: 480px;
-  --color-primary: #50a0a5;
-  --color-secondary: #ffffff;
-  --color-complement: #0a375a;
-  --color-black: #000000;
+  --color-primary: #{$theme-color-primary};
+  --color-secondary: #{$theme-color-secondary};
+  --color-complement: #{$theme-color-complement};
+  --color-black: #{$theme-color-black};
+  --font-main: #{$theme-font-main};
+  --font-secondary: #{$theme-font-secondary};
+  --text-sm: #{$theme-text-sm};
+  --text-md: #{$theme-text-md};
+  --text-lg: #{$theme-text-lg};
+  --text-xl: #{$theme-text-xl};
+  --text-2xl: #{$theme-text-2xl};
 
   @include mq('small-screen','max'){
     --header-size: 400px;

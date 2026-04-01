@@ -1,17 +1,19 @@
+@import './theme.scss';
+
 /* Rebranding palette */
 
-$primary: #50a0a5;
-$secondary: #ffffff;
-$complement: #0a375a;
-$black: #000000;
+$primary: $theme-color-primary;
+$secondary: $theme-color-secondary;
+$complement: $theme-color-complement;
+$black: $theme-color-black;
 
 $white: $secondary;
-$gray-light: #f7f7f8;
-$gray-medium: #edeef0;
-$gray-semi-dark: #aeadb3;
-$gray-dark: #87868a;
-$gray-darker: #5b5b5f;
-$brown: #60553f;
+$gray-light: $theme-color-gray-light;
+$gray-medium: $theme-color-gray-medium;
+$gray-semi-dark: $theme-color-gray-semi-dark;
+$gray-dark: $theme-color-gray-dark;
+$gray-darker: $theme-color-gray-darker;
+$brown: $theme-color-brown;
 
 /* Backward-compatible aliases for legacy styles */
 $primaryColor: $primary;

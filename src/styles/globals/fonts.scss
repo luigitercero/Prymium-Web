@@ -1,9 +1,11 @@
-$mainFont: 'Lato';
-$secondaryFont: 'Lato';
+@import './theme.scss';
 
-$font_family_regular:'Lato-Regular';
-$font_family_bold:'Lato-Regular';
-$font_family_lora: 'Lato-Regular';
+$mainFont: $theme-font-main;
+$secondaryFont: $theme-font-secondary;
+
+$font_family_regular: $theme-font-family-regular;
+$font_family_bold: $theme-font-family-bold;
+$font_family_lora: $theme-font-family-alt;
 
 @font-face {
   font-family: $font_family_regular;

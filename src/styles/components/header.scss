@@ -199,7 +199,7 @@
     a{
       text-decoration: none;
       padding: .5em;
-      @include font-set(1, 1.1em, $secondary, 700);
+      @include font-set(1, $header-nav-size-desktop, $secondary, $theme-font-weight-bold);
       text-shadow: 0 2px 8px rgba($color: $black, $alpha: 0.55);
       &:hover, &:focus{
         color: $primary;
@@ -208,6 +208,7 @@
       @include mq ("medium-screen",'max'){
         padding-left: 0.5em;
         padding-right: 0.5em;
+        font-size: $header-nav-size-mobile;
         &:hover, &:focus{
           color: $enfasisColorHover;
         }
