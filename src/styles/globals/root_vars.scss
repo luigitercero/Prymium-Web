@@ -2,6 +2,10 @@
 
 :root{
   --header-size: 480px;
+  --color-primary: #50a0a5;
+  --color-secondary: #ffffff;
+  --color-complement: #0a375a;
+  --color-black: #000000;
 
   @include mq('small-screen','max'){
     --header-size: 400px;

@@ -17,7 +17,7 @@ $max-items: 3;
 .bidetframe{
   
   h2{
-    border-bottom: 3px solid $primaryColor;
+    border-bottom: 3px solid $primary;
   }
   .gallery-wrapper{
     margin: 0 $margin-left-right;
@@ -101,7 +101,7 @@ $max-items: 3;
       display: none;
       width: unset;
       right: 0;
-      background: linear-gradient(to bottom, transparent, transparent, #ffff);;
+      background: linear-gradient(to bottom, transparent, transparent, $secondary);
     }
   }
 }

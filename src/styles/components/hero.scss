@@ -19,11 +19,28 @@
   width: 100%;  
   // @include hero-background('/images/backgrounds/hero-default.webp');
   position: relative;
-  background-color: $textColor;
+  background-color: $complement;
+  overflow: hidden;
+
+  &::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba($color: $black, $alpha: 0.5), rgba($color: $black, $alpha: 0.05));
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(to top, rgba($color: $complement, $alpha: 0.92), rgba($color: $primary, $alpha: 0.18) 45%, transparent 70%);
+  }
 
   .image{
     position: relative;
-    width: 65%;
+    width: 100%;
     height: 100%;
     z-index: 1;
   }
@@ -60,38 +77,55 @@
     }
   }
 
-  .link a, h1, span{
+  h1, span{
     position: absolute;
     z-index: 3;
     text-align: right;
-    right: 14vw;
+    left: auto;
+    right: 8vw;
+    width: min(86vw, 980px);
   }
 
   h1, span{
     color: $white;
-    background-color: $backgroundTextColor;
+    text-shadow: 0 2px 14px rgba($color: $black, $alpha: 0.45);
     margin: 0;
   }
 
   h1{
-    @include font-set(3, 3.6em);
-    font-weight: 500;
-    @include hero-item(3.4em, 0.2em);
+    @include font-set(3, 5.2em);
+    font-weight: 700;
+    line-height: 1;
+    @include hero-item(2.5em);
   }
 
   span{
-    @include font-set(1, 2em);
-    @include hero-item(4.5em, 0.2em);
+    @include font-set(1, 1.95em, $secondary, 600);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    width: min(82vw, 860px);
+    @include hero-item(4.1em);
   }
 
   .link a{
+    position: absolute;
+    z-index: 3;
+    left: auto;
+    right: 8vw;
+    transform: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    min-width: 340px;
+    white-space: nowrap;
     text-decoration: none;
-    @include font-set(1, 2em, $primaryColor);
-    @include hero-item(1.5em);
-    padding: 0.3em 1em;
-    border: 3px solid $primaryColor;
+    @include font-set(1, 1.65em, $primary);
+    @include hero-item(0.25em);
+    padding: 0.28em 1.4em;
+    border: 3px solid $primary;
     border-radius: 40px;
-    background-color: $textColor;
+    background-color: rgba($color: $complement, $alpha: 0.8);
     &:hover{
       transform: scale(1.05);
     }
@@ -109,17 +143,24 @@
   @include mq('large-screen', 'max'){
     height: 520px;
     // @include hero-background('/images/backgrounds/hero-730w.webp');
-    .link a, h1, span{
-      right: 10vw;
-    }
-
     margin-bottom: -6px;
     h1{
-      font-size: 2.8em;
+      font-size: 3.8em;
+      right: 7vw;
     }
-  
-    span, .link a{
+
+    span{
       font-size: 1.5em;
+      right: 7vw;
+      width: min(82vw, 700px);
+      bottom: 4.9em;
+    }
+
+    .link a{
+      font-size: 1.35em;
+      min-width: 300px;
+      right: 7vw;
+      bottom: 3em;
     }
   }
 
@@ -130,16 +171,25 @@
       width: 100%;
     }
 
-    .link a, h1, span{
-      right: 3vw;
-    }
     h1{
       margin-bottom: 5px;
-      font-size: 1.8em;
+      font-size: 2.6em;
+      right: 4vw;
+      width: min(92vw, 480px);
     }
 
-    span, .link a{
-      font-size: 1.1em;
+    span{
+      font-size: 1.08em;
+      right: 4vw;
+      width: min(90vw, 380px);
+      bottom: 5.1em;
+    }
+
+    .link a{
+      font-size: 1.05em;
+      min-width: 230px;
+      right: 4vw;
+      bottom: 3em;
     }
   }
 }

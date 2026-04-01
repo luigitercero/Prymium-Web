@@ -11,10 +11,10 @@
   margin-top: 5px;
 
   input, textarea, button{
-    @include font-set(1, 1em, $textColor);
+    @include font-set(1, 1em, $complement);
     margin: 5px;
     border-radius: 6px;
-    border: 1px solid #dfe1e5;
+    border: 1px solid $gray-medium;
  
     &:focus{
       outline: 0;

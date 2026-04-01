@@ -66,7 +66,7 @@ $media-query: "(max-width: 1024px)";
       height: 350px;
       margin: 0 5px 1px;
       background: $white;
-      box-shadow: 0px 0px 4px $secondaryColor;
+      box-shadow: 0px 0px 4px $secondary;
       border-radius: 3px;
       overflow: hidden;
       position: relative;
@@ -79,7 +79,7 @@ $media-query: "(max-width: 1024px)";
 
       .image-description{
         padding: 0 5px;
-        color: rgba($color: $textColor, $alpha: 0.88);
+        color: rgba($color: $complement, $alpha: 0.88);
         text-align: center;
       }
 
@@ -93,13 +93,13 @@ $media-query: "(max-width: 1024px)";
         width: 114px;
         margin: 0 auto;
         padding: .3em 0;
-        color:$textColor;
-        border: 0.15em solid $textColor;
+        color:$complement;
+        border: 0.15em solid $complement;
         border-radius: 10px;
 
         &:hover{
-          color:$primaryColor;
-          background-color:$secondaryColor;
+          color:$primary;
+          background-color:$secondary;
         }
       }
     }

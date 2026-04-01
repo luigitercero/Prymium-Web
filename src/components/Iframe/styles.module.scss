@@ -1,3 +1,5 @@
+@import '../../styles/globals/settings.scss';
+
 @keyframes ldio-gorbfxh5l89 {
   0% { transform: translate(-50%,-50%) rotate(0deg); }
   100% { transform: translate(-50%,-50%) rotate(360deg); }
@@ -7,7 +9,7 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  border: 10px solid #5dd7ff;
+  border: 10px solid $primary;
   border-top-color: transparent;
   border-radius: 50%;
 }

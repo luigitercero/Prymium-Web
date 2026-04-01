@@ -4,7 +4,7 @@
   align-items: center; /* add this will all relevant prefixes */
 }
 :root {
-  --swiper-theme-color: #e2b85c;
+  --swiper-theme-color: #{$primary};
 }
 .list-tecnico {
   
@@ -24,9 +24,9 @@
     border-radius: 20px;
     max-width: 5.8em;
     margin-top: 25px;
-    background-color: $secondaryColor;
-    color: $primaryColor;
-    border-color: $textColor;
+    background-color: $secondary;
+    color: $primary;
+    border-color: $complement;
     grid-area: button;
     max-height: 2em;
   }
@@ -120,7 +120,7 @@
     grid-area: price;
     position: relative;
     z-index: 3;
-    background-color: rgba($color: #fff, $alpha: 0.8);
+    background-color: rgba($color: $secondary, $alpha: 0.8);
     align-self: end;
   }
   .medidas {

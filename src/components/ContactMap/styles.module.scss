@@ -31,5 +31,5 @@
 }
 
 .title{
-  @include font-set(1, 1.2em, $textColor, bold);
+  @include font-set(1, 1.2em, $complement, bold);
 }

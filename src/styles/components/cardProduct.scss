@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   
-  background-color: $primaryColor;
+  background-color: $primary;
   max-height: 300px;
   min-height: 272px;
   
@@ -55,14 +55,14 @@
     margin-bottom: 10px;
     text-align: center;
     padding: .3em 1em;
-    color:$textColor;
-    border: 0.15em solid $textColor;
+    color:$complement;
+    border: 0.15em solid $complement;
     border-radius: 10px;
-    background-color:$primaryColor;
+    background-color:$primary;
     max-width: 10em;
     &:hover{
-      color:$primaryColor;
-      background-color:$secondaryColor;
+      color:$primary;
+      background-color:$secondary;
     }
   }
 }

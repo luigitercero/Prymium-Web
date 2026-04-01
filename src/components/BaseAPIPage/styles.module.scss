@@ -35,7 +35,7 @@
 .content_container{
   height: 0;
   overflow: hidden;
-  border-bottom: 3px solid $primaryColor;
+  border-bottom: 3px solid $primary;
 }
 
 .item_content{
@@ -60,7 +60,7 @@
     max-height: 99%;
     height: 99%;
     width: 99%;
-    border: 1px solid $textColor;
+    border: 1px solid $complement;
     // margin: 0;
     @include mq('medium-screen', 'min'){
       // font-size: 16px;

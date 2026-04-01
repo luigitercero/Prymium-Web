@@ -1,19 +1,23 @@
-/*Color palette*/
- 
-$white: #ffff;
-$gray-light: #f7f7f8;
+/* Rebranding palette */
 
+$primary: #50a0a5;
+$secondary: #ffffff;
+$complement: #0a375a;
+$black: #000000;
+
+$white: $secondary;
+$gray-light: #f7f7f8;
 $gray-medium: #edeef0;
 $gray-semi-dark: #aeadb3;
 $gray-dark: #87868a;
 $gray-darker: #5b5b5f;
 $brown: #60553f;
-$black: #0000;
 
-$primaryColor: #e2b85c;
-$secondaryColor:#553b00;
-$textColor:#1a1200;
-$enfasisColor:#fff0cf; 
-$enfasisColorHover:#fff; 
-$backgroundLightColor: #fff7e2;
-$backgroundTextColor: rgba($color: #1A1200, $alpha: 0.4);
+/* Backward-compatible aliases for legacy styles */
+$primaryColor: $primary;
+$secondaryColor: $secondary;
+$textColor: $complement;
+$enfasisColor: mix($secondary, $primary, 70%);
+$enfasisColorHover: $secondary;
+$backgroundLightColor: mix($secondary, $primary, 85%);
+$backgroundTextColor: rgba($color: $complement, $alpha: 0.4);

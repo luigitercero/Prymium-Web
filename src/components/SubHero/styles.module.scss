@@ -32,7 +32,7 @@
   [id=subtitle]{
     @include abs(270px, false, false, $margin-left-right);
     @extend %children-extend;
-    @include font-set(1, 2em, $textColor, 400);
+    @include font-set(1, 2em, $complement, 400);
     @include mq('small-screen','max'){
       font-size: 1.5em;
       top: 190px;
@@ -52,7 +52,7 @@
   [id=subtitle]{
     @include abs(270px, false, false, $margin-left-right);
     @extend %children-extend;
-    @include font-set(1, 2em, $textColor, 400);
+    @include font-set(1, 2em, $complement, 400);
     right: $margin-left-right;
     text-align: center;
     @include mq('small-screen','max'){
@@ -64,7 +64,7 @@
 
 .overlay{
   @include abs(0, 0);
-  background: radial-gradient(transparent, transparent, transparent,transparent, transparent, transparent, #fff7e2, #fff7e2, #fff7e2);;
+  background: radial-gradient(transparent, transparent, transparent, transparent, transparent, transparent, $backgroundLightColor, $backgroundLightColor, $backgroundLightColor);
   width: calc(var(--header-size) * 2);
   height: calc(var(--header-size) * 2.5);
   margin-right: calc(var(--header-size)* (-1));
