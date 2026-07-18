@@ -1,0 +1,94 @@
+@import '../styles/globals/settings.scss';
+
+.privacy_page {
+  padding: 60px $margin-left-right 80px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.privacy_header {
+  border-bottom: 2px solid $primaryColor;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+}
+
+.privacy_title {
+  @include font-set(2, 2.2rem, $textColor);
+  margin: 0 0 8px;
+
+  @include mq(medium-screen) {
+    font-size: 2.8rem;
+  }
+}
+
+.privacy_date {
+  @include font-set(1, 0.9rem, $gray-dark);
+  margin: 0;
+}
+
+.privacy_body {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.section {
+  h2 {
+    @include font-set(2, 1.15rem, $secondaryColor);
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid $gray-medium;
+
+    @include mq(medium-screen) {
+      font-size: 1.3rem;
+    }
+  }
+
+  p {
+    @include font-set(1, 0.95rem, $textColor);
+    line-height: 1.75;
+    margin: 0 0 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    padding-left: 20px;
+    margin: 8px 0 12px;
+
+    li {
+      @include font-set(1, 0.95rem, $textColor);
+      line-height: 1.75;
+      margin-bottom: 6px;
+    }
+  }
+
+  a {
+    color: $primaryColor;
+    text-decoration: underline;
+
+    &:hover {
+      color: $secondaryColor;
+    }
+  }
+}
+
+.address {
+  @include font-set(1, 0.95rem, $textColor);
+  font-style: normal;
+  line-height: 1.9;
+  background-color: $backgroundLightColor;
+  border-left: 3px solid $primaryColor;
+  padding: 16px 20px;
+  border-radius: 4px;
+
+  a {
+    color: $primaryColor;
+
+    &:hover {
+      color: $secondaryColor;
+    }
+  }
+}
